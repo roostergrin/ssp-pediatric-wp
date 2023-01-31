@@ -1,0 +1,140 @@
+section.tri-carousel {
+    padding: 90px 0 50px 0;
+    @media @menuMax {padding:80px 0 30px 0;}
+    @media @ipadMax {padding: 30px 0 30px 0;}
+    @media @mobileMax {padding: 60px 0 30px 0;}
+
+    &.bg-green { 
+        background-color: @green; 
+
+        &.southmoor-pediatric-default-palette {
+            .pagination-container .pagination {
+                .page-left, .page-right {
+                    &:hover {
+                        >span { color: var(--color-primary); }
+                        i::before { color: var(--color-primary); }
+                    }
+                }
+            }   
+        }        
+        &.smiles-in-motion-palette {
+            .pagination-container .pagination {
+                .page-left, .page-right {
+                    &:hover {
+                        >span { color: @brown; }
+                        i::before { color: @brown; }
+                    }
+                }
+            }   
+        }
+    }
+    &.bg-blue {
+        background-color: @blue;
+        .pagination-container {
+            .pagination {
+                .page-left,
+                .page-right {
+                    &:hover {
+                        >span {color: var(--color-secondary);}
+                        i:before {
+                            color: var(--color-secondary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .owl-item {
+        .slide-container {
+            .display-flex;
+            .flex-justify-content-center;
+            .img-container {
+                .display-flex;
+                .flex-justify-content-center;
+                .clip-path(circle());
+                img {
+                    width: 315px;
+                    height: 315px;
+    
+                    @media (min-width: @mobile-max-width) {      
+                        width: 500px;
+                        height: 500px;
+                    } 
+                }
+            }
+        }
+    }
+
+    .pagination-container {
+        margin: 0;
+        .display-flex;
+        .flex-align-items-center;
+        .flex-justify-content-center;
+        margin: @gutter-md;
+
+        .pagination {
+            margin-bottom: 80px;
+            margin-left: -55px;
+            .display-flex;
+            .flex-justify-content-space-between;
+            .flex-align-items-center;
+            .page-left,
+            .page-right {
+                .display-flex;
+                .flex-justify-content-space-between;
+                .flex-align-items-center;
+                position: relative;
+                span {
+                    // display: none;
+                    color: @light-gray;
+                    position: absolute;
+                    right: 45px;
+                    bottom: -25px;
+                    .transition(all 0.2s ease-out);
+                }
+                i {
+                    outline: none;
+                    position: relative;
+                    padding: 0 12px;
+                    
+                    &:before {
+                        position: absolute;
+                        color: @light-gray;
+                        height: 10px;
+                        width: 10px;
+                        cursor: pointer;
+                        bottom: 9px;
+                        font-size: 70px;
+                        .transition(all 0.2s ease-out);
+                    }
+                    &.icon-left-arrow {
+                        margin-right: 25px;
+                        &:before {
+                            left: 10px;
+                        }
+                    }
+
+                    &.icon-right-arrow {
+                        margin-left: 5px;
+                        &:before {
+                            right: 10px;
+                        }
+                    }
+                }
+                &:hover {
+                    >span {color: var(--color-primary);}
+                    i:before {
+                        color: var(--color-primary);
+                    }
+                }
+            }
+            .page-left {span{right: 30px;}}
+            .page-right {span{left: 70px;}}
+        }
+
+        a {
+            margin-left: @gutter-sm;
+        }
+    }
+}

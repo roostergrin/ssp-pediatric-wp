@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55.8 62.8"
+	 style="enable-background:new 0 0 55.8 62.8;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#000064;}
+</style>
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  bottomLeftOrigin="true" height="62.8" width="55.4" x="38.6" y="40.2"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g>
+	<g id="Group_20734" transform="translate(-8133 -6175)">
+		<path class="st0" d="M8185.4,6175c-1.7,0-3,1.3-3,3v1h-6c-1.1,0-2,0.9-2,2v16c0,1.1,0.9,2,2,2h6v35c0,1.7,1.3,3,3,3s3-1.3,3-3v-56
+			C8188.4,6176.3,8187.1,6175,8185.4,6175z"/>
+		<g id="Group_20669" transform="translate(0 1)">
+			<path id="Path_14217" class="st0" d="M8151.4,6186h10c1.1,0,2,0.9,2,2l4,46c0,1.1-0.9,2-2,2h-18c-1.1,0-2-0.9-2-2l4-46
+				C8149.4,6186.9,8150.3,6186,8151.4,6186z"/>
+			<path id="Rectangle_592" class="st0" d="M8152.4,6174h8c1.1,0,2,0.9,2,2v6c0,1.1-0.9,2-2,2h-8c-1.1,0-2-0.9-2-2v-6
+				C8150.4,6174.9,8151.3,6174,8152.4,6174z"/>
+		</g>
+		<g id="Group_20669_00000162349504893166923290000000686107417492014748_" transform="translate(0 1)">
+			<path id="Path_14217_00000136388959485457293550000016049051205397916044_" class="st1" d="M8160.8,6185.8l8.9,4.6
+				c1,0.5,1.4,1.7,0.8,2.7l-17.8,42.6c-0.5,1-1.7,1.4-2.7,0.8l-15.9-8.3c-1-0.5-1.4-1.7-0.8-2.7l24.9-38.9
+				C8158.6,6185.7,8159.8,6185.3,8160.8,6185.8z"/>
+			<path class="st1" d="M8185.4,6174c-1.7,0-3,1.3-3,3v1h-6c-0.9,0-1.7,0.6-1.9,1.5c-0.1,0-0.1-0.1-0.2-0.1l-7.1-3.7
+				c-1-0.5-2.2-0.1-2.7,0.8l-2.8,5.3c-0.5,1-0.1,2.2,0.8,2.7l7.1,3.7c1,0.5,2.2,0.1,2.7-0.8l2-3.9v12.5c0,1.1,0.9,2,2,2h6v35
+				c0,1.7,1.3,3,3,3s3-1.3,3-3v-56C8188.4,6175.3,8187.1,6174,8185.4,6174z"/>
+		</g>
+	</g>
+</g>
+</svg>

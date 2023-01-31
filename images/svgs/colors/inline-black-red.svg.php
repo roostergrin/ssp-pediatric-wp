@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 100 60"><defs><style>.black-red-a{fill:#d61d1d;}</style></defs><g transform="translate(-826 -1490)"><rect width="50" height="60" transform="translate(826 1490)"/><rect class="black-red-a" width="50" height="60" transform="translate(876 1490)"/></g></svg>

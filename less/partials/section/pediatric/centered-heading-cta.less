@@ -1,0 +1,96 @@
+section.centered-heading-cta {
+    overflow: hidden;
+    padding: 120px 0 100px 0;
+    // z-index: -1;
+    margin-top: -@gutter-lg;
+    margin-bottom: 2*@gutter-lg;
+
+    body.page-template-kids-dental-care-visits & {
+        @media (max-width: 1076px) {
+            margin-top: 2*@gutter-lg;
+        }
+    }
+
+    @media @tabletMax {
+        body.page-template-preparing-for-your-visit & {
+            margin-top: 2*@gutter-lg;
+        }
+    }
+
+    &.gray {
+        background-color: @gray-3;
+    }
+    .inner-content {
+        position: relative;
+        .display-flex;
+        .flex-direction-column;
+        .flex-justify-content-center;
+        .flex-align-items-center;
+        h2 {
+            text-align: center;
+            margin-bottom: @gutter-lg;
+            &.red {
+                color: @red;
+            }
+            &.gray {
+                color: @gray-1;
+            }
+        }
+        .bubble {
+            .clip-path(circle());
+            background-color: @white;
+            position: absolute;
+            z-index: -1;
+
+            &.bubble-1 {
+                width: 210px;
+                height: 210px;
+                left: 150px;
+                bottom: -240px;
+
+                body.page-template-kids-dental-care-visits & {
+                    @media @mobileMax {
+                        bottom: -270px;
+                    }
+                }
+            }
+            &.bubble-2 {
+                width: 240px;
+                height: 240px;
+                left: 250px;
+                top: -280px;
+
+                body.page-template-kids-dental-care-visits & {
+                    @media @mobileMax {
+                        left: -115px;
+                    }
+                }
+            }
+            &.bubble-3 {
+                width: 70px;
+                height: 70px;
+                left: 800px;
+                bottom: -50px;
+
+                body.page-template-kids-dental-care-visits & {
+                    @media @mobileMax {
+                        left: 35%;
+                    }
+                }
+            }
+            &.bubble-4 {
+                width: 130px;
+                height: 130px;
+                left: 900px;
+                bottom: -180px;
+
+                body.page-template-kids-dental-care-visits & {
+                    @media @mobileMax {
+                        left: -100px;
+                        bottom: -160px;
+                    }
+                }
+            }
+        }
+    }
+}

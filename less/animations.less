@@ -1,0 +1,257 @@
+// Variables
+@in-quad:cubic-bezier(0.550, 0.085, 0.680, 0.530);
+@in-cubic:cubic-bezier(0.550, 0.055, 0.675, 0.190);
+@in-quart:cubic-bezier(0.895, 0.030, 0.685, 0.220);
+@in-quint:cubic-bezier(0.755, 0.050, 0.855, 0.060);
+@in-sine:cubic-bezier(0.470, 0.000, 0.745, 0.715);
+@in-expo:cubic-bezier(0.950, 0.050, 0.795, 0.035);
+@in-circ:cubic-bezier(0.600, 0.040, 0.980, 0.335);
+@in-back:cubic-bezier(0.600, -0.280, 0.735, 0.045);
+@out-quad:cubic-bezier(0.250, 0.460, 0.450, 0.940);
+@out-cubic:cubic-bezier(0.215, 0.610, 0.355, 1.000);
+@out-quart:cubic-bezier(0.165, 0.840, 0.440, 1.000);
+@out-quint:cubic-bezier(0.230, 1.000, 0.320, 1.000);
+@out-sine:cubic-bezier(0.390, 0.575, 0.565, 1.000);
+@out-expo:cubic-bezier(0.190, 1.000, 0.220, 1.000);
+@out-circ:cubic-bezier(0.075, 0.820, 0.165, 1.000);
+@out-back:cubic-bezier(0.175, 0.885, 0.320, 1.275);
+@in-out-quad:cubic-bezier(0.455, 0.030, 0.515, 0.955);
+@in-out-cubic:cubic-bezier(0.645, 0.045, 0.355, 1.000);
+@in-out-quart:cubic-bezier(0.770, 0.000, 0.175, 1.000);
+@in-out-quint:cubic-bezier(0.860, 0.000, 0.070, 1.000);
+@in-out-sine:cubic-bezier(0.445, 0.050, 0.550, 0.950);
+@in-out-expo:cubic-bezier(1.000, 0.000, 0.000, 1.000);
+@in-out-circ:cubic-bezier(0.785, 0.135, 0.150, 0.860);
+@in-out-back:cubic-bezier(0.680, -0.550, 0.265, 1.550);
+
+// Mixins
+.ease(@scope:all, @duration:0.5s, @function:ease) {
+	-webkit-transition:@scope @duration @function;
+	-moz-transition:@scope @duration @function;
+	-ms-transition:@scope @duration @function;
+	-o-transition:@scope @duration @function;
+	transition:@scope @duration @function;
+}
+.linear(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, linear);
+}
+.ease(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, ease);
+}
+.ease-in(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, ease-in);
+}
+.ease-out(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, ease-out);
+}
+.ease-in-out(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, ease-in-out);
+}
+.ease-in-sine(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.470, 0.000, 0.745, 0.715));
+}
+.ease-out-sine(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.390, 0.575, 0.565, 1.000));
+}
+.ease-in-out-sine(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.445, 0.050, 0.550, 0.950));
+}
+.ease-in-quad(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.550, 0.085, 0.680, 0.530));
+}
+.ease-out-quad(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.250, 0.460, 0.450, 0.940));
+}
+.ease-in-out-quad(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.455, 0.030, 0.515, 0.955));
+}
+.ease-in-cubic(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.550, 0.055, 0.675, 0.190));
+}
+.ease-out-cubic(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.215, 0.610, 0.355, 1.000));
+}
+.ease-in-out-cubic(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.645, 0.045, 0.355, 1.000));
+}
+.ease-in-quart(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.895, 0.030, 0.685, 0.220));
+}
+.ease-out-quart(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.165, 0.840, 0.440, 1.000));
+}
+.ease-in-out-quart(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.770, 0.000, 0.175, 1.000));
+}
+.ease-in-quint(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.755, 0.050, 0.855, 0.060));
+}
+.ease-out-quint(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.230, 1.000, 0.320, 1.000));
+}
+.ease-in-out-quint(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.860, 0.000, 0.070, 1.000));
+}
+.ease-in-expo(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.950, 0.050, 0.795, 0.035));
+}
+.ease-out-expo(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.190, 1.000, 0.220, 1.000));
+}
+.ease-in-out-expo(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(1.000, 0.000, 0.000, 1.000));
+}
+.ease-in-circ(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.600, 0.040, 0.980, 0.335));
+}
+.ease-out-circ(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.075, 0.820, 0.165, 1.000));
+}
+.ease-in-out-circ(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.785, 0.135, 0.150, 0.860));
+}
+.ease-in-back(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.600, -0.280, 0.735, 0.045));
+}
+.ease-out-back(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.175, 0.885, 0.320, 1.275));
+}
+.ease-in-out-back(@scope:all, @duration:0.5s) {
+	.ease(@duration, @scope, cubic-bezier(0.680, -0.550, 0.265, 1.550));
+}
+
+// Bounce
+.bounce {
+	.animation(bounce 3s infinite);
+}
+@-moz-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		.transform(translateY(0));
+	}
+	40% {
+		.transform(translateY(-30px));
+	}
+	60% {
+		.transform(translateY(-15px));
+	}
+}
+@-webkit-keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		.transform(translateY(0));
+	}
+	40% {
+		.transform(translateY(-30px));
+	}
+	60% {
+		.transform(translateY(-15px));
+	}
+}
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {
+		.transform(translateY(0));
+	}
+	40% {
+		.transform(translateY(-30px));
+	}
+	60% {
+		.transform(translateY(-15px));
+	}
+}
+
+// Fade in
+.fadeIn {
+	.animation(fadeIn 0.75s);
+}
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+// Blur in
+.blurIn {
+	.animation(blurIn 0.75s);
+}
+@-webkit-keyframes blurIn {
+	from {
+		filter: blur(2rem);
+	}
+	to {
+		filter: blur(0rem);
+	}
+}
+@keyframes blurIn {
+	from {
+		filter: blur(2rem);
+	}
+	to {
+		filter: blur(0rem);
+	}
+}
+
+// Blur in
+.blurFadeIn {
+	.animation(blurFadeIn 0.3s);
+}
+@-webkit-keyframes blurFadeIn {
+	from {
+		opacity: 0;
+		filter: blur(2rem);
+	}
+	to {
+		opacity: 1;
+		filter: blur(0rem);
+	}
+}
+@keyframes blurFadeIn {
+	from {
+		opacity: 0;
+		filter: blur(2rem);
+	}
+	to {
+		opacity: 1;
+		filter: blur(0rem);
+	}
+}
+
+// Loading icon
+.loading-icon {
+	width: 135px;
+	z-index: -1;
+	opacity: 0;
+	position: absolute;
+	left: 30px;
+	margin: 0;
+	padding: 0;
+	height: 2*@gutter-sm;
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+	.ease-in-out-quart(opacity, .3s);
+
+	@media @mobileMax {
+		left: 0;
+	}
+
+	html.IS & {
+		z-index: 9;
+		opacity: 1;
+		display: block;
+	}
+
+	svg path,
+	svg rect {
+		fill: rgb(221, 72, 79);
+	}
+}

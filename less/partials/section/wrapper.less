@@ -1,0 +1,40 @@
+section.wrapper {
+    &.service-spacer {
+        margin-bottom: 170px;
+		height: 1px;
+    }
+    &.abpd-section {
+        @media @mobileMax { margin-top: -130px;}
+    }
+    &.questions {
+        body.page-template-brand-home & {
+            margin-top: -230px;
+        }
+        .mb;
+    }
+
+    &.toddlers-and-preschoolers {
+        @media (max-width:500px) {
+            section.bubbles.top.var-1 {
+                height: 180px;
+            }
+            section.split-static.toddlers-and-preschoolers-custom {
+                margin-top: 180px;
+            }
+        }
+    }
+
+    &.bg-blue { background-color: @blue;}
+    &.bg-green { background-color: @green;}
+    &.bg-gray { background-color: @gray-3;}
+    &.primary { background-color: var(--color-primary);}
+
+    // Anchor tag offsets
+    a.anchor {
+        &[name="dental-emergencies-treatments-carousel"] {
+            position: absolute;
+            top: 70px;
+        }
+    }
+    
+}

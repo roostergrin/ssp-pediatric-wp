@@ -1,0 +1,26 @@
+officeID	entityID	regionID	city
+1	6	1	Eau Claire
+2	7	1	Black River Falls
+3	8	1	Bloomer
+4	9	1	Chippewa Falls
+5	10	1	Menomonie
+7	12	1	Rice Lake
+8	13	1	Stanley
+9	14	2	Wausau
+10	15	2	Merrill
+11	16	3	Marinette
+12	17	4	New Richmond
+13	18	4	Amery
+14	19	4	Baldwin
+15	20	4	River Falls
+16	21	NULL	La Crosse
+17	22	NULL	Holmen
+18	23	NULL	Onalaska
+19	24	NULL	West Salem
+20	25	NULL	Maplewood
+21	26	NULL	Roseville
+22	27	NULL	Madison
+23	28	NULL	Beaver Dam
+24	29	NULL	Sun Prairie
+25	4	NULL	Wisconsin Rapids
+26	5	NULL	Shawano

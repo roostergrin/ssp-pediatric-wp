@@ -1,0 +1,72 @@
+section.blog.archive {
+    margin-top: 4*@gutter-lg;
+
+	@media @mobileMax {
+		margin-bottom: 6*@gutter-lg;
+		margin-top: -(4*@gutter-sm);
+	}
+	@media (max-width:425px) {
+		margin-top: -(6*@gutter-sm);
+	}
+
+	.main-container {
+		margin: 0 -@gutter-lg;
+		width: calc(~"100% + 60px");
+		.display-flex;
+		@media @mobileMaxWithLandscape { margin: 0; width: 100%; .flex-direction-column; }
+
+		.content-container {
+			@width: percentage((1170 - 312)/1170);
+			margin: 0 @gutter-lg;
+			width: @width;
+			@media @mobileMaxWithLandscape { margin: 0; width: 100%; }			
+
+			// h1 { margin-bottom: @gutter-md; }
+			// h2 {
+			// 	.heading-4;
+			// 	color: var(--color-primary);
+			// 	margin-bottom: 5px;
+			// }
+			// h3 {
+			// 	.heading-5;
+			// 	margin-bottom: 5px;
+			// }
+			strong { margin-bottom: 1.2em; }
+
+			.large-posts {
+				@media @mobileMaxWithLandscape {
+					margin-bottom: 50%;
+				}
+			}
+
+			.small-posts {
+				margin: 0 -@gutter-lg;
+				width: calc(~"100% + 60px");
+				flex-wrap: wrap;
+				.display-flex;
+				@media @mobileMaxWithLandscape { margin: 0; width: 100%; .flex-direction-column; }				
+			}
+
+            #load-more {
+                margin: 1.5*@gutter-lg 0 4*@gutter-lg;
+
+				@media @mobileMaxWithLandscape {
+					margin-bottom: 0;
+				}
+            }
+		}
+
+		.sidebar-container {
+			@width: percentage(312/1170);
+			margin: 0 @gutter-lg;
+			width: @width;
+			@media @mobileMaxWithLandscape { margin: 2*@gutter-lg 0 4*@gutter-lg; width: 100%; }
+		}
+	}
+}
+// Sticky category sidebar fix
+body.page-template-kids-dentist-blog {
+	main {
+		overflow-x: visible;
+	}
+}

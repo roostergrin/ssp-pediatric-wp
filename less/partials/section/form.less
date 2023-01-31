@@ -1,0 +1,203 @@
+section.form {
+	.content {
+		.inner-content {
+			margin: auto;
+			margin-top: 100px;
+			.display-flex;
+			.flex-align-items-stretch;
+			.flex-justify-content-flex-start;
+			@media @mobileMax {
+				display: block;
+				margin-top: 50px;
+			}
+
+			> article, > aside {
+				position:relative;
+				 @width:percentage(1/2);
+				.flex(0,0,@width);
+				width:@width;
+				max-width:@width;
+				@media @mobileMax {
+					width:100%;
+					max-width:100%;
+				}
+			}
+
+			> article {
+				padding-right: 2*@gutter-lg;
+				form:not(.contact) & {
+
+					@media screen and (min-width:1200px){ min-height: 525px; }
+					@media screen and (min-width:783px) and (max-width:1199px) { min-height: 615px; }
+				}
+				@media @mobileMax { 
+					padding-right: 0; 
+					h1 {
+						margin-bottom: 0.7rem;
+					}
+				}
+
+				h1, h2, h3 {
+					&.orange { color: @orange; }
+				}
+
+				img {
+					.clip-path(circle());
+				}
+			}
+
+			> aside {
+				@media @mobileMax {
+					padding-right: 0;
+					margin-top: 2*@gutter-lg;
+					body.page-template-pediatric-dentist-referral & {
+						margin-top: @gutter-lg;
+					}
+				}
+
+				.form-wrapper {
+					h2 { margin-bottom: 0; }
+				}
+			}
+		}
+	}
+
+	&.appointment {
+		margin-bottom: 100px;
+		z-index: 9;
+		@media @tabletMax { margin-bottom: 0;}
+
+		&.smiles-in-motion-palette {
+			aside {
+				.disclaimer {
+					color: @gray-1 !important;
+				}
+			}
+		}
+
+		.inner-content {
+			.flex-direction-row-reverse;
+			@media @tabletMax { .flex-direction-column; }
+			article {
+				position: relative;
+				padding-right: 0;
+				padding-left: 3*@gutter-sm;
+				@media @tabletMax {
+					padding-left: 0;
+					padding-right: 0;
+					.display-flex;
+					.flex-direction-column-reverse;
+				}
+				.copy-container {
+					margin-bottom: 2*@gutter-md;
+					text-align: right;
+					.display-flex;
+					.flex-direction-column;
+					.flex-align-items-flex-end;
+					.flex-justify-content-flex-start;
+					@media @tabletMax {
+						text-align: center;
+						.flex-align-items-center;
+					}
+					@media @mobileMax { margin-bottom: 0; }
+					h2 {
+						max-width: 420px;
+					}
+					p { max-width: 700px; }
+				}
+				img {
+					position: absolute;
+					width: 100%;
+					left: 60px;
+					min-width: 705px;
+					@media @tabletMax {
+						position: relative;
+						width: auto;
+						left: auto;
+						min-width: auto;
+						max-width: 705px;
+						margin-bottom: @gutter-lg;
+					}
+                    @media @mobileMax {
+                        max-width: 100%;
+                    }
+				}
+
+			}
+			aside {
+				.radio-options.appt_day, .radio-options.appt_time {
+					label q {
+						font-weight: bold !important;
+					}
+				}
+				.disclaimer {
+					color: @blue;
+					margin-top: 2*@gutter-md;
+				}
+			}
+			@media @tabletMax {
+				article, aside {
+					width:100%;
+					max-width:100%;
+				}
+			}
+		}
+	}
+
+	&.community {
+		padding-bottom: 100px;
+
+		.inner-content {
+			.form-wrapper {
+				@media @tabletMin {
+					min-height: 809px;
+				}
+			}
+			.cols {
+				&.col-left {
+					max-width: 585px;
+					// width: 50%;
+					position: absolute;
+					left: -200px;
+					bottom: -75px;
+
+					@media screen and (max-width: 1000px) {
+						margin-right: 40px;
+					}
+
+					@media @mobileMax {
+						position: relative;
+						margin-right: 0;
+						margin-top: 40px;
+						margin-bottom: 40px;
+						left: 0;
+						bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+    &.orthodontic-referral {
+
+        .content {
+            .inner-content {
+				@media (min-width:671px) { margin-top: -50px;}
+                display: block;
+				margin-top: 0;
+                > article, > aside {
+                    width: 100%;
+                    max-width:100%;
+                    min-height: unset;
+                }
+            }
+        }
+    }
+
+	&.contact {
+		margin-bottom: 3*@gutter-lg;
+		@media @mobileMax {
+			margin-bottom: 2*@gutter-lg;
+		}
+	}
+}

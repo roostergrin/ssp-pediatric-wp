@@ -1,0 +1,134 @@
+div.widget.search {
+	.container {
+		position: absolute;
+		height: 105px;
+		max-height: 105px;
+		padding-right: 4*@gutter-sm;
+		background-color: var(--color-primary);
+		z-index: 1;
+		-webkit-transition: all .3s ease-in-out;
+		-moz-transition: all .3s ease-in-out;
+		-ms-transition: all .3s ease-in-out;
+		-o-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out;
+		.display-flex;
+		.flex-direction-column;
+		.flex-justify-content-center;
+		.border-bottom-right-radius(180px);
+
+		&:before {
+			content: '';
+			width: 100vw;
+			height: 105px;
+			max-height: 105px;
+			position: absolute;
+			right: 100%;
+			background-color: var(--color-primary);
+			z-index: 1;
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;
+			-ms-transition: all .3s ease-in-out;
+			-o-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;
+		}
+
+		h3 {
+			font-size: 25/@rem;
+			line-height: 35/@rem;
+			color: @white;
+		}
+
+		a {
+			margin-top: @gutter-lg/2;
+			display: block;
+			color: @white;
+		}
+
+		#find-location {
+			margin: 0;
+			opacity: 0;
+			max-height: 0;
+			-webkit-transition: all .3s ease-in-out;
+			-moz-transition: all .3s ease-in-out;
+			-ms-transition: all .3s ease-in-out;
+			-o-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;
+
+			form {
+				margin: 0;
+				.display-flex;
+				.flex-align-items-center;
+
+				input {
+					background-color: transparent;
+					border-bottom: 2px solid @white;
+					cursor: text;
+					width: 100%;
+					max-width: 300px;
+
+					&::-webkit-input-placeholder {
+						color: @white;
+						padding-bottom: 2px;
+					}
+
+					&::-moz-placeholder {
+						color: @white;
+						padding-bottom: 2px;
+					}
+
+					&:-ms-input-placeholder {
+						color: @white;
+						padding-bottom: 2px;
+					}
+
+					&:-moz-placeholder {
+						color: @white;
+						padding-bottom: 2px;
+					}
+
+					&:placeholder-shown {
+						color: @white;
+						padding-bottom: 2px;
+					}
+
+					&::placeholder {
+						color: @white;
+						padding-bottom: 2px;
+					}
+				}
+
+				button {
+					color: @white;
+					background: none;
+					border: none;
+					outline: none;
+					font-size: 25px;
+					cursor: pointer;
+					.appearance(none);
+				}
+			}
+		}
+		&.active {
+			height: 260px;
+			max-height: 260px;
+			padding-left: 4*@gutter-lg;
+			padding-right: 4*@gutter-lg;
+			left: -4*@gutter-lg;
+
+			h3 {
+				font-size: 40/@rem;
+				line-height: 40/@rem;
+				margin-bottom: @gutter-sm;
+
+				i {
+					display: none;
+				}
+			}
+
+			#find-location {
+				opacity: 1;
+				max-height: 100%;
+			}
+		}
+	}
+}

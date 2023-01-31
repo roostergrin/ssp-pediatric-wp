@@ -1,0 +1,26 @@
+section.photos-staggered {
+    margin-top: -350px;
+    padding-bottom: 200px;
+    @media @mobileMax {display: none;}
+    .inner-content {
+        .display-flex;
+        .flex-justify-content-flex-end;
+        .cols {
+            .img-container {
+                .clip-path(circle());
+            }
+            &.col-left {
+                max-width: 585px;
+                width: 50%;
+                position: absolute;
+                left: -200px;
+                bottom: -200px;
+                @media (max-width:1024px) { left: -140px; }
+            }
+            &.col-right {
+                max-width: 780px;
+                width: 70%;
+            }
+        }
+    }
+}

@@ -1,0 +1,797 @@
+// To do: get rid of all the transform translates. That was a dead end experiment
+section.bubbles {
+	z-index: -1;
+	margin: 0;
+	width: 100%;
+	max-width: 1650px;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;	
+
+	&.blue {
+		.bubble {
+			background-color: @blue; // var(--color-primary);
+		} 
+	}
+	&.green {
+		.bubble {
+			background-color: @green; // var(--color-secondary);
+		} 
+	}
+	&.gray {
+		.bubble {
+			background-color: @gray-3;
+		} 
+	}
+	&.white {
+		.bubble {
+			background-color: @white;
+		}
+	}
+	.content {
+		// border: 1px solid red; // For dev purposes
+		// background-color: rgba(255, 0, 0, .3); // For dev purposes
+		position: relative;
+		height: 100%;
+		margin: 0 auto;
+		max-width: 1170px;
+		.bubble {
+			border-radius: 50%;
+			position: absolute;
+
+			// Enable for dev purposes
+			// &.bubble-green {background-color: yellowgreen;}
+			// &.bubble-orange {background-color: orange;}
+			// &.bubble-blue {background-color: lightblue;}
+			// &.bubble-purple {background-color: purple;}
+			// &.bubble-pink {background-color: pink;}
+			// &.bubble-yellow {background-color: yellow;}
+			// &.bubble-black {background-color: black;}
+		}
+	}
+	
+	&.top {
+		&.var-1 {
+			height: 260px;
+            &.var-1-custom {
+			     height: 180px;
+            }
+            &.var-1-custom2 {
+                 @media @mobileMax {
+                     height: 130px;
+                     .bubble-green {
+                         display: none;
+                     }
+			     }
+            }
+			.content {		
+				.bubble-green {
+					width: 130px;
+					height: 130px;
+					left: -8%;
+					bottom: 50px;
+				}
+				.bubble-blue {
+					width: 480px;
+					height: 480px;
+					bottom: 0;
+					left: 400px;
+					transform: translate(-50%, 80%);
+					@media (max-width:375px) {
+						left: 300px;
+					}
+
+					body.page-template-kids-dental-care-visits & {
+						@media @mobileMax {
+							left: 265px;
+						}
+					}
+				}
+				.bubble-orange {
+					width: 70px;
+					height: 70px;
+					bottom: 0;
+					left: 600px;
+					top: 80px;
+				}
+				.bubble-purple {
+					width: 210px;
+					height: 210px;
+					bottom: 0;
+					left: 760px;
+					transform: translate(-50%, 80%);
+		
+				}
+				.bubble-pink {
+					width: 210px;
+					height: 210px;
+					top: 0;
+					left: 1020px;
+		
+				}
+			}
+			&.alt {
+				.content {
+					.bubble-pink {
+						width: 0;
+						height: 0;
+						top: 0;
+						left: 0;
+					}
+				}
+			}
+		}
+		&.var-2 {
+			height: 260px;
+
+			body.page-template-kids-dental-exams &.post-appt-cta {
+				@media @mobileMax {
+					height: 170px;
+				}
+			}
+
+			.content {		
+				.bubble-green {
+					width: 480px;
+					height: 480px;
+					top: 80px;
+					left: 320px;
+					@media @mobileMax {
+						left: 480px;
+					}
+				}
+				.bubble-orange {
+					width: 210px;
+					height: 210px;
+					bottom: 0;
+					left: -170px;
+					top: 130px;
+					@media @mobileMax {
+						left: -90px;
+					}
+				}
+				.bubble-purple {
+					width: 130px;
+					height: 130px;
+					top: 0;
+					left: 220px;
+	
+				}
+			}
+		}
+		&.var-3 {
+			height: 260px;
+			.content {		
+				.bubble-green {
+					width: 480px;
+					height: 480px;
+					top: 150px;
+					left: 680px;
+				}
+				.bubble-orange {
+					width: 210px;
+					height: 210px;
+					left: 450px;
+					top: 0;
+					@media @mobileMax {
+						left: 240px;
+					}
+				}
+				.bubble-purple {
+					width: 70px;
+					height: 70px;
+					top: 10px;
+					left: 0px;
+				}
+			}
+		}
+        &.var-4 {
+			height: 260px;
+            margin-top: -200px;
+            @media @mobileMax {
+                margin-top: -120px;
+            }
+			.content {		
+				.bubble-green {
+					width: 480px;
+					height: 480px;
+					top: 150px;
+					left: 0px;
+				}
+                .bubble-blue {
+                    width: 210px;
+                    height: 210px;
+                    left: 1000px;
+                    top: 200px;
+                    @media @mobileMax {
+                        display: none;
+                    }
+                }
+				.bubble-orange {
+					width: 210px;
+					height: 210px;
+					left: 410px;
+					top: 30px;
+					@media @mobileMax {
+						display: none;
+					}
+				}
+				.bubble-purple {
+					width: 70px;
+					height: 70px;
+					top: 93px;
+					left: -50px;
+                    @media @mobileMax {
+						display: none;
+					}
+				}
+			}
+            + section.variable-slide-up-carousel.bg-green {
+                padding-top: 50px;
+				@media @mobileMax { padding-top: 0; }
+            }
+		}
+		&.var-5-sparse {
+			height: 100px;
+
+			.content {		
+				.bubble-green {
+					width: 130px;
+					height: 130px;
+					right: 10%;
+					bottom: -100px;
+					@media @mobileMax {right: 0;}
+				}
+				.bubble-orange {
+					width: 70px;
+					height: 70px;
+					bottom: 0;
+					right: 25%;	
+					bottom: 25px;
+					@media @mobileMax {right: 45%;}
+				}
+				.bubble-purple {
+					width: 210px;
+					height: 210px;
+					bottom: -115px;
+					left: 160px;
+					@media @mobileMax {left: -140px;}
+				}
+			}
+		}
+	}
+	
+	&.bottom {
+		&.var-1 {
+			height: 350px;
+			@media @mobileMax {
+				height: 200px;
+			}
+			.content {
+				.bubble-orange {
+					
+					width: 240px;
+					height: 240px;
+					bottom: 0;
+					left: -240px;
+				}
+				.bubble-pink {
+					width: 480px;
+					height: 480px;
+					top: -360px;
+					left: -100px;
+					@media @mobileMax {
+						transform: translate(-50%,-50%);
+						top: -90%;
+						left: 50%;
+					}
+				}
+				.bubble-green {
+					width: 130px;
+					height: 130px;
+					left: 350px;
+					top: 80px;
+					@media @mobileMax {
+						left: -30px;
+						top: auto;
+						bottom: 0;
+					}
+				}
+				.bubble-yellow {
+					width: 70px;
+					height: 70px;
+					left: 1150px;
+					top: 25%;
+					@media @mobileMax {
+						right: 0;
+						left: auto;
+					}
+				}
+			}
+		}
+		&.var-2 {
+			@var-2-height:260px;
+			height: @var-2-height;
+			.content {
+				.bubble-green {
+					width: 70px;
+					height: 70px;
+					left: -20px;
+					top: 185px;
+				}
+				.bubble-blue {
+					width: 211px;
+					height: 211px;
+					top: -95px;
+					left: -30px;
+				}
+				.bubble-pink {
+					width: 130px;
+					height: 130px;
+					top: 10px;
+					left: 320px;					
+
+					@media (max-width:375px) {
+						top: 100px;
+						left: 200px;
+					}
+				}
+				.bubble-purple {
+					width: 240px;
+					height: 240px;
+					top: -200px;
+					left: 450px;
+				}				
+				.bubble-orange {
+					width: 70px;
+					height: 70px;
+					top: 130px;
+					left: 700px;
+				}
+				.bubble-yellow {
+					width: 480px;
+					height: 480px;
+					left: 740px;
+					top: -335px;
+				}
+				.bubble-black {
+					width: 100px;
+					height: 100px;
+					left: 1180px;
+					top: 80px;
+				}
+			}
+		}
+		&.var-3 {
+			@var-3-height:260px;
+			height: @var-3-height;
+			@media @mobileMax {
+				height: 200px;
+			}
+			.content {
+				.bubble-green {
+					width: 70px;
+					height: 70px;
+					left: 575px;
+					bottom:100px;
+				}
+				.bubble-blue {
+					width: 210px;
+					height: 210px;
+					bottom:200px;
+					left: 200px;
+				}
+				.bubble-pink {
+					width: 70px;
+					height: 70px;
+					bottom:150px;
+					left: 430px;
+					@media @mobileMax {
+						bottom: 60px;
+						left: 300px;
+					}
+				}
+				.bubble-purple {
+					width: 480px;
+					height: 480px;
+					bottom:130px;
+					right: -50px;
+				}				
+				.bubble-orange {
+					width: 130px;
+					height: 130px;
+					bottom: 70px;
+					right: -150px;
+				}
+				.bubble-yellow {
+					width: 130px;
+					height: 130px;
+					left: 70px;
+					bottom:70px;
+					@media @mobileMax {
+						left: -70px;
+						bottom:0;
+					}
+				}
+				.bubble-black {
+					width: 240px;
+					height: 240px;
+					left: -180px;
+					bottom:150px;
+					@media @mobileMax {
+						left: -230px;
+					}
+				}
+			}
+		}
+		&.var-4 {
+			@var-4-height:260px;
+			height: @var-4-height;
+			.content {
+				.bubble-green {
+					width: 130px;
+					height: 130px;
+					left: -200px;
+					bottom:0;
+				}
+				.bubble-blue {
+					width: 240px;
+					height: 240px;
+					bottom:190px;
+					left: 0;
+				}
+				.bubble-orange {
+					width: 70px;
+					height: 70px;
+					bottom:80px;
+					left: 90px;
+				}
+				.bubble-purple {
+					width: 130px;
+					height: 130px;
+					bottom:100px;
+					left: 550px;
+				}				
+				.bubble-pink {
+					width: 480px;
+					height: 480px;
+					bottom: 180px;
+					left: 590px;
+				}
+				.bubble-yellow {
+					width: 95px;
+					height: 95px;
+					left: 950px;
+					bottom:90px;
+				}
+				.bubble-black {
+					width: 240px;
+					height: 240px;
+					left: 1150px;
+					bottom: 0;
+				}
+				@media (max-width:1070px) {
+					.bubble {
+						.transform(translateX(150px));
+					}
+				}
+			}
+		}
+		&.var-5-sparse {
+				height: 150px;
+			.content {
+				.bubble-orange {
+					width: 240px;
+					height: 240px;
+					bottom: 70px;
+					left: 20%;
+					@media (max-width:550px) { left: -20%;}
+				}
+				.bubble-green {
+					width: 80px;
+					height: 80px;
+					left: 80%;
+					bottom:100px;
+				}
+			}
+		}
+	}
+
+	&.background {
+		&.var-1 {
+			height: 325px;
+			.content {
+				.bubble-green {
+					width: 100px;
+					height: 100px;
+					top: -30px;
+					left: 40px;
+					@media (max-width:570px) { display: none;}
+				}
+				.bubble-pink {
+					width: 240px;
+					height: 240px;
+					bottom: 0;
+					left: -120px;
+					@media (max-width:970px) { left: -190px}
+				}			
+				.bubble-orange {
+					width: 240px;
+					height: 240px;
+					top: -100px;
+					right: 50px;
+				}
+				.bubble-yellow {
+					width: 70px;
+					height: 70px;
+					right: -50px;
+					bottom: 100px;
+					@media (max-width:1070px) { right: 50px;}
+				}
+			}
+		}
+		&.var-2 {
+			height: 200px;
+            &.var-2-custom {
+                @media @mobileMax {
+                    height: 150px;
+                    .content {
+                        .bubble-yellow {
+                            left: 48%;
+                            top: -380px;
+                        }
+                    }
+                }
+            }
+			.content {
+				// .bubble-green {
+				// 	width: 70px;
+				// 	height: 70px;
+				// 	left: -20px;
+				// 	top: 185px;
+				// }
+				.bubble-blue {
+					width: 211px;
+					height: 211px;
+					top: -95px;
+					right: 1020px;
+					@media (max-width:1024px){right: 980px;}
+				}
+				.bubble-pink {
+					width: 100px;
+					height: 100px;
+					top: 60px;
+					left: 240px;
+					@media (max-width:1110px) { left: 90px; }
+					@media @mobileMax { left: -80px; }
+				}
+				.bubble-purple {
+					width: 240px;
+					height: 240px;
+					top: -100px;
+					left: 1020px;
+					@media (max-width:1024px){left: 980px;}
+				}				
+				.bubble-orange {
+					width: 70px;
+					height: 70px;
+					top: 30px;
+					left: 700px;
+					@media @mobileMax {
+						right: -50px;
+						left: auto;
+					}
+				}
+				.bubble-yellow {
+					width: 480px;
+					height: 480px;
+					left: 40%;
+					.transform(translateX(-50%));
+					top: -400px;
+				}
+				// .bubble-black {
+				// 	width: 100px;
+				// 	height: 100px;
+				// 	left: 1180px;
+				// 	top: 80px;
+				// }
+			}
+		}
+	}
+	
+	&.absolute {
+		position: absolute;
+		left: 0;
+    	right: 0;
+	}
+	&.reverse {
+		.content {
+			.transform(scaleX(-1));
+			@media @mobileMax {.transform(scaleX(1))}
+		}
+	}
+
+	body.page-template-patient-forms & {
+		&.smiles-in-motion {
+			z-index: 2;
+
+			&.background {
+				.bubble {
+					&-green, &-yellow { background-color: @orange; }
+				}
+
+				&.is-location {
+					.bubble {
+						&-green, &-yellow { background-color: @white; }
+					}	
+				}
+			}
+			&.bottom {
+				.bubble {
+					&-green, &-pink, &-black { background-color: @orange; }
+				}
+
+				&.is-location {
+					.bubble {
+						&-blue, &-pink, &-black { background-color: @green; }
+					}	
+				}
+			}
+		}
+	}	
+
+	body.page-template-kids-dentist-appointment & {
+		&.smiles-in-motion {
+			z-index: 2;
+
+			&.background {
+				.bubble {
+					&-green, &-yellow { background-color: @orange; }
+				}
+
+				// &.is-location {
+				// 	.bubble {
+				// 		&-green, &-yellow { background-color: @white; }
+				// 	}	
+				// }
+			}
+			&.bottom {
+				.bubble {
+					&-orange, &-green, &-black { background-color: @orange; }
+				}
+
+				// &.is-location {
+				// 	.bubble {
+				// 		&-orange, &-green, &-black { background-color: @green; }
+				// 	}	
+				// }
+			}
+		}
+	}
+
+	body.page-template-pediatric-dentist-referral & {
+		&.smiles-in-motion-palette {
+			&.bottom {
+				.bubble {
+					&-orange, &-yellow { background-color: @orange; }
+				}
+			}
+		}
+	}
+		
+}
+@media @mobileMax {
+    section.two-icons-with-image.mb-neg-150 {
+        + section.wrapper {
+            section.bubbles.top.var-2 .content .bubble-purple {
+                .transform(translateY(50px));
+            }
+        } 
+    }
+}
+section.split-static.hero.single-location {
+    z-index: 2;
+    + .wrapper {
+        .bubbles.top.var-1 {
+            margin-top: -100px;
+        }
+    }
+}
+
+body.page-template-kids-dental-care-visits {
+	section.bubbles {	
+		&.bottom {
+			&.var-2 {
+				&.pre-elementary {
+					.bubble-blue {
+						@media @mobileMax {
+							left: 200px;
+						}
+					}
+				}
+				&.pre-about-southmoor-section {
+					.bubble-pink {
+						@media @mobileMax {
+							top: 50px;
+							left: 200px;
+						}
+					}
+				}
+			}
+		}		
+	}
+}
+
+body.page-template-kids-dental-care-visits .bubbles.pre-elementary .content{
+	.bubble-pink {
+		@media @mobileMax {
+			left: 50px;
+			top: 50px;
+		}
+	}
+	.bubble-green {
+		@media @mobileMax {
+			right: -20px;
+			left: auto;
+		}
+	}
+}
+
+body.page-template-dentist-office-for-kids .bubbles.post-hero .content {
+	.bubble-yellow {
+		@media @mobileMax {
+			left: auto;
+		}
+	}
+}
+body.page-template-kids-dental-exams  {
+	.bubbles.post-appt-cta .content {
+		.bubble-green {
+			@media @mobileMax {
+				top: 60px;
+				left: 40px;
+			}
+		}
+		.bubble-purple {
+			@media @mobileMax {
+				left: -40px;
+			}
+		}
+		.bubble-orange {
+			@media @mobileMax {
+				left: -300px;
+			}
+		}
+	}
+	.bubbles.top.var-1.gray.reverse {
+		@media (max-width:500px) {
+			height: 200px;
+		}
+	}
+}
+
+.page-template-accepted-payment {
+	&.smiles-in-motion {
+		section.bubbles {
+			&.top {
+				&.var-3 {
+					display: none;
+				}
+			}
+		}		
+	}
+}
+ 
+.page-template-frenectomy {
+	&.smiles-in-motion {
+		section.bubbles {
+			&.top {
+				&.var-2 {
+					@media @mobileMax {
+						display: none; 
+					}
+				}
+			}
+		}		
+	}
+}		

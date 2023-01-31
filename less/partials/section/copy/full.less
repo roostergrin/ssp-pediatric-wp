@@ -1,0 +1,34 @@
+section.copy.full {
+    text-align: center;
+    margin: @gutter-sm 0;
+    h2 {
+        margin-bottom: @gutter-sm;
+        &.orange {
+            color: @orange;
+        }
+    }
+    p {
+        font-size: 20/@rem;
+        line-height: 26/@rem;
+        max-width: 850px;
+        margin: 0 auto;
+    }
+    @media @mobileMax {
+        margin: -50px 0 30px 0;
+    }
+    body.page-template-fillings-crowns-restoration & {
+        @media screen and (max-width: 375px){
+            margin-top: -30px !important;
+        }
+    }
+}
+section.wrapper {
+    + section.copy.full {
+        @media @mobileMax {
+            margin: 20px 0;
+            body.page-template-kids-dental-exams &,
+            body.page-template-kids-custom-mouthguard &,
+            body.page-template-kids-dental-fillings-crowns & { margin: -50px 0 30px 0; }
+        }
+    }
+}

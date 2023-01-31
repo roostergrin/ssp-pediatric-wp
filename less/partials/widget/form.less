@@ -1,0 +1,210 @@
+.widget-form {
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:1000000;
+	background-color:fade(@gray-2, 90);
+	color:@white;
+	padding:2*@subgrid;
+    overflow: scroll;
+    @media @mobileMax {
+		overflow:scroll; 
+		display:block;
+		padding:0;
+	}
+	
+	.display-flex;
+	.flex-justify-content-center;
+	.flex-align-items-flex-start;
+	
+	&.hidden {
+		display:none;
+	}
+
+	&.one-column {
+		> .content {
+			max-width:@wrapper*(3/5);
+		}
+		aside {
+			.flex(0,0,percentage(5/5));
+			width:percentage(5/5);
+		}
+	}
+
+	&.two-column {
+		article {
+			.flex(0,0,percentage(2/5));
+			width:percentage(2/5);
+            @media @mobileMax {.flex(0,0,100%); width:100%; .flex-order(2); }
+		}
+		
+		aside {
+			.flex(0,0,percentage(3/5));
+			width:percentage(3/5);
+            @media @mobileMax {.flex(0,0,100%); width:100%; .flex-order(1); }
+		}
+	}
+	
+	> .content {
+		width:100%;
+		max-width:@wrapper;
+		position:relative;
+	}
+	
+	.inner-content {
+		width:100%;
+		.display-flex;
+		.flex-justify-content-flex-start;
+		.flex-align-items-stretch;
+		
+        @media @mobileMax { .flex-direction-column; }
+	}
+	
+	article {
+		position:relative;
+		
+		&.widget-form-consultant {
+			.display-grid;
+			grid-template-columns:50% 50%;
+			align-items:end;
+			margin-bottom:2*@subgrid;
+			
+			.consultant-details {
+				.transform(translateY(@subgrid));
+			}
+            
+            .consultant-headshot.smaller {
+                img.bg-img {
+                    left: 30%;
+                    width: 70%;
+                    height: inherit;
+                }
+            }
+		}
+		
+		&.widget-form-location {
+			> div {
+				height:100%;
+			}
+			.location-tile {
+				height:calc(~"100% + @{subgrid}");
+			}
+		}
+	}
+	
+	aside {
+		margin-top:@subgrid;
+		padding:@subgrid @subgrid 2*@subgrid;
+		background-color:@color-1;
+		position:relative;
+        @media @mobileMax { padding: @subgrid 2*@gutter-y 2*@subgrid 2*@gutter-y; }
+		
+		&:before {
+			content:'';
+			display:block;
+			position:absolute;
+			bottom:100%;
+			left:0;
+			width:percentage(2/3);
+			height:@subgrid;
+			background-color:@color-1;
+		}
+	}
+	
+	.h2 {
+		margin-bottom:@subgrid;
+	}
+	
+	.cta.submit {
+		position:absolute;
+		top:100%;
+		right:0;
+		min-width:percentage(1/3);
+        @media @mobileMax { .transform(translateY(-100%)); }
+	}
+	
+	.icon-close {
+		position:absolute;
+		bottom:100%;
+		right:0;
+		.transform(translateY(-@subgrid));
+		font-size:unit(2*@gutter-y)/@rem;
+		color:@white;
+		cursor:pointer;
+        @media @mobileMax {bottom: inherit; right:2*@gutter-y; top: 8*@gutter-y; }
+	}
+	
+	&.form-search {
+		.inner-content {
+			padding:@subgrid @subgrid 0.75*@subgrid;
+			margin-left:percentage(1/5);
+			width:percentage(3/5);
+			.flex-direction-column;
+			position:relative;
+            
+            @media @mobileMax {
+                padding: 2*@subgrid 2*@gutter-y 2*@gutter-y 2*@gutter-y;
+                margin-left: 0;
+                width:100%;
+            }
+
+			&:before {
+				content:'';
+				display:block;
+				.position-absolute;
+				background-color:@white;
+				z-index:-1;
+				.clip-path(polygon(0% 0%, percentage(2/3) 0%, percentage(2/3) @subgrid, 100% @subgrid, 100% 100%, 0% 100%));
+			}
+		}
+		
+		input[type="text"] {
+			.heading-2;
+			color:@gray-2;
+			text-transform:none;
+			height:1.5*@subgrid;
+			line-height:1.5*@subgrid;
+			
+			.placeholder() {
+				color:@color-10;
+				// font-family:inherit;
+				font-size:inherit;
+				letter-spacing:inherit;
+				line-height:inherit;
+				font-weight:inherit;
+				text-transform:inherit;
+			}
+			
+			&::-webkit-input-placeholder { .placeholder; }
+			&::-moz-placeholder { .placeholder; }
+			&:-ms-input-placeholder { .placeholder; }
+			&:-moz-placeholder { .placeholder; }
+			&:placeholder-shown { .placeholder; }
+			&::placeholder { .placeholder; }
+		}
+		
+		.h5 {
+			color:fade(@color-26, 50);
+			@media @tabletMin { margin-top:2*@gutter-y; }
+		}
+		
+		button {
+			position:absolute;
+			top:100%;
+            cursor: pointer;
+			left:percentage(2/3);
+			width:percentage(1/3);
+			@media @tablet {
+				left:percentage(1/3);
+				width:percentage(2/3);
+			}
+            @media @mobileMax { left:percentage(1/3); width:percentage(2/3); }
+		}
+	}
+	
+	html.lightbox-form-search & {
+		.flex-align-items-flex-start;
+	}
+}

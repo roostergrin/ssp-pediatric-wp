@@ -1,0 +1,55 @@
+@heading-line-height-multiplier: 1;
+@heading-letter-spacing-multiplier: 0;
+@heading-font-size-multiplier: 1;
+@font-size-multiplier: 1;
+@line-height-multiplier: 1;
+@letter-spacing:-0.08/15em;
+@primary-font: ~"var(--font-primary)"; //Usual
+@secondary-font: ~"var(--font-secondary)"; // Urbane
+
+// (Paragraph Style) Default font size/line-height
+@default-font-family: @primary-font;
+@default-font-weight: 300;
+@font-size: 18*@font-size-multiplier;
+@rem: unit(@font-size, rem);
+@line-height: (24*@line-height-multiplier)/unit(@font-size, em);
+@header-height: 100px;
+@mobile-header-height: 70px;
+@utility-header-height: 45px;
+@mobile-bth-size: 40px;
+
+// Wrappers and gutters
+@gutter-lg: 30px;
+@gutter-md: 25px;
+@gutter-sm: 20px;
+@wrapper: 1290px;
+@inner-wrapper: 1170px;
+@inner-wrapper-compact: 1140px;
+@section-margin: 120px;
+@section-margin-mobile: 75px;
+@cta-height:36px;
+
+// Widths
+@mobile-max-width: 782px;
+@tablet-min-width: 783px;
+@tablet-max-width: 1140px;
+@desktop-min-width: 1141px;
+@wrapper-max-width: 1410px;
+
+// Fonts and Font Weights
+.PrimaryFont() {
+    font-family: @primary-font;
+    line-height:@line-height;
+}
+.SecondaryFont() {
+    font-family: var(--font-secondary);
+    line-height:@line-height;
+}
+
+.Light() { font-weight: 300; }
+.Regular() { font-weight: 400; }
+.Medium() { font-weight: 500; }
+// .Semibold() { font-weight: 600; }
+.Bold() { font-weight: 700; }
+// .Bolder() { font-weight: 900; }
+// .Black() { font-weight: 900; }

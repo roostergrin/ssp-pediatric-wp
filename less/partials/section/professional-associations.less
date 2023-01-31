@@ -1,0 +1,202 @@
+section.professional-associations {
+	@media (max-width:500px) { margin-top: -75px; }
+	.content {
+		.inner-content {
+			h2 {
+				text-align: center
+			}
+			.univ-logos {
+				.display-flex;
+				.flex-direction-column;
+				.flex-justify-content-space-around;
+				.owl-stage-outer {
+					margin-bottom: -20px;
+					z-index: -1;
+					.owl-stage {
+						margin: 0px auto;
+					}
+				}
+				.logo-container {
+					text-align: center;
+					position: relative;
+					overflow: hidden;
+					.display-flex;
+					.flex-direction-column;
+					.flex-justify-content-center;
+					.flex-align-items-center;
+					min-height: 200px;
+					margin-bottom: 25px;
+					@media @mobileMax { margin-bottom: 0;}
+
+					.static {
+						.display-flex;
+						.flex(1, 1, auto);
+						.flex-direction-column;
+						.flex-justify-content-space-around;
+
+						&.image {
+							transform: translateY(30%);
+						}
+						h3.static {
+							// font-family: 'Kumbh Sans', sans-serif;
+							font-size: 20px;
+							text-align: center;
+							padding-bottom: 40px;
+						}
+					}
+
+					.image{
+						opacity: 1;
+						display: block;
+						height: 200px;
+						max-height: 200px;
+						transform: translateY(-25px);
+						@media screen and (min-width:783px) and (max-width:949px) {transform: translateY(-60px);}
+						.ease-out(all, 0.3s);
+						 img{
+							 max-height:  200px;
+							 width: auto !important;
+						 }
+					}
+
+					.copy {
+						opacity: 0;
+						.ease-out(all, 0.3s);
+						height: 100%;
+						transform: translateY(-200px);
+						margin-bottom: -200px;
+						min-height: 200px;
+						@media screen and (max-width:949px) {min-height:fit-content}
+						@media @mobileMax {opacity: 1;transform: translateY(-40px);margin-bottom:0;}
+
+						h2, h3, h4 {
+							color: var(--color-primary);
+							
+							font-size: 20px;
+							text-align: center;
+							margin-bottom: @gutter-sm/2;
+						}
+
+						h3, p {
+							-webkit-transition: .3s all ease-out;
+							-moz-transition: .3s all ease-out;
+							-ms-transition: .3s all ease-out;
+							-o-transition: .3s all ease-out;
+							transition: .3s all ease-out;
+						}
+
+						h3 {
+							transform: translateY(100px);
+							@media @mobileMax {transform: translateY(0);}
+						}
+						p {
+							padding: 0 @gutter-lg;
+							transform: translateY(-100px);
+							@media @mobileMax {transform: translateY(0);padding:0;}
+						}
+
+					}
+					&:hover {
+						.image {
+							opacity: 0;
+
+							@media @mobileMax {opacity: 1; height: 200px; max-height: none;}
+						}
+						.copy {
+							opacity: 1;
+							h3,
+							p {
+								transform: translateY(0);
+							}
+							@media @mobileMax {}
+						}
+					}
+				}
+
+			}
+			.pagination-container {
+				margin: 0;
+				.display-flex;
+				.flex-align-items-center;
+				.flex-justify-content-center;
+				margin: @gutter-md;
+
+				.pagination {
+					margin-bottom: 80px;
+					margin-left: -55px;
+					.display-flex;
+					.flex-justify-content-space-between;
+					.flex-align-items-center;
+					.page-left,
+					.page-right {
+						.display-flex;
+						.flex-justify-content-space-between;
+						.flex-align-items-center;
+						position: relative;
+						span {
+							// display: none;
+							color: @light-gray;
+							position: absolute;
+							right: 45px;
+							bottom: -25px;
+						}
+						i {
+							outline: none;
+							position: relative;
+							padding: 0 12px;
+
+							&:before {
+								position: absolute;
+								color: #D0D0D0;
+								height: 10px;
+								width: 10px;
+								cursor: pointer;
+								bottom: 9px;
+								font-size: 70px;
+							}
+							&.icon-left-arrow {
+								margin-right: 25px;
+								&:before {
+									left: 10px;
+								}
+							}
+
+							&.icon-right-arrow {
+								margin-left: 5px;
+								&:before {
+									right: 10px;
+								}
+							}
+						}
+						&:hover {
+							>span {color: var(--color-primary);}
+							i:before {
+								color: var(--color-primary);
+							}
+						}
+					}
+					.page-left {span{right: 30px;}}
+					.page-right {span{left: 70px;}}
+				}
+
+				a {
+					margin-left: @gutter-sm;
+				}
+
+				&.limited-amount {
+					display: none;
+
+					@media @menuMax {
+						display: flex;
+					}
+				}
+			}
+			.copy-content {
+				max-width: 818px;
+				margin: 2*@gutter-sm auto;
+				text-align: center;
+				font-size: 15/@rem;
+			}
+		}
+	}
+}

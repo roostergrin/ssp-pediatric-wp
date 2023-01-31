@@ -1,0 +1,188 @@
+/**
+ * ALERT
+ * 
+ * because this template is associated with virtual WP pages
+ * the LESS compile flag will not work on blog pages
+ */
+
+section.hero.centered {
+    &.bg-green{ background-color: @green}
+    &.padding { padding: 2*@gutter-md 0 2*@gutter-lg 0; }
+    .mb;
+    &.no-mb { margin-bottom: 0; }
+    @media @mobileMax { margin-bottom: 50px;}
+
+    &.blog-single-hero-heading-container {
+        padding-top: 3*@gutter-lg;
+        @media @mobileMax {
+            padding: 60px 0 !important;
+            .content-container {
+                h1 {
+                    margin: 0;
+                }
+                p {
+                    display: none;
+                }
+            }
+        }
+        @media (max-width:500px) { padding: @gutter-lg 0 !important;}   
+    }
+
+    .inner-content {
+        .display-flex;
+        .flex-direction-column;
+        .flex-justify-content-center;
+        .flex-align-items-center;
+        .image-continer {
+            .clip-path(circle());
+            max-width: 800px;
+            min-width: 315px;
+            margin-top: -25%;
+            margin-bottom: @gutter-lg;
+
+            body.page-template-frenectomy & {
+                margin-top: -14%;
+            }
+
+            @media @wrapperMax {
+                margin-top: -31%;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+
+                @media @wrapperMin and (max-width: 1550px) {
+                    width: 690px;
+                }
+            }
+        }
+        .content-container {
+            max-width: 850px;
+            color: @white;
+            text-align: center;
+            .display-flex;
+            .flex-direction-column;
+            .flex-justify-content-center;
+            .flex-align-items-center;
+            width: 100%;
+            h1 {
+                color: @white;
+                margin-bottom: @gutter-sm;
+                body.page-template-book-appointment & { max-width: 700px;}
+            }
+            p {
+                &:not(.full) { 
+                    max-width: 700px;
+                }
+                body.page-template-book-appointment & { max-width: 500px;}
+                body.page-template-patient-form & { max-width: 700px;}
+            }
+            .cta-container {
+                a { margin: 5px;}
+            }
+        }
+    }
+
+    &.smiles-in-motion {
+        body.page-template-patient-forms &,
+        body.page-template-kids-dentist-appointment & {
+            .image-continer {
+                z-index: 3;
+            }
+        }
+
+        .content-container .cta-container a.cta {
+            color: @orange;
+
+            &:hover {
+                color: @white;
+            }
+        }
+    }
+}
+
+.page-template-patient-forms {
+	&.smiles-in-motion {
+
+        .hero{
+            .content {
+                .content-container{
+                
+                    p {
+                        font-size: 18px;
+                        font-family: 'Usual';
+                        line-height: 24px;
+                        letter-spacing: 0px;
+
+                        &:not(.full) { 
+                            max-width: 630px;
+                        }
+                    }
+                }
+            }            
+            
+            &.centered {
+                .inner-content {
+                    width: 100%;
+                }
+        
+                .form-wrapper {
+                    @media (max-width:700px)  {
+                        width: 100%;
+                    }
+
+                    .fancy-select {
+                        max-width: 275px;
+            
+                        @media (max-width:700px)  {
+                            max-width: unset;
+                        }
+                        
+                        &-title {
+                            min-width: 275px;
+                            font-size: 16px;
+                            line-height: 22px;
+                            color: white;
+                            font-family: 'Usual';
+                            letter-spacing: -0.08px;
+                            border-bottom: 2px solid white;
+
+                            &:after {
+                                content: '\e969';
+                                font-family: 'icons'!important;
+                                line-height: 1;
+                                font-size: .66666667rem;
+                                color: white;
+                                -webkit-pointer-events: none;
+                                -moz-pointer-events: none;
+                                -ms-pointer-events: none;
+                                -o-pointer-events: none;
+                                pointer-events: none;
+                                -webkit-transition: .3s ease-out;
+                                -moz-transition: .3s ease-out;
+                                -ms-transition: .3s ease-out;
+                                -o-transition: .3s ease-out;
+                                transition: .3s ease-out;                     
+                            }
+                        }    
+                        
+                        .options {
+                            position: static;
+                            text-align: left;   
+
+                            ul.select-options li {
+                                a {
+                                    color:white;
+
+                                    &:hover {
+                                        color: var(--color-gray-1);
+                                    }
+                                }
+                            }
+                        }
+                    }                                                                            
+                }
+            }
+        }         
+    }
+}

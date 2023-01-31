@@ -1,0 +1,618 @@
+section.split-static {
+    // Anchor link offsets
+    .anchor {
+        position: absolute;
+        &#section-1,
+        &#section-2 {
+            top: -150px;
+            @media (max-width:782px) { top: -240px; }
+        }
+        &#section-3 {
+            top: 60px;
+            @media (max-width:782px) { top: -30px; }
+        }
+    }
+    .content-wrapper {
+        .display-flex;
+        .split {
+            .flex(1, 1, 50%);
+
+            &.left-side {
+                img {
+                    &.bubble {
+                        max-width: 500px;
+                        width: 100%;
+                        clip-path: circle();
+                    }
+                }
+            }
+            &.right-side {
+                //padding-left: 2*@gutter-lg;
+                @media @mobileMax {padding-left:0}
+                .copy {
+                    height: 100%;
+                    .display-flex;
+                    .flex-direction-column;
+                    .flex-justify-content-flex-end;
+                    .flex-align-items-flex-start;
+                    h2 {
+                        color: var(--color-primary);
+                        &.font-size-20px {
+                            font-size: 20/@rem;
+                            line-height: 24/@rem;
+                        }
+                    }
+                    h1{
+                        &.blue{color: @blue;}
+                        &.red{color: @red;}
+                        &.orange {color: @orange;}
+                    }
+                    p {
+                        font-size: 18/@rem;
+                        line-height: 24/@rem;
+                        .Regular;
+                    }
+                    .mb-15 { margin-bottom: 15px; }
+                    .mb-20 { margin-bottom: 20px; }
+                }
+            }
+        }
+        @media (max-width:1080px) {
+            .flex-direction-column;
+            .split {
+                .flex(1, 1, 100%);
+                margin: 0 auto;
+                width: 100%;
+                &.left-side {
+                    img {
+                        &.bubble {
+                            margin-bottom: 50px;
+                        }
+                    }
+                }
+                &.right-side {
+                    margin-top: 0px;
+                    margin-left: 0;
+                    @media @mobileMax {
+                        body.page-template-preparing-for-your-visit & {
+                            margin-top: @gutter-lg;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.overlap-top {
+        margin-top: -10px;
+        margin-bottom: 0;
+        @media @tabletMax {
+            margin-top: -50px;
+            margin-bottom: 50px;
+        }
+        @media @mobileMax {
+            margin-top: -30px;
+            margin-bottom: 30px;
+            .content-wrapper {
+                .split.right-side {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    &.lg-top-overlap {
+        margin-top: -100px;
+        margin-bottom: -60px;
+
+        body.page-template-kids-dental-care-visits & {
+            @media @mobileMax {
+                margin-top: -70px;
+                margin-bottom: 0;
+
+                .right-side {
+                    h2 {
+                        max-width: 300px;
+                        margin: auto;
+                        .center;
+                        font-size: 30px;
+                    }
+                    p {
+                        .center;
+                    }
+                }
+            }
+        }
+    }
+    &.bg-green {
+        background-color: @green;
+        .content-wrapper {
+            .split {
+                &.right-side {
+                    .copy {
+                        color: @white;
+                        h2 {
+                            color: @white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.bg-gray {
+        background-color: @gray-3;
+    }
+    &.reverse {
+        .content-wrapper {
+            .flex-direction-row-reverse;
+            @media (max-width:1080px) {
+                .flex-direction-column;
+                .split {
+                    .flex(1, 1, 100%);
+                    &.left-side {
+                        img {
+                            &.bubble {
+                                margin-bottom: 50px;
+                            }
+                        }
+                    }
+                    &.right-side {
+                        margin-top: 120px;
+                        margin-top: 0;
+                        margin-left: 0;
+                    }
+                }
+            }
+            @media @mobileMax {
+                .flex-direction-column;
+                .split {
+					display: block!important;
+                    &.left-side {
+                        img {
+                            &.bubble {
+                                margin-bottom: 0px;
+                            }
+                        }
+                    }
+                    &.right-side {
+                        margin-top: @gutter-lg;
+                    }
+                }
+            }
+            .split {
+                &.right-side {
+                    margin-left: 0;
+                }
+                &.left-side {
+                    .display-flex;
+                    .flex-justify-content-flex-end;
+                }
+            }
+        }
+    }
+    &.v-centered-text {
+        margin-top: -200px;
+        z-index: 2;
+        @media (max-width:1080px) { margin-top: -110px; }
+        .content-wrapper {
+            .split {
+                &.left-side {
+                    margin-right: -250px;
+                    img.bubble {
+                        max-width: 780px;
+                        width: 780px;
+                    }
+                    @media (max-width:1080px) {
+                        margin-right: 0;
+                        img.bubble {
+                            max-width: 100%;
+                            width: 100%;
+                        }
+                    }
+                }
+                &.right-side {
+                    margin-right: 2*@gutter-lg;
+                    .copy {
+                        .flex-justify-content-center;
+                        .flex-align-items-flex-start;
+                    } 
+                    @media (max-width:1080px) {
+                        margin-right: 0;
+                        margin-top: @gutter-lg;
+                    }
+                }
+
+            }
+        }
+        &.about-southmoor .split.left-side img.bubble {
+            @media (max-width: 1080px) {
+                max-width: 585px;
+            }
+        }
+    }    
+    &.seventy-thirty {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        @media @menuMax {
+            padding-top: 80px;
+            padding-bottom: 95px;
+        }
+        .content-wrapper {
+            @media @menuMax {.flex-direction-column-reverse;}
+            .split {
+                &.right-side {
+                    .flex(1, 1, 70%);
+                    @media @menuMax { .flex(1, 1, 100%);}
+                    @media @mobileMax { margin-top: @gutter-lg;}
+                }
+                &.left-side {
+                    .flex(1, 1, 30%);
+                    @media @menuMax {
+                        .flex(1, 1, 100%);
+                        margin-top: @gutter-lg;
+                    }
+                    .display-flex;
+                    .flex-justify-content-center;
+                    .flex-align-items-center;
+                }
+            }
+        }
+    }
+    &.big-img-left {
+        padding: 80px 0 150px;
+        @media @mobileMax {
+            padding-bottom: 0;
+            body.page-template-preparing-for-your-visit & {
+                margin-bottom: 0;
+            }
+        }
+        .content-wrapper {
+            .split {
+                &.right-side {
+                    .flex(1, 1, 40%);
+                    @media (max-width: 1080px){
+                        margin-top: 160px;
+                    }
+                    @media@mobileMax {
+                        margin-top: 110px;
+                    }
+                }
+                &.left-side {
+                    img {
+                        &.bubble {
+                            position: absolute;
+                            top: -270px;
+                            width: 50%;
+                            max-width: 585px;
+                            @media (min-width:671px) and (max-width:1080px) {
+                                width: 400px;                                
+                            }                            
+                            @media @mobileMax {
+                                min-width: 320px;
+                                top: -240px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.after-hero {
+            .content-wrapper {
+                .split.left-side {
+                    img.bubble {
+                        @media (max-width: 1080px) {
+                            left: 50%;
+                            transform: translateX(-50%);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.mt {
+            margin-top: 260px;
+        }
+        
+        &.toddlers-and-preschoolers-custom {
+            @media @mobileMax {
+                .left-side {
+                    img.bubble {
+                        top: -120px;
+                    }
+                }
+
+                .right-side {
+                    margin-top: 240px;
+
+                    h2 {
+                        max-width: 100%;
+                        font-size: 30px;
+                        .center;
+                    }
+                    p {
+                        .center;
+                    }
+                }
+            }
+            
+            padding: 80px 0 60px 0;
+            &.reverse {
+                .content-wrapper {
+                    .split {
+                        &.left-side {
+                            @media (min-width:426px) and (max-width:670px) { margin-bottom: 60px;}  
+                            img.bubble {
+                                width: 45%;
+                                max-width: 535px;
+                                @media (max-width:1080px) {
+                                    max-width: 400px;
+                                    width: 400px;
+                                    left: 50%;
+                                    right: 50%;
+                                    .transform(~"translate(-50%, -5%)");
+                                }
+                                @media @mobileMax {
+                                    .transform(~"translate(-50%, -35%)");
+                                    min-width: auto;
+                                    width: 100%;
+                                }
+                                @media (max-width:500px) {
+                                    .transform(~"translate(-50%, -25%)");
+                                    min-width: auto;
+                                }
+                                @media (max-width:320px) {
+                                    .transform(~"translate(-50%, -5%)");
+                                    width: 260px;
+                                    min-width: auto;
+                                }
+                            }
+                        }
+                        &.right-side {
+                            @media (max-width:1080px) {
+                                margin-top: 0;
+                            }
+                            @media (max-width:425px) { margin-top: 60px;}
+                            @media (max-width:375px) { margin-top: 30px;}
+                        }
+                    }
+
+                    @media (max-width:1080px) {
+                        padding-top: 150px;
+                    }
+                    @media @mobileMax {
+                        padding-top: 0px;
+                    }
+                }
+            }
+            @media @mobileMax {
+                padding-bottom: 0px;
+            }
+        }
+    }
+    &.last-section {
+        // Make room for consultation bottom widget
+        @media @mobileMax {padding-bottom: 330px;}
+    }
+    &.mobile-center-text {
+        @media @mobileMax {
+            .copy {
+                text-align: center;
+            }
+        }
+    }
+    &.elementary {
+        body.page-template-kids-dental-care-visits & {
+            @media @mobileMax {
+                margin-top: -200px;
+
+                h2 {
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 300px;
+                    font-size: 30px;
+                    .center;
+                }
+                p {
+                    .center;
+                }
+            }
+        }
+
+        margin-top: -300px;
+        .content-wrapper {
+            .split{
+                &.right-side{
+                    padding-left: 2*@gutter-lg;
+
+                    body.page-template-kids-dental-care-visits & {
+                        @media @mobileMax {
+                            padding-left: 0;
+                        }
+                    }
+
+                    .copy {
+                        padding-bottom: @gutter-lg;
+                        h2 {
+                            &.orange {color:@orange !important;}
+                            &.gray {color: @gray-2 !important;}
+                            &.green {color:@green !important;}
+                            &.red {color:@red !important;}
+                        }
+                    }
+                }
+                &.left-side {
+                    @media (max-width:1080px) {
+                        max-width: 400px;
+                    }
+                    img.bubble {
+                        max-width: 585px;
+                    }
+                }
+            }
+        }
+    }
+    &.hero {
+        margin: 60px 0 0;
+        &.no-margin {
+            margin: 0;
+        }
+        .content-wrapper {
+            .split.right-side {
+                .copy {
+                    height: auto;
+                    padding-bottom: @gutter-lg;
+                    h2 {
+                        &.orange {color:@orange !important;}
+                        &.gray {color: @gray-2 !important;}
+                        &.green {color:@green !important;}
+                        &.red {color:@red !important;}                            
+                    }
+                }
+                @media @tabletMax {
+                    margin-top: @gutter-lg;
+                }
+                @media @mobileMax {
+                    margin-top: 0;
+                }
+            }
+        }
+        &.single-location {
+            margin-bottom: 0;
+
+            .content-wrapper .split.left-side {
+                body.smiles-in-motion & {
+                    @media @mobileMax {
+                        padding-bottom: 2*@gutter-sm;
+                    }
+                }
+            }
+        }
+    }
+    &.middle {
+        .content-wrapper {
+            .split{
+                &.right-side{
+                    .copy {
+                        height: auto;
+                        padding-bottom: @gutter-lg;
+                        h2 {
+                            &.orange {color:@orange !important;}
+                            &.gray {color: @gray-2 !important;}
+                            &.green {color:@green !important;}
+                            &.red {color:@red !important;}
+                        }
+                    }
+                    @media @tabletMax {
+                        margin-top: @gutter-lg;
+                    }
+                }
+            }
+        }
+    }
+    &.service-hero {
+        .mt;
+        margin-bottom: -100px;
+        z-index: 3;
+        @media (max-width:1080px) { margin-bottom: -200px; }
+        @media (max-width:770px) {
+            margin-bottom: 0;
+            margin-top: -65px;
+        }
+        @media (max-width:600px) {
+            margin-top: -35px;
+        }
+        .content {
+            .inner-content {
+                .content-wrapper {
+                    @media (max-width: 1080px) { .flex-direction-row-reverse; }
+                    @media (max-width: 770px) { .flex-direction-column; }
+                    .split.left-side {
+                        width: 65%;
+                        .flex(1, 1, 65%);
+                        position: relative;
+                        @media (max-width: 770px) {
+                            width: 100%;
+                            .flex(1, 1, 100%);
+                        }
+                        @media (max-width:500px) {.flex-justify-content-flex-start;}
+                        img {
+                            max-width: 650px;
+                            // min-width: 350px;
+                            object-fit: contain;
+                            position: absolute;
+                            top: -100px;
+                            @media (max-width: 1080px) {
+                                top: 0;
+                            }
+                            @media (max-width: 770px) {
+                                position: relative;
+                            }
+                            // @media (max-width:500px) { min-width: unset; }
+                        }
+                    }
+                    .split.right-side {
+                        min-height: 650px;
+                        @media (max-width:1080px) { margin-top: 0;}
+                        @media (max-width: 770px) { min-height: auto; }
+                        .copy {
+                            .flex-justify-content-flex-start;
+                            margin-top: @gutter-sm;
+                            padding-right: @gutter-lg;
+                            h1 {
+                                letter-spacing: -0.5px;
+                            }
+
+                            @media (max-width:1140px) { padding-right: 50px; }
+                            @media (max-width:815px) { padding-right: 20px; }
+                            @media (max-width:500px) { padding-right: 0; }
+                            @media (max-width:375px) { 
+                                .cta { width:100%; }
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+    }
+    &.services-overview-hero {
+        .mt;
+        margin-bottom: -100px;
+        @media (max-width:1200px) { margin-bottom: -50px;}
+        .content-wrapper {
+            .split.right-side {
+                .copy {
+                    .flex-justify-content-flex-start;
+                    h1 {
+                        max-width: 440px;
+                    }
+                }
+                @media (max-width:1080px) {
+                    margin-top: 0;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    &.mb-neg-130 {
+        margin-bottom: -130px;
+        @media @mobileMax {
+            margin-bottom: -80px;
+        }
+    }
+    &.z-3 {
+        z-index: 3;
+    }
+    &.hero.reverse.meet-the-team.sim4kids {
+        .content-wrapper {
+            .right-side {
+                h1 {
+                    margin-bottom: 10px;
+                    max-width: 470px;
+                }
+                h2 {
+                    font-size: 22px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

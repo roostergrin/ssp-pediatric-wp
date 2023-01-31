@@ -1,0 +1,89 @@
+section.three-bubble-hero {
+    padding: 2*@gutter-md 0 4*@gutter-lg 0;
+    color: @white;
+    text-align: center;
+
+    &.bg-green {
+        background-color: @green;
+    }
+    &.smiles-in-motion {
+        .content .copy-container .cta-container a.cta {
+			color: var(--color-secondary);
+
+			&:hover {
+				color: @white;
+                background-color: var(--color-secondary) !important;
+			}
+		}
+    }
+
+    body.page-template-kids-dental-care-visits & {
+        @media @mobileMax {
+            padding-bottom: 2*@gutter-lg;
+        }
+    }
+
+    .inner-content {
+        .display-flex;
+        .flex-direction-column;
+        .flex-align-items-center;
+
+        .bubble-photo-container {
+            .display-flex;
+            .bubble-photo {
+                img {
+                    .clip-path(circle());
+                }
+            }
+            @media (min-width:671px) {
+                margin: 0 -15px;
+                .bubble-photo {
+                    .flex(1, 1, 33.33333%);
+                    padding: 15px;
+                }
+            }
+
+            @media @mobileMax {
+                overflow: hidden;
+                margin-bottom: 2*@gutter-md;
+                .bubble-photo {
+                    width: 100%;
+                    .flex(1, 1, 100%);
+                    .transform(translateX(600px));
+                    .ease;
+                    &.active {
+                        .transform(translateX(0));
+                    }
+                    &+.bubble-photo {
+                        margin-left: -100%
+                    }
+                }
+            }
+        }
+        .copy-container {
+            .display-flex;
+            .flex-direction-column;
+            .flex-align-items-center;
+            h1 {
+                color: @white;
+                text-align: center;
+                padding-top: 2*@gutter-md;
+                @media @mobileMax { margin-bottom: 15px; padding-top: 0;}
+            }
+            p {
+                font-size: 20/@rem;
+                line-height: 24/@rem;
+                max-width: 580px;
+            }
+            .cta-container {
+                a.cta.white {
+                    width: 280px;
+                    margin: 10px 15px;
+                    &:hover {
+                        background-color: #dod5b9 !important;
+                    }
+                }
+            }
+        }
+    }
+}

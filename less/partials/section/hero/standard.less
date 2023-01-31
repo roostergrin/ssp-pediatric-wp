@@ -1,0 +1,194 @@
+section.hero.standard {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	background-color: var(--color-primary);
+	&.bg-green{ background-color: @green}
+	&.bg-blue{ background-color: @blue}
+	@media @mobileMax {
+		height: 100%;
+	}
+	.content {
+		img {
+			max-width: 650px;
+			width: 60%;
+			clip-path: circle();
+			position: absolute;
+			right: 0;
+			top: 18%;
+			z-index: 1;
+
+			body.page-template-accepted-payment & {
+				@media (max-width: 1280px) {
+					max-width: 550px;
+				}
+			}
+
+			@media screen and (min-width:1410px) {
+				margin-right: 3*@gutter-lg;
+			}			
+			@media screen and (min-width:1170px) and (max-width:1409px){
+				margin-right: 2*@gutter-lg;
+			}
+			@media screen and (min-width:671px) and (max-width:1169px) {
+				margin-right: -2*@gutter-lg;
+			}
+			@media @mobileMax {
+				position: relative;
+				width: 125%;
+				margin-top: -10%;
+			}
+
+			body.page-template-pediatric-dentist-referral & {
+				@media screen and (min-width:1170px) and (max-width:1260px){
+					margin-right: -2*@gutter-lg;
+				}
+				@media @menuMin and (max-width:1169px){
+					margin-right: -3*@gutter-lg;
+				}
+			}			
+		}
+		.inner-content {
+			.wrapper {
+				max-width: 535px;
+				width: 50%;
+				color: @white;
+				@media @mobileMax {
+					width: 100%;
+					max-width: none;
+				}
+				.container {
+					margin-top: 100px;
+					color: @white;
+					padding-right: @gutter-lg;
+					@media @mobileMax {
+						margin-top: @gutter-lg;
+						margin-bottom: 2*@gutter-lg;
+						padding-right: 0;
+
+						body.page-template-pediatric-dentist-referral & {
+							margin-bottom: 0;
+						}
+					}
+					h1 {
+					color: @white;
+					margin-bottom: @gutter-sm;	
+					font-style: normal;
+					.Medium;
+					// @media (min-width:671px)(max-width:960px)
+
+					}
+					p {
+						body.page-template-pediatric-dentist-referral & {
+							max-width: 67%;
+							font-family: @primary-font;
+							@media @mobileMax { max-width: none;}
+						}
+						body:not(.page-template-pediatric-dentist-referral) & {
+							font-size: 22/@rem;
+							line-height: 26/@rem;
+							font-family: @secondary-font;
+						}
+						font-style: normal;
+						.Medium;
+						@media @menuMax {
+							max-width: 87%;
+							font-size: 18/@rem;
+							line-height: 22/@rem;
+						}
+						@media @mobileMax { 
+                            max-width: 100%;
+                        }
+						a.cta {
+							@media (max-width:375px) {
+								width: 100%;
+								white-space: break-spaces;
+								line-height: 1.3;
+								padding: 10px;
+								border-radius: 50px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+    
+    &.no-right-padding {
+        .content {
+            .inner-content {
+                .wrapper {
+				    .container {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+	&.payment-options {
+		.content {
+			.inner-content {
+				.wrapper {
+					.container {
+						p {
+							font-size: 18/@rem;
+							line-height: 24/@rem;
+                            letter-spacing: 0;
+                            font-weight: normal;
+                            font-family: @primary-font;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&.error404 {
+		padding-bottom: 400px;
+		height: 100%;
+		.content {
+			img {
+				// width: 100%;
+			}
+			.inner-content {
+				.wrapper {
+					.container {
+
+						p {
+							line-height: 1.4;
+						}
+						a {
+							color: @white;
+							text-decoration: underline;
+							&:hover {
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+
+			@media @mobileMax {
+				margin-top: 50px;
+			}
+		}
+
+	}
+
+	&.smiles-in-motion {
+		.inner-content .wrapper .container a.cta {
+			color: var(--color-secondary);
+
+			&:hover {
+				color: @white;
+			}
+		}
+
+		body.page-template-pediatric-dentist-referral & {
+			@media @mobileMax {
+				padding-bottom: @gutter-lg;
+			}
+		}
+	}
+}

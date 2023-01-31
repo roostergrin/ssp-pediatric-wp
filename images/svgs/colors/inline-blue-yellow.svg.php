@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 100 60"><defs><style>.blue-yellow-a{fill:#0031ff;}.blue-yellow-b{fill:#f4cf08;}</style></defs><g transform="translate(-705 -1490)"><rect class="blue-yellow-a" width="50" height="60" transform="translate(705 1490)"/><rect class="blue-yellow-b" width="50" height="60" transform="translate(755 1490)"/></g></svg>

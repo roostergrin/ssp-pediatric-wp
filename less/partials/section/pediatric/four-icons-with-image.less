@@ -1,0 +1,138 @@
+section.four-icons-with-image {
+    &.red {
+        h2 {
+            color: @red;
+        }
+        .img-container {
+            background-color: @red;
+        }
+    }
+    &.green {
+        h2 {
+            color: @green;
+        }
+        .img-container {
+            background-color: @green;
+        }
+    }
+    &.orange {
+        h2 {
+            color: @orange;
+        }
+        .img-container {
+            background-color: @orange;
+        }
+    }
+    &.gray {        
+        .icon-container {
+            .img-container {
+                background-color: @gray-1;
+            }
+            .copy-container p {
+                color: @gray-1 !important;
+            }
+        }
+        
+    }
+    &.bg-white { background-color: @white;}
+    &.bg-gray { background-color: @gray-3;}
+
+    body.page-template-kids-dental-care-visits & {
+        @media @mobileMax {
+            padding-top: 0;
+
+            h2 {
+                max-width: 300px;
+            }
+        }        
+    }
+
+    margin-top: 70px;
+    @media @mobileMax {
+        margin-top: @gutter-lg;
+    }
+    z-index: 2;
+    .inner-content {
+        .display-flex;
+        .flex-direction-column;
+        .flex-justify-content-center;
+        .flex-align-items-center;
+
+        .heading-container {
+            h2 {
+                text-align: center;
+                max-width: 700px;
+
+                &.red { color: @red; }
+                &.green { color: @green; }
+                &.gray { color: @gray-1; }
+            }
+        }
+        .content-box {
+            position: relative;
+            @media @menuMax {
+                .display-flex;
+                .flex-direction-column;
+                width: 100%;
+                max-width: 100%;
+            }
+            .icons-container {
+                .display-flex;
+                .flex-wrap-wrap;
+                margin-left: -@gutter-lg;
+                width: 70%;
+                @media @menuMax {
+                    width: 100%;
+                    margin-left: 0;
+                }
+                .icon-container {
+                    padding: @gutter-lg;
+                    .flex(1, 1, 50%);
+                    .display-flex;
+                    .flex-direction-column;
+                    .flex-justify-content-center;
+                    .flex-align-items-center;
+                    .img-container {
+                        .clip-path(circle());
+                        width: 110px;
+                        height: 110px;
+                        margin-bottom: @gutter-md;
+                        position: relative;
+                    }
+                    .copy-container {
+                        max-width: 300px;
+                        p {
+                            font-size: 20/@rem;
+                            line-height: 24/@rem;
+                            color: var(--color-primary);
+                            font-family: @primary-font;
+                        }
+                    }
+                }
+            }
+            .image-container {
+                width: 50%;
+                position: absolute;
+                top: 0;
+                right: -200px;
+                @media @menuMax {
+                    width: 100%;
+                    position: relative;
+                    right: auto;
+                    top: auto;
+                }
+                img {
+                    .clip-path(circle());
+                    max-width: 585px;
+                    width: 100%;
+                }
+            }
+        }
+
+    }    
+    @media @menuMax {
+        &.mob-mb-neg-230 {
+            margin-bottom: -230px;
+        }
+    }
+}

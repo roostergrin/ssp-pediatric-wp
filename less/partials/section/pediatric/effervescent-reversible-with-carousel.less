@@ -1,0 +1,492 @@
+section.effervescent-reversible-with-carousel {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: @secondary-font;
+
+    .copy {
+        font-family: @primary-font;
+    }
+    &.mb-1 {
+        margin-bottom: @gutter-lg;
+    }
+
+    .inner-content {
+        .display-flex;
+        .flex-direction-column;
+        .flex-align-items-center;
+
+        .top-image-container {
+            width: 100%;
+            position: relative;
+            .display-flex;
+            .flex-justify-content-flex-end;
+            margin-bottom: -380px;
+            @media @mobileMax {
+                margin-bottom: -100px;
+            }
+            .top-image-circle {
+                clip-path: circle();
+                width: 483px;
+                height: 483px;
+                position: absolute;
+                top: 0;
+                right: 1170px;
+            }
+            img {
+                clip-path: circle();
+                max-width: 700px;
+                width: 70%;
+                margin-top: 150px;
+                min-width: 315px;
+                @media @mobileMax {
+                    width: 100%;
+                    margin-top: 0;
+                }
+            }
+        }
+        h2 {
+            line-height: 1;
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 2*@gutter-sm;
+            position: absolute;
+            top: 160px;
+
+            @media (max-width:960px) {
+                max-width: 500px;
+            }
+            @media @ipadMax {
+                max-width: 320px;
+            }
+            @media (max-width:550px) {
+                position: relative;
+                top: 0;
+                max-width: 500px;
+
+                body.page-template-dentist-office-for-kids & {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .heading-container {
+            z-index: -1;
+            position: relative;
+            width: 100%;
+            height: 300px;
+            .display-flex;
+            .flex-justify-content-center;
+            .flex-align-items-flex-end;
+            @media (max-width:1080px) { margin-bottom: 75px; }
+            @media @mobileMax { 
+                margin-bottom: 20px;
+
+                body.page-template-dentist-office-for-kids & {
+                    height: 270px;
+                }
+            }
+            .pc-circle {
+                position: absolute;
+                clip-path: circle();
+                z-index: -1;
+                &.medium {
+                    width: 210px;
+                    height: 210px;
+                    bottom: 0;
+                    left: -140px;
+                    @media @wrapperMin { left: -250px; }
+                }
+                &.small {
+                    width: 130px;
+                    height: 130px;
+                    left: 25px;
+                    top: 0;
+                    @media @mobileMax { 
+                        left: 75px; 
+                        top: 25px;
+                        
+                        body.page-template-dentist-office-for-kids & {
+                            left: 100px;
+                            top: 35px;
+                        }
+                    }
+                }
+            }
+        }
+        .box {
+            .display-flex;
+            margin-top: 210px;
+            width: 100%;
+            max-width: 100%;
+            @media (max-width:1080px) {
+                .flex-direction-column;
+                margin-top: 80px;
+            }
+            .inner-box-left {
+                @left-width: 33%;
+                width: @left-width;
+                max-width: @left-width;
+                .flex(1,1,@left-width);
+                .heading {
+                    position: relative;
+                    margin-bottom: 250px;
+                    padding-right: @gutter-lg;
+                    padding-top: @gutter-sm;
+                    h3, h4 {
+                        color: @white;
+                        max-width: 300px;
+                    }
+                    h3 {
+                        font-size: 50/@rem;
+                        margin-bottom: 10px;
+                    }
+                    h4 {
+                        font-size: 25/@rem;
+                        font-weight: 100;
+                        margin-right: 20px;
+                    }
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 600px;
+                        height: 600px;
+                        clip-path: circle();
+                        z-index: -1;
+                        right: 0;
+                        bottom: -220px
+                    }
+                }
+                @media (max-width:1080px) {
+                    @left-width: 100%;
+                    width: @left-width;
+                    max-width: @left-width;
+                    .flex(1,1,@left-width);
+                    .display-flex;
+                    margin-bottom: @gutter-lg;
+                    .heading {
+                        padding-top: 0;
+                        margin-right: 2*@gutter-lg;
+                        margin-bottom: 150px;
+                        width: 33.3333%;
+                        &::before {
+                            max-width: 400px; 
+                        }
+                    }
+                    .copy {
+                        width: 66.6666%;
+                        //font-family: @secondary-font;
+                    }
+                }
+
+                @media @ipadMax {
+                    .flex-direction-column;
+                    .heading {
+                        width: 100%;
+                        padding: 25px 0 0;
+                        &::before {
+                            width: 150%;
+                            left: -100px;
+                            top: -190px;
+                        }
+                    }
+                    .copy {
+                        width: 100%;
+
+                        body.page-template-dentist-office-for-kids & {
+                            margin-top: 2*@gutter-sm;
+                        }
+                    }
+                }
+            }
+            .inner-box-right {
+                .flex(1, 1,auto);
+                .display-flex;
+                @media @mobileMax {
+                    .flex-direction-column;
+                    .flex-align-items-center;
+                }
+                .sub-box {
+                    width: 50%;
+                    .display-flex;
+                    .flex-direction-column;
+                    .flex-align-items-center;
+                    &.sub-box-left {
+                        border-right: 1px solid var(--color-gray-1);
+                        @media @mobileMax {
+                            border: none;
+                        }
+                    }
+                    @media @mobileMax {
+                        margin-bottom: @gutter-lg;
+                        width: 100%;
+                    }
+                    &>p {
+                        font-size: 20/@rem;
+                        margin-bottom: 0;
+                        .Medium;
+                    }
+                    .demographic {
+                        font-size: 50/@rem;
+                        line-height: 1;
+                        @media @mobileMax {
+                            margin-bottom: 2*@gutter-sm;
+                        }
+                    }
+                    .slides.owl-carousel {
+                        .display-flex;
+                        .flex-direction-column;
+                        .flex-align-items-center;
+                        @media @mobileMax {
+                            display: block;
+                        }
+                        .slide {
+                            width: 310px;
+                            height: 225px;
+                            padding: 0 20px;
+                            .display-flex;
+                            .flex-direction-column;
+                            .flex-align-items-center;
+                            text-align: center;
+    
+                            @media @mobileMax {
+                                height: auto;
+                                width: auto;
+                                max-width: 350px;
+                                margin: 0 auto;
+                            }
+                            .icon {
+                                width: 110px;
+                                min-width: 110px;
+                                height: 110px;
+                                min-height: 110px;
+                                color: @white;
+                                clip-path: circle();
+    
+                                opacity: 1;
+                                transform: translateY(50px);
+                                transition: all 0.3s ease-out;
+                                @media @mobileMax {
+                                    transform: translateY(0);
+                                    margin-bottom: 25px;
+                                }
+                            }
+                            .heading {
+                                font-size: 24/@rem;
+                                line-height: 25/@rem;
+                                margin-bottom: 10px;
+                                transform: translateY(60px);
+                                transition: all 0.3s ease-out;
+                                @media @mobileMax {
+                                    transform: translateY(0);
+                                }
+                            }
+                            .copy {
+                                font-size: 18/@rem;
+                                line-height: 25/@rem;
+                                transform: translateY(50px);
+                                opacity: 0;
+                                transition: all 0.3s ease-out;
+                                @media @mobileMax {
+                                    transform: translateY(0);
+                                    opacity: 1;
+                                }
+                            }
+                            &:hover {
+                                .icon {
+                                    opacity: 0;
+                                    transform: translateY(20px);
+                                    @media @mobileMax {
+                                        transform: translateY(0);
+                                        opacity: 1;
+                                    }
+                                }
+                                .heading {
+                                    transform: translateY(-40px);
+                                    @media @mobileMax {
+                                        transform: translateY(0);
+                                    }
+                                }
+                                .copy {
+                                    transform: translateY(-40px);
+                                    opacity: 1;
+                                    @media @mobileMax {
+                                        transform: translateY(0);
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Default fallback colors
+    .heading {
+        color: var(--color-primary);
+        &::before {
+            background-color: var(--color-primary);
+        }
+    }
+    .pc-circle {
+        background-color: var(--color-primary);
+    }
+    .icon {
+        background-color: var(--color-primary);
+    }
+    .top-image-circle {
+        background-color: var(--color-primary);
+    }
+    // Change color by class
+    &.red {
+        .heading {
+            color: @red;
+            &::before {
+                background-color: @red;
+            }
+        }
+        .pc-circle {
+            background-color: @red;
+        }
+        .icon {
+            background-color: @red;
+        }
+        .top-image-circle {
+            background-color: @red;
+        }
+    }
+    &.blue {
+        .heading {
+            color: @blue;
+            &::before {
+                background-color: @blue;
+            }
+        }
+        .pc-circle {
+            background-color: @blue;
+        }
+        .icon {
+            background-color: @blue;
+        }
+        .top-image-circle {
+            background-color: @blue;
+        }
+    }
+    &.green {
+        .heading {
+            color: @green;
+            &::before {
+                background-color: @green;
+            }
+        }
+        .pc-circle {
+            background-color: @green;
+        }
+        .icon {
+            background-color: @green;
+        }
+        .top-image-circle {
+            background-color: @green;
+        }
+    }
+    &.orange {
+        .heading {
+            color: @orange;
+            &::before {
+                background-color: @orange;
+            }
+        }
+        .pc-circle {
+            background-color: @orange;
+        }
+        .icon {
+            background-color: @orange;
+        }
+        .top-image-circle {
+            background-color: @orange;
+        }
+    }
+    &.brown {
+        .heading {
+            color: @brown;
+            &::before {
+                background-color: @brown;
+            }
+        }
+        .pc-circle,
+        .icon, 
+        .top-image-circle {
+            background-color: @brown;
+        }  
+        
+        body.smiles-in-motion & {
+            .inner-box-left .heading h4 {
+                @media @mobileMax {
+                    max-width: 280px;
+                }
+            }
+        }
+    }
+    // Reverse by class
+    &.reverse {
+        .inner-content {
+            .top-image-container {
+                transform: scaleX(-1);
+                img {
+                    transform: scaleX(-1);
+                }
+            }
+            .heading-container {
+                transform: scaleX(-1);
+            }
+
+            .box {
+                .inner-box-left {
+                    order: 2;
+                    @media (max-width:1080px) {order: 1;}
+                    .heading {
+                        text-align: right;
+                        order: 2;
+                        .flex-align-self-flex-end;
+                        max-width: 300px;
+                        padding-right: 0;
+                        margin-right: 0;
+                        margin-left: auto;
+                        @media (max-width:1080px) {
+                            margin-right: 0;
+                            margin-left: 2*@gutter-lg;
+                        }
+                        @media @ipadMax {
+                            order: 1;
+                            padding-left: 30px;
+                            &::before {
+                                right: -100px;
+                                left: auto;
+                            }
+                        }
+                        &::before {
+                            right: -200px;
+                            @media (max-width:1180px) { right: -250px;}
+                            @media (max-width:1080px) { right: -100px;}
+                        }
+                    }
+                    .copy {
+                        text-align: right;
+                        order: 1;
+                        @media @ipadMin and (max-width:930px) {
+                            padding-right: 2*@gutter-md;
+                        }
+                        @media @ipadMax {
+                            order: 2;
+                            margin-top: @gutter-lg;
+                        }
+                    }
+                } 
+                .inner-box-right {
+                    order: 1;
+                    @media (max-width:1080px) {order: 2;}
+                } 
+            }
+        }
+    }    
+}

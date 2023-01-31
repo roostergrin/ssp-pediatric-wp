@@ -1,0 +1,143 @@
+section.blog-post.single {
+	@media @mobileMax {
+		margin-bottom: 280px;
+	}
+
+	article {
+		ul {
+			list-style-type: disc;
+			li {
+				padding: 0;
+				margin-left: 20px;
+			}
+		}
+	}
+
+	.main-container {
+		margin: 0 -@gutter-lg;
+		width: calc(~"100% + 60px");
+		.display-flex;
+		@media @menuMax { margin: 0; width: 100%; .flex-direction-column; }
+
+		.content-container {
+			@width: percentage((1170 - 312)/1170);
+			margin: 0 @gutter-lg;
+			width: @width;
+			@media @menuMax { margin: 0; width: 100%; }
+
+			> .img-container {
+				width: 100%;
+				// min-height: 515px;
+				overflow: hidden;
+				position: relative;
+				margin: -250px auto 2*@gutter-md;
+				// clip-path: circle();
+
+				@media @menuMax {
+					margin-top: -250px;
+				}
+
+				// @media (min-width:950px) and (max-width:1075px) {
+				// 	height: 530px;
+				// }
+				@media (max-width:770px) {
+					height: auto;
+				}
+				@media @mobileSmallerMax {
+					margin-top: -230px;
+					margin-bottom: @gutter-lg;
+				}
+
+				> img {
+					object-fit: contain;
+					object-position: top center;
+					// .position-absolute;
+					.pointer-events(none);
+					clip-path: circle();
+
+					@media @tabletMax {
+						object-position: center;							
+					}
+					@media @menuMax {
+						position: relative;
+						height: 100%;
+					}
+				}
+			}
+
+			.content {
+				padding: 0 2*@gutter-lg;
+				margin-bottom: 2*@gutter-lg;
+				@media @menuMax { padding: 0; }
+
+				h1 { margin-bottom: @gutter-md; }
+				h2 {
+					.heading-4;
+					color: var(--color-primary);
+					margin-bottom: 5px;
+				}
+				h3 {
+					.heading-5;
+					margin-bottom: 5px;
+				}
+				strong { margin-bottom: 1.2em; }
+
+				.category-list {
+					margin: 0 0 20px;
+					flex-wrap: wrap;
+					.display-flex;
+					.flex-align-items-flex-start;
+
+					li {
+						a {
+							font-size: 12/@rem;
+							border: 1px solid var(--color-primary);
+							padding: 5px 10px;
+							cursor: pointer;
+							margin-bottom: 10px;
+							display: block;
+							color: var(--color-primary);
+							background-color: @white;
+							.Bold;
+							.border-radius(2px);
+
+							&:hover {
+								color: @white;
+								background-color: var(--color-primary);
+							}
+						}
+
+						&:not(:last-of-type) {
+							a {
+								margin-right: 10px;
+							}
+						}
+					}
+				}
+
+				img {
+					margin: 0;
+					.border-radius(5px);
+				}
+			}
+		}
+
+		.sidebar-container {
+			@width: percentage(312/1170);
+			margin: 0 @gutter-lg;
+			width: @width;
+			@media @menuMax { margin: 0; width: 100%; }
+
+			@media @mobileMax {
+				margin-top: 2*@gutter-lg;
+			}
+		}
+	}
+}
+
+// Sticky category sidebar fix
+body.single-post {
+	main {
+		overflow-x: visible;
+	}
+}

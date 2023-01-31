@@ -1,0 +1,113 @@
+article.blog-post.small {
+    @percent: percentage(1/2);
+    margin: 6*@gutter-lg @gutter-lg 0;
+    width: calc(~"@{percent} - 60px");
+	// width: 100%;
+	max-width: 379px;
+    position: relative;
+    background-color: var(--color-primary);    
+    border-radius: 10px;	
+
+	@media @mobileMaxWithLandscape { 
+        max-width: 100%; 
+        width: 100%;
+        margin: 0 0 2*@gutter-lg; 
+		margin-bottom: calc(100% - 75% / 1.5);
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+    }    
+
+	.img-container {
+		top: -110px;
+        left: 50%;
+        transform: translateX(-50%);
+        clip-path: circle();
+        position: absolute;
+        width: 100%;
+
+		@media screen and (max-width: 1280px) {
+			top: 0;
+			transform: translateX(-50%) translateY(-50%);
+		}
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.content {
+		width: 100%;
+		margin: 0;
+		padding: 5*@mobile-bth-size @gutter-lg @gutter-lg;
+		background-color: var(--color-primary);
+		color: @white;
+        border-radius: 10px;
+		.display-flex;
+		.flex-align-items-flex-start;
+		.flex-direction-column;
+
+		@media screen and (max-width: 1280px) {
+			padding-top: calc((100% - 75%) * 2);
+		}
+
+		h3 {
+            .heading-3;
+			margin-bottom: @gutter-lg/2;
+
+			a:hover {
+				color: var(--color-gray-1);
+			}
+
+			@media screen and (max-width: 840px) and (min-width: 782px) {
+				font-size: 3vw;
+			}
+		}
+        p {
+            font-family: var(--font-primary);
+            font-size: 18px;
+            line-height: @line-height;      
+        }
+        .cta {
+            color: var(--color-primary);
+
+            &:hover {
+                background-color: var(--color-secondary);
+            }
+        }
+    }
+
+	// 	.category-list {
+	// 		margin: 0 0 @gutter-sm;
+	// 		flex-wrap: wrap;
+	// 		.display-flex;
+	// 		.flex-align-items-flex-start;
+
+	// 		li {
+	// 			a {
+	// 				font-size: 12/@rem;
+	// 				border: 1px solid @white;
+	// 				padding: 4.51/@rem @gutter-sm/2;
+	// 				cursor: pointer;
+	// 				margin-bottom: @gutter-sm/2;
+	// 				display: block;
+	// 				color: @white;
+	// 				.Bold;
+	// 				.border-radius(2px);
+
+	// 				&:hover {
+	// 					color: var(--color-gray-1);
+	// 					border: 1px solid var(--color-gray-1);
+	// 				}
+	// 			}
+
+	// 			&:not(:last-of-type) {
+	// 				a {
+	// 					margin-right: @gutter-sm/2;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
+}

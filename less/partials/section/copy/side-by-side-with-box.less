@@ -1,0 +1,185 @@
+.page-template-careers {
+    
+    .side-by-side-with-box {
+        margin: 50px 0;
+
+        .cta.text {
+            border-bottom: none;
+        }
+        
+        .content {
+            .inner-content {
+                .content-container {
+                    .column1,.column2 {
+                        width: 100%;
+                        display: inline-block;
+                        vertical-align: middle;
+
+                        @media (min-width: @mobile-max-width) {                        
+                            width: 49%;
+                        }
+
+                    }
+
+                    .column1 {
+                        margin-bottom: 40px;
+
+                        @media (min-width: @mobile-max-width) {                        
+                            margin-bottom: 0px;
+
+                            position: relative;
+                            top: -54px;
+                        }
+
+                        .content-wrapper {
+
+                            .cta:not(.text).green:hover {
+                                background-color: @green;
+                                a {
+                                    color:@white;
+                                }
+                                
+                            }
+                            
+
+                            h1 {
+                                margin-bottom: 19px;
+
+                                @media (min-width: @mobile-max-width) {   
+                                    line-height: 50px;
+                                    margin-bottom: 20px;
+                                }
+                            }
+
+                            .subTitle {
+                                margin-bottom: 38px;
+
+                                @media (min-width: @mobile-max-width) {   
+                                    margin-bottom: 28px;
+                                    max-width: 525px;
+                                    font-size: 18px;
+                                    line-height: 24px;
+                                }
+                            }
+                            
+                            p {
+
+                                &:first-child {
+
+                                }                                                    
+                            }
+
+                            .cta.green {
+                                padding-right: 0.9em;
+                            }
+                        }
+                    }
+
+                    .column2 {
+                        position: relative;
+                        height: 500px;
+
+                        .bg-container {
+                            width: 450px;
+                            height: 450px;
+                            
+                            background: #F7921E 0% 0% no-repeat padding-box;
+                            opacity: 1;                        
+
+                            position: absolute;
+                            top:50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                            border-radius: 220px;                     
+
+                            @media (min-width: @mobile-max-width) { 
+                                left: unset;                       
+                                top:unset;
+                                transform: unset;
+                                width: 49%;
+                                width: 500px;
+                                height: 500px;
+                                border-radius: 50%;
+                                position: relative;
+                                margin: auto;
+                            }
+
+                            .content-wrapper {
+                                width: 400px;
+                                position: absolute;
+                                top:50%;
+                                left: 50%;
+                                transform: translate(-50%,-50%);
+                                .display-flex;
+                                .flex-direction-column;
+                                .flex-justify-content-space-between;
+                                height: 65%;
+                                                        
+                                p {
+                                    text-align: center;                                
+                                    letter-spacing: -0.8px;
+                                    color: #FFFFFF;
+                                    opacity: 1;
+                                    width: 350px;
+                                    margin: auto;
+                                    text-align: center;
+                                    font-size: 20px;
+                                    line-height:24px ;
+                                    letter-spacing: 0px;
+                                    font-family: Urbane;                                     
+                                    padding-bottom: 26px;
+                                    padding: 0px 4px;
+                                    //margin-bottom: 29px;                                
+                                    
+                                    @media (min-width: @mobile-max-width) {
+                                        padding: 0;
+                                        font-size: 22px;
+                                        line-height:26px ;
+                                        letter-spacing: 0px;
+                                    }
+                                }
+
+                                .bold {                               
+                                    font-size: 30px; 
+                                    font-weight: normal;
+                                    line-height: 35px;
+                                    padding: 0px 19px;
+                                    margin-bottom: 14px;
+
+                                    @media (min-width: @mobile-max-width) {     
+                                        font-size: 40px;
+                                        line-height: 40px;
+                                        font-weight: normal;
+                                        letter-spacing: -0.8px;
+                                        margin-bottom: 7px;
+                                        width: 400px;
+                                        padding: 0px 0px;
+                                    }
+                                } 
+                                
+                                a {
+                                    font-size: 16px;                                
+                                }
+                            }
+                        }                   
+                    }
+                }
+            }
+        }
+    }   
+    
+    .header-utility {
+        background-color: #EAEAEA;
+    }  
+    
+    .wrapper {
+        z-index: 0;    
+        margin-top: -292px;
+
+        @media (min-width: @mobile-max-width) {      
+            margin-top: -192px;
+        }          
+        
+    }    
+}
+

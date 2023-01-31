@@ -1,0 +1,133 @@
+.icon-container {
+    .icons-hover-container {
+        @size: 100%;
+        width: @size;
+        max-width: @size;
+        height: @size;
+        text-align: center;
+        .display-flex;
+        .flex-direction-column;
+        .flex-align-items-center;
+        .icons-hover {
+            opacity: 1;
+            font-size: 110/@rem;
+            position: relative;
+            margin: auto;
+            .ease-out(opacity, 0.3s);
+            .display-flex;
+            .flex-align-items-center;
+            .flex-justify-content-center;
+            .ease;
+            .path1, .path2, .path3, .path4, .path5 {.ease;}
+        }
+    
+        .icon-h-apple { .path1, .path2 { opacity: 1; }}
+        .icon-h-building-tooth {.path2 {opacity: 0;}}
+        .icon-h-chat-two-talk-bubbles {
+            .path3, .path4 { opacity: 0; }
+            .path3 { .transform(scaleY(-1));}
+            .path4 { .transform(scaleY(-1));}
+        }
+        .icon-h-caution {
+            .path1 { opacity: 0; }
+            .path2 { opacity: 1; }
+        }
+        .icon-h-caution-question-mark {.path2 {opacity: 0;}}
+        .icon-h-credit-card { .path1 {opacity: 0;} .path2 {opacity: 1;}}
+        .icon-h-brush-and-paste {
+            .path2,
+            .path3{ opacity: 1; }
+            .path4,
+            .path5{ opacity: 0; }
+        }
+        .icon-h-pacifier,
+        .icon-h-plain-tooth,
+        .icon-h-tooth-brace { .transform(rotate(0deg)); }
+        .icon-h-personal-check {.path1 {opacity: 0}}
+        .icon-h-piercing { .transform(rotate(0deg)); }
+        .icon-h-tooth-plus { .path3, .path4 { opacity: 0; } }
+        .icon-h-toothbrush-toothpaste {
+            .path4, .path5 {opacity: 0;}
+            .path2, .path3 {opacity: 1;}
+        }
+        .icon-h-tooth-flag { .path1 { opacity: 0 } }
+        //.icon-h-chat-two-talk-bubbles {
+        //    .path1 {opacity: 1;}
+        //    .path2 {opacity: 1;}
+        //    .path3 {opacity: 1;}
+        //    .path4 {opacity: 1;}
+        //}
+        .icon-h-phone {
+            .path1 {opacity: 1;}
+            .path2 {opacity: 0;}
+            .path3 {opacity: 0;}
+        }
+    }
+    &:hover {
+        .icon-h-apple {
+            .path1 {opacity: 0;}
+            .path2 {opacity: 1;}
+        }
+        .icon-h-building-tooth {
+            .path1 {opacity: 0;}
+            .path2 {opacity: 1;}
+        }
+        .icon-h-chat-two-talk-bubbles {
+            .path1 {
+                opacity: 0;
+                .transform(scaleY(-1));
+            }
+            .path2 {
+                opacity: 0;
+                .transform( scaleY(-1));
+            }
+            .path3, .path4 {
+                opacity: 1;
+                .transform(scaleY(1));
+            }
+        }
+        .icon-h-caution-question-mark {
+            .path1 {opacity: 0;}
+            .path2 {opacity: 1;}
+        }
+        .icon-h-caution {
+            .path1 { opacity: 1; }
+            .path2 { opacity: 0; }
+        }
+        .icon-h-brush-and-paste {
+            .path2,
+            .path3{ opacity: 0; }
+            .path4,
+            .path5{ opacity: 1; }
+        }
+        .icon-h-financing-waves {
+            .path1 {opacity: 0.9;}
+            .path2 {opacity: 1;}
+            .path3 {opacity: 0.8;}
+        }
+        .icon-h-pacifier,
+        .icon-h-plain-tooth,.icon-h-credit-card,
+        .icon-h-tooth-brace { .transform(rotate(30deg)); }
+        .icon-h-piercing { .transform(rotate(-180deg)); }
+        .icon-h-personal-check {
+            .path1 {opacity: 1}
+            .path2 {opacity: 0;}
+        }
+        .icon-h-toothbrush-toothpaste {
+            .path4, .path5 {opacity: 1;}
+            .path2, .path3 {opacity: 0;}
+        }
+        .icon-h-tooth-flag {
+            .path1 {opacity: 1;}
+            .path2 { opacity: 0;}
+        }
+        .icon-h-tooth-plus { .path3, .path4 { opacity: 1; } }
+        .icon-h-phone {
+            .path1 {opacity: 1;}
+            .path2 { opacity: 1;}
+            .path3 { opacity: 1;}
+        }
+    }
+
+}
+

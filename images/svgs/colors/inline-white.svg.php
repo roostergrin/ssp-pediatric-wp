@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 100 60"><defs><style>.white-a{fill:#fff;}.white-b,.white-c{stroke:none;}.white-c{fill:#eaeaea;}</style></defs><g class="white-a"><path class="white-b" d="M 99 59 L 1 59 L 1 1 L 99 1 L 99 59 Z"/><path class="white-c" d="M 2 2 L 2 58 L 98 58 L 98 2 L 2 2 M 0 0 L 100 0 L 100 60 L 0 60 L 0 0 Z"/></g></svg>
