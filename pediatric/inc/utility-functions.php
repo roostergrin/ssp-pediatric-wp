@@ -52,10 +52,10 @@ function get_providers() {
 	$brand = is_brand();
 	$brand_location_ids = wp_list_pluck(get_locations_for_brand($brand->ID), 'ID');
 	$location = is_location();
-	$all_providers = [];	
+	$all_providers = [];
 
 	if (property_exists($providers, 'providers') && !empty($providers->providers)) {
-        if($location) {			
+        if($location) {
             $all_providers = array_values(array_filter($providers->providers, function($provider) use ($brand_location_ids) {
                 $location_relationship = !empty($provider->location_relationship) ? unserialize($provider->location_relationship) : false;
 				return ($location_relationship == false ? null : array_intersect($location_relationship, $brand_location_ids));
@@ -75,11 +75,11 @@ function get_providers() {
 				$brand_relationship = !empty($provider->brand_relationship) ? unserialize($provider->brand_relationship) : false;
 				return is_array($brand_relationship) ? in_array($brand->ID, $brand_relationship) : $brand->ID === $brand_relationship;
 			}));
-            
+
 			usort($all_providers, function($a, $b) {
                 return $a->menu_order <=> $b->menu_order;
             });
-        } 
+        }
 	}
 
 	return $all_providers;
@@ -139,12 +139,12 @@ function get_regions_for_edu_association( $edu_id ) {
 
 	if( count($providers) == 1 ){
 		$locations = get_location_ids_for_provider($providers[0]);
-		
+
 		foreach ($locations as $key => $location_id) {
 			$region = get_region_for_location($location_id, 1);
 			array_push( $filtered_regions, $region[0] );
 		}
-		
+
 	} else {
 		return null;
 	}
@@ -252,7 +252,7 @@ function get_brand_for_provider($provider_id, $admin_link = false) {
 	global $brands;
 
 	$relationship_id = get_post_meta($provider_id, 'provider_brand_relationship', true);
-	if( empty( $relationship_id ) ) return ''; 
+	if( empty( $relationship_id ) ) return '';
 
 	$brand_links = '';
 	foreach($brands->brands as $brand) {
@@ -279,7 +279,7 @@ function get_brand_for_review($review_id, $admin_link = false) {
 	global $brands;
 
 	$relationship_ids = get_post_meta($review_id, 'review_relationships', true);
-	if( empty( $relationship_ids ) ) return []; 
+	if( empty( $relationship_ids ) ) return [];
 
 	$brand_titles = array();
 	foreach($brands->brands as $brand) {
@@ -308,19 +308,19 @@ function get_faqs_for_page() {
 	$page_faqs = [];
 	$brand = is_brand();
 
-	if( !is_location() ) {			
+	if( !is_location() ) {
 		foreach ($faqs->faqs as $key => $faq) {
 			if( in_array( strval($brand->ID), unserialize($faq->relationships) ) ) {
 				array_push( $page_faqs, $faq );
 			}
-		}	
-	} else {		
+		}
+	} else {
 		foreach ($faqs->faqs as $key => $faq) {
 			if( in_array( strval(is_location()->ID), unserialize($faq->relationships) ) ) {
 				array_push( $page_faqs, $faq );
 			}
 		}
-	}	
+	}
 
 	if( !empty($page_faqs) && $brand->ID == 18088) { // Smiles in Motion
 		shuffle($page_faqs);
@@ -379,7 +379,7 @@ function get_education_associations( $filters ) {
 function get_provider_name_from_id($id) {
 	global $providers;
 
-	if( array_key_exists( $id, $providers->providers ) ) { 
+	if( array_key_exists( $id, $providers->providers ) ) {
 		$provider = $providers->providers[$id];
 		return $provider->first_name.' '.$provider->last_name;
 	}
@@ -411,8 +411,8 @@ function is_brand() {
 		});
 
 		if( !empty( $brand ) ) {
-			$brand = reset($brand);		
-			$brand->palette = $brands->brand_color_options[$brand->colors];			
+			$brand = reset($brand);
+			$brand->palette = $brands->brand_color_options[$brand->colors];
 		}
 	}
 	return !empty($brand) ? $brand : false;
@@ -423,7 +423,7 @@ function is_location($bypass = false) {
 	if ($wp->request === 'orthodontist-office' && empty($bypass)) return;
 
 	$url_segments = explode('/', $wp->request);
-	$page_id = is_archive('location') ? get_page_by_path('orthodontist-office')->ID : get_the_ID();	
+	$page_id = is_archive('location') ? get_page_by_path('orthodontist-office')->ID : get_the_ID();
 	$page_parent = 0;
 
 	if(is_pediatric_provider_page()){
@@ -447,11 +447,11 @@ function is_location($bypass = false) {
 		foreach ($page_parents as $parent_ID) {
 			$location = array_filter($locations->locations, function($location) use ($page_parent, $page_id) {
 				return in_array($location->ID, [$page_id, $parent_ID]);
-			});	
-		}		
+			});
+		}
 
 		// if (empty($location) && strstr($wp->request, 'orthodontist-office/')) {
-		if (empty($location) && strstr($wp->request, 'pediatric-dentist/')) {			
+		if (empty($location) && strstr($wp->request, 'pediatric-dentist/')) {
 			$location = get_page_by_path($url_segments[1], OBJECT, 'location');
 			$location = $locations->locations[$location->ID];
 			return $location;
@@ -464,9 +464,9 @@ function is_location($bypass = false) {
 function is_pediatric_provider_page() {
 	global $wp;
 
-	$url_segments = explode('/', $wp->request); 
+	$url_segments = explode('/', $wp->request);
 	$provider_url_key = 'pediatric-dental-team';
-	$is_provider_page = false;	
+	$is_provider_page = false;
 
 	if( (count($url_segments) == 2 && $url_segments[0] == $provider_url_key) || (count($url_segments) == 4 && $url_segments[2] == $provider_url_key)) {
 		$is_provider_page = true;
@@ -494,7 +494,7 @@ function brand_host($brand = false) {
 
 function brand_url($path, $brand = false) {
 	global $wp;
-	
+
 	$is404 = is_404();
 
 	$location = is_location($brand);
@@ -508,7 +508,7 @@ function _location_based_url($path) {
 	global $wp;
 	$brand = is_brand();
 	$brand_locations = get_locations_for_brand($brand->ID);
-	$url_segments = explode('/', $wp->request); 
+	$url_segments = explode('/', $wp->request);
 	$uri = brand_host() . '/' . $path;
 
 	if($url_segments[0] == 'pediatric-dentist') {
@@ -521,7 +521,7 @@ function _location_based_url($path) {
 	return $uri;
 }
 
-function provider_url($path, $provider_relative_url) {	
+function provider_url($path, $provider_relative_url) {
 	return _location_based_url($path);
 }
 
@@ -593,7 +593,13 @@ function get_bcc_email_addresses_for_form($form, $location_id) {
 }
 
 function sanitize_array_for_output($array) {
-	return array_map(function($v) { return stripslashes(trim(strip_tags(htmlentities($v)))); }, $array);
+  return array_map(function($v) {
+    if (is_array($v)) {
+      return sanitize_array_for_output($v);
+    } else {
+      return stripslashes(trim(strip_tags(htmlentities($v))));
+    }
+  }, $array);
 }
 
 function starts_with($s, $prefix){
@@ -638,7 +644,7 @@ function do_virtual_page($post_obj = [], $wp_query_override = []) {
     ]);
 
     $post = get_post($p->ID);
-	
+
     $wp_query->comment_count = 0;
     $wp_query->current_comment = null;
     $wp_query->current_post = $p->ID;
@@ -655,9 +661,9 @@ function do_virtual_page($post_obj = [], $wp_query_override = []) {
     $wp_query->queried_object = $p;
     $wp_query->queried_object_id = $p->ID;
     $wp_query->query_vars['error'] = '';
-	
+
 	do_action('wp');
-	
+
     // Override $wp_query with $wp_query_override values
     if (!empty($wp_query_override)) {
         foreach ($wp_query_override as $property => $value) {
@@ -822,11 +828,11 @@ function get_relative_pediatric_provider_url($url) {
 	// global $wp;
 	// return ($wp->request === 'pediatric-dental-team') ? str_replace('orthodontic-team', $wp->request, $url) : $url;
 	return strstr($url, 'orthodontic-team') ? str_replace('orthodontic-team', 'pediatric-dental-team', $url) : $url;
-} 
+}
 
 function get_relative_pediatric_location_url($url) {
 	return strstr($url, 'orthodontist-office') ? str_replace('orthodontist-office', 'pediatric-dentist', $url) : $url;
-} 
+}
 
 function serve_404() {
 	status_header(404);
@@ -1218,7 +1224,7 @@ function do_location_page($loc = NULL, $pro = NULL) {
 			$carousel_pagination_classes = NULL;
 		}
 	}
-	
+
 	/*
 						OLD ID 		NEW ID
 	Eau Claire 			- 6		| 	1253
@@ -1279,19 +1285,19 @@ function do_location_page($loc = NULL, $pro = NULL) {
 			'img' => get_post_meta($brand->ID,'three_icons_slides_0_three_icons_slides_0_icon', true),
 			'heading' => get_post_meta($brand->ID,'three_icons_slides_0_three_icons_slides_0_heading', true),
 			'copy' => get_post_meta($brand->ID,'three_icons_slides_0_three_icons_slides_0_copy', true),
-			'bg_color' => (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'orange' : 'red') 
+			'bg_color' => (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'orange' : 'red')
 		],
 		[
 			'img' => get_post_meta($brand->ID,'three_icons_slides_1_three_icons_slides_1_icon', true),
 			'heading' => get_post_meta($brand->ID,'three_icons_slides_1_three_icons_slides_1_heading', true),
 			'copy' => get_post_meta($brand->ID,'three_icons_slides_1_three_icons_slides_1_copy', true),
-			'bg_color' => (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue') 
+			'bg_color' => (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue')
 		],
 		[
 			'img' => get_post_meta($brand->ID,'three_icons_slides_2_three_icons_slides_2_icon', true),
 			'heading' => get_post_meta($brand->ID,'three_icons_slides_2_three_icons_slides_2_heading', true),
 			'copy' => get_post_meta($brand->ID,'three_icons_slides_2_three_icons_slides_2_copy', true),
-			'bg_color' => (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'brown' : 'orange') 
+			'bg_color' => (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'brown' : 'orange')
 		],
 	];
 
