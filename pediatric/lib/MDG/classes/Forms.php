@@ -62,7 +62,7 @@ class Forms {
 			foreach($this->form_configurations as $form_name => $config) {
 				$js_config[$form_name] = $rules = $messages = [];
 				if(!empty($config['rows'])) {
-					
+
 					// print_stmt($this->form_configurations['orthodontic-referral'], 1);
 					foreach($config['rows'] as $row) {
 						foreach($row as $ff) {
@@ -1141,7 +1141,7 @@ class Forms {
 		$fields['Timestamp'] = $data['timestamp_formatted'].' (Central)';
 		$fields['IP address'] = $data['ip_address'];
 		$fields['Client email'] = $recipient;
-        
+
 		unset($fields['Your office preference']);
 		unset($fields['Upload files:']);
 
@@ -1154,7 +1154,13 @@ class Forms {
 		$data['fields'] = implode('<br><br>', $field_rows);
 
 		$content = file_get_contents($email_template);
-		foreach($data as $k => $v) $content = str_replace('[%'.$k.'%]', $v, $content);
+		foreach($data as $k => $v) {
+			if(is_string($v)) {
+					if(!empty($v)) {
+							$content = str_replace('[%'.$k.'%]', $v, $content);
+					}
+				}
+			}
 		return $content;
 	}
 
@@ -1375,7 +1381,7 @@ class Forms {
 
 		$referring_doctor_email = $_POST['referring_doctor_email'] ? $_POST['referring_doctor_email'] : '';
 		if(!empty($referring_doctor_email)) $headers[] = 'Cc: ' . $referring_doctor_email;
-		
+
 		# Deploy email
 		if(!is_live()) $this->current_form->subject = '(DEV) '.$this->current_form->subject;
 		if(!is_local()) wp_mail($recipient, $this->current_form->subject, $this->getTemplateBody(), $headers, $attachments);
