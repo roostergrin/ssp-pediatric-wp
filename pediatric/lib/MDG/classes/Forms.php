@@ -1147,8 +1147,10 @@ class Forms {
 
 		$field_rows = [];
 		foreach($fields as $k => $v) {
-			if(!strlen($v)) $v = 'N/A';
-			$field_rows[] = '<b>'.$k.'</b> '.$v;
+			if(is_string($v)) {
+				if(!strlen($v)) $v = 'N/A';
+				$field_rows[] = '<b>'.$k.'</b> '.$v;
+			}
 		}
 
 		$data['fields'] = implode('<br><br>', $field_rows);
