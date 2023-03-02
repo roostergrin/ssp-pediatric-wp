@@ -1,6 +1,6 @@
 /**
  * ALERT
- * 
+ *
  * because this template is associated with virtual WP pages
  * the LESS compile flag will not work on blog pages
  */
@@ -25,7 +25,7 @@ section.hero.centered {
                 }
             }
         }
-        @media (max-width:500px) { padding: @gutter-lg 0 !important;}   
+        @media (max-width:500px) { padding: @gutter-lg 0 !important;}
     }
 
     .inner-content {
@@ -71,7 +71,7 @@ section.hero.centered {
                 body.page-template-book-appointment & { max-width: 700px;}
             }
             p {
-                &:not(.full) { 
+                &:not(.full) {
                     max-width: 700px;
                 }
                 body.page-template-book-appointment & { max-width: 500px;}
@@ -83,7 +83,6 @@ section.hero.centered {
         }
     }
 
-    &.smiles-in-motion {
         body.page-template-patient-forms &,
         body.page-template-kids-dentist-appointment & {
             .image-continer {
@@ -98,34 +97,33 @@ section.hero.centered {
                 color: @white;
             }
         }
-    }
+
 }
 
 .page-template-patient-forms {
-	&.smiles-in-motion {
 
         .hero{
             .content {
                 .content-container{
-                
+
                     p {
                         font-size: 18px;
                         font-family: 'Usual';
                         line-height: 24px;
                         letter-spacing: 0px;
 
-                        &:not(.full) { 
+                        &:not(.full) {
                             max-width: 630px;
                         }
                     }
                 }
-            }            
-            
+            }
+
             &.centered {
                 .inner-content {
                     width: 100%;
                 }
-        
+
                 .form-wrapper {
                     @media (max-width:700px)  {
                         width: 100%;
@@ -133,11 +131,11 @@ section.hero.centered {
 
                     .fancy-select {
                         max-width: 275px;
-            
+
                         @media (max-width:700px)  {
                             max-width: unset;
                         }
-                        
+
                         &-title {
                             min-width: 275px;
                             font-size: 16px;
@@ -162,13 +160,13 @@ section.hero.centered {
                                 -moz-transition: .3s ease-out;
                                 -ms-transition: .3s ease-out;
                                 -o-transition: .3s ease-out;
-                                transition: .3s ease-out;                     
+                                transition: .3s ease-out;
                             }
-                        }    
-                        
+                        }
+
                         .options {
                             position: static;
-                            text-align: left;   
+                            text-align: left;
 
                             ul.select-options li {
                                 a {
@@ -180,9 +178,8 @@ section.hero.centered {
                                 }
                             }
                         }
-                    }                                                                            
+                    }
                 }
             }
-        }         
+        }
     }
-}
