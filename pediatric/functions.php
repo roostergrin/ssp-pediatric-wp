@@ -75,8 +75,8 @@ $header_classes = [];
 $navigation = null;
 
 add_action('wp_head', function() {
-	$brand = is_brand();	
-	
+	$brand = is_brand();
+
 	if(get_page_template_slug() === 'templates/leg-three.php' || get_page_template_slug() === 'templates/leg-four.php') {
 		?>
 			<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
@@ -92,9 +92,9 @@ add_action('wp_head', function() {
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','<?= $brand->gtm_container_id ?>');</script>
-	
-	<?    
-        $g_measurement_id = get_field('brand_ga4_measurement_id', $brand->ID); 
+
+	<?
+        $g_measurement_id = get_field('brand_ga4_measurement_id', $brand->ID);
         if($g_measurement_id):
     ?>
     <script async src="https://www.googletagmanager.com/gtag/js?id=<?= $g_measurement_id; ?>"></script>
@@ -104,7 +104,7 @@ add_action('wp_head', function() {
     gtag('js', new Date());
     gtag('config', '<?= $g_measurement_id; ?>');
     </script>
-    <? endif; 
+    <? endif;
 });
 
 add_action( 'wp_head', function(){
@@ -112,7 +112,7 @@ add_action( 'wp_head', function(){
 
 	if (is_brand() == 'southmoor' && $post->post_type == 'attachment' && $post->post_mime_type = 'application/pdf') : ?>
 		<link rel="shortcut icon" href="<?= wp_get_attachment_image_url($brand->favicon); ?>" type="image/png" />'
-	<? endif;		
+	<? endif;
 });
 
 add_action('body', function() {
@@ -203,7 +203,7 @@ add_action('after_setup_theme', function() {
 	global $reviews; 					$reviews = new Reviews();
 	global $smile_transformations; 		$smile_transformations = new SmileTransformations();
 	global $insurance_providers; 		$insurance_providers = new InsuranceProviders();
-	global $faqs; 						$faqs = new Faqs();	
+	global $faqs; 						$faqs = new Faqs();
 
 	# Preserve ordering for the following:
 	global $site_404_settings;			$site_404_settings = new \MDG\Site404Settings();
@@ -304,7 +304,7 @@ function add_icon_selection_fields($key) {
 //			'tray' => '<span class="icon-adjust" style="display:flex;align-items:center;line-height:20px;"><img src="'.(get_stylesheet_directory_uri()).'/images/icons/tray.svg" height="20" />&nbsp;&nbsp;Tray</span>',
 //			'two-crosses' => '<span class="icon-adjust" style="display:flex;align-items:center;line-height:20px;"><img src="'.(get_stylesheet_directory_uri()).'/images/icons/two-crosses.svg" height="20" />&nbsp;&nbsp;Two crosses</span>',
 //			'two-people' => '<span class="icon-adjust" style="display:flex;align-items:center;line-height:20px;"><img src="'.(get_stylesheet_directory_uri()).'/images/icons/two-people.svg" height="20" />&nbsp;&nbsp;Two people</span>',
-			
+
 		];
 
 		return $field;
@@ -544,24 +544,24 @@ add_filter('acf/fields/relationship/result/name=provider_location_relationship',
 add_filter('acf/fields/relationship/result/name=insurance_provider_page_relationship', function( $text, $post, $field, $post_id ) {
     global $locations, $brands;
 
-    $brand_id = get_post_meta($post->ID, 'page_brand_relationship', true);        
+    $brand_id = get_post_meta($post->ID, 'page_brand_relationship', true);
     $page_location_id = get_post_meta($post->ID, 'page_location_parent', true);
     if( !empty( $page_location_id ) ) {
         $text .= ' - ' .  $locations->locations[$page_location_id]->post_title;
     } else {
-        if( !empty($brand_id)) {            
-            $brand_name = $brands->brands[$brand_id[0]]->post_title;        
+        if( !empty($brand_id)) {
+            $brand_name = $brands->brands[$brand_id[0]]->post_title;
             $brand_name = str_replace('Orthodontics', '', $brand_name);
             $text .= ' - ' .  $brand_name . ' brand level';
         }
-    }     
-    
+    }
+
     return $text;
 }, 10, 4 );
 
 
-function sim_acf_relationship_query( $args, $field, $post_id ) {    
-    $args['meta_query'] = [];      
+function sim_acf_relationship_query( $args, $field, $post_id ) {
+    $args['meta_query'] = [];
     return $args;
 };
 add_filter('acf/fields/relationship/query/name=meet_the_team_providers_relationship', 'sim_acf_relationship_query', 10, 3 );
@@ -764,7 +764,7 @@ add_filter('post_link', function($post_link, $post, $leavename) {
 add_filter( 'category_link', function( $termlink ) {
 	if( wp_get_theme() == 'PEDIATRIC') {
 		$termlink = str_replace('orthodontic-blog', 'kids-dentist-blog', $termlink);
-	}	
+	}
 
 	return $termlink;
 });
@@ -937,22 +937,22 @@ add_action('wp_after_insert_post', function($post_id, $post, $update) {
 	}
 }, 10, 3);
 
-# Virtualize pages tagged to locations (URL segment length = 3) 
-add_action('wp', function($template) { 
-	global $wp, $wp_post_types; 
- 
+# Virtualize pages tagged to locations (URL segment length = 3)
+add_action('wp', function($template) {
+	global $wp, $wp_post_types;
+
 	$brand = is_brand();
-	$url_segments = explode('/', $wp->request); 
+	$url_segments = explode('/', $wp->request);
 	$this_type = null;
 	$post_parent = null;
-	$post_name = null;	
+	$post_name = null;
 
 	$blog_key = 'kids-dentist-blog';
 	$provider_key = 'pediatric-dental-team';
 	$location_key = 'pediatric-dentist';
-	
 
-	if( is_404() ) {		
+
+	if( is_404() ) {
 
 		if( count( $url_segments ) == 2 ) {
 			$post_name = $url_segments[1];
@@ -960,40 +960,40 @@ add_action('wp', function($template) {
 			$post_parent = 0;
 			$post_type = get_post_type_from_subject($post_subject);
 
-			$p = virtual_redirect_get_post( $post_type, $post_parent, $post_name, $post_subject, $url_segments );	
+			$p = virtual_redirect_get_post( $post_type, $post_parent, $post_name, $post_subject, $url_segments );
 
 			if(!empty($p) && !empty($p->ID)) {
 				do_virtual_page(get_post($p->ID));
 				virtual_redirect_seo( $p->ID );
 				virtual_redirect_template_assignment( $post_type, $this_type );
 			}
-		}				
+		}
 
-		if ( !empty($wp_post_types['location']->rewrite['slug']) && !is_single_location_brand() ) {										
+		if ( !empty($wp_post_types['location']->rewrite['slug']) && !is_single_location_brand() ) {
 			if (count($url_segments) == 3) {
 				if($url_segments[0] == $blog_key){
-					if($url_segments[1] == 'category') {						
+					if($url_segments[1] == 'category') {
 						$post_type = 'post';
 						$this_type = 'archive';
 						$term = get_term_by('slug', $url_segments[2], 'category');
-						$meta_title = $term->name;																				
-			
+						$meta_title = $term->name;
+
 						status_header(200);
 						add_filter('wp_title', function($text) use ($meta_title) { return $meta_title.' | '.do_shortcode('[BRAND_TITLE]'); });
 						add_filter('aioseop_title', function($text) use ($meta_title) { return $meta_title.' | '.do_shortcode('[BRAND_TITLE]'); });
-						virtual_redirect_template_assignment( $post_type, $this_type );						
+						virtual_redirect_template_assignment( $post_type, $this_type );
 						exit;
-					}						
+					}
 				}
 
 				if($url_segments[0] == $location_key) {
 					$location = get_page_by_path($url_segments[1], OBJECT, 'location');
 					$post_name = $url_segments[2];
 					$post_parent = $location->ID ?? 0;
-					$post_type = 'page';					
-				}					
-			} 
-			
+					$post_type = 'page';
+				}
+			}
+
 			if (count($url_segments) == 4) {
 				if($url_segments[0] == $location_key) {
 					$location = get_page_by_path($url_segments[1], OBJECT, 'location');
@@ -1002,47 +1002,47 @@ add_action('wp', function($template) {
 					$post_parent = 0;
 					$post_type = get_post_type_from_subject($post_subject);
 				}
-			} 
-			
+			}
+
 			if (count($url_segments) == 5) {
 				if($url_segments[3] === 'category') {
 					$post_type = 'post';
 					$this_type = 'archive';
 
 					$term = get_term_by('slug', $url_segments[4], 'category');
-					$meta_title = $term->name;					
-	
+					$meta_title = $term->name;
+
 					status_header(200);
 					add_filter('wp_title', function($text) use ($meta_title) { return $meta_title.' | '.do_shortcode('[BRAND_TITLE]'); });
 					add_filter('aioseop_title', function($text) use ($meta_title) { return $meta_title.' | '.do_shortcode('[BRAND_TITLE]'); });
 					virtual_redirect_template_assignment( $post_type, $this_type );
 					exit;
-				}		
-			}		
+				}
+			}
 
-			$p = virtual_redirect_get_post( $post_type, $post_parent, $post_name, $post_subject, $url_segments );			
+			$p = virtual_redirect_get_post( $post_type, $post_parent, $post_name, $post_subject, $url_segments );
 			if(!empty($p) && !empty($p->ID)) {
 				do_virtual_page(get_post($p->ID));
 				virtual_redirect_seo( $p->ID );
 				virtual_redirect_template_assignment( $post_type, $this_type );
 			}
-		} 
+		}
 
-		if( $url_segments[0] === $location_key ) {				
+		if( $url_segments[0] === $location_key ) {
 			if(count($url_segments) == 2) {
 				$post_name = $url_segments[1];
-				$post_parent = 0;			
-				$post_type = 'location';	
+				$post_parent = 0;
+				$post_type = 'location';
 				$p = virtual_redirect_get_post( $post_type, $post_parent, $post_name );
 
 				// don't know if this is ever accessed???
 				print_stmt('entered inside the location function', 1);
 
-				if(!empty($p) && !empty($p->ID)) {												
+				if(!empty($p) && !empty($p->ID)) {
 					do_virtual_page(get_post($p->ID));
 					virtual_redirect_seo( $p->ID );
 					virtual_redirect_template_assignment( $post_type );
-				}					
+				}
 			} elseif( count($url_segments) === 1 ) {
 				$meta_title = 'Locations';
 				$meta_description = 'Find an pediatric dentist near you! Serving communities in Centennial and Denver.';
@@ -1052,17 +1052,17 @@ add_action('wp', function($template) {
 				add_filter('aioseop_description', function($text) use ($meta_description) { return $meta_description; });
 
 				status_header(200);
-				
+
 				include_once get_stylesheet_directory().'/archive-location.php';
 				exit;
 			}
 		}
-		
+
 		if( $url_segments[0] === $blog_key ) {
 			if(count($url_segments) == 2) {
 				$post_name = $url_segments[1];
 				$post_subject = $url_segments[0];
-				$post_parent = 0;				
+				$post_parent = 0;
 				$post_type = get_post_type_from_subject($post_subject);
 
 				$p = virtual_redirect_get_post( $post_type, $post_parent, $post_name );
@@ -1070,15 +1070,15 @@ add_action('wp', function($template) {
 				if(!empty($p) && !empty($p->ID)) {
 					do_virtual_page(get_post($p->ID));
 					virtual_redirect_seo( $p->ID );
-					virtual_redirect_template_assignment( $post_type );																
+					virtual_redirect_template_assignment( $post_type );
 				}
 			}
-		} 
-		
+		}
+
 		if( $url_segments[0] === $provider_key ) {
 			if(count($url_segments) == 2) {
 				$post_name = $url_segments[1];
-				$post_parent = 0;			
+				$post_parent = 0;
 				$post_type = get_post_type_from_subject($provider_key);
 
 				$p = virtual_redirect_get_post( $post_type, $post_parent, $post_name );
@@ -1091,7 +1091,7 @@ add_action('wp', function($template) {
 			}
 		}
 	}
-}); 
+});
 
 function get_post_type_from_subject($subject) {
 	$blog_key = 'kids-dentist-blog';
@@ -1117,7 +1117,7 @@ function virtual_redirect_seo($id) {
 }
 
 function virtual_redirect_template_assignment( $post_type, $this_type = null ) {
-	
+
 	if( $this_type != null ){
 		if ($post_type === 'post' && $this_type === 'archive') {
 			include_once get_stylesheet_directory().'/templates/blog.php';
@@ -1129,7 +1129,7 @@ function virtual_redirect_template_assignment( $post_type, $this_type = null ) {
 		case 'post':
 			include_once get_stylesheet_directory().'/single.php';
 			break; exit;
-	
+
 		case 'provider':
 			include_once get_stylesheet_directory().'/single-provider.php';
 			break; exit;
@@ -1137,19 +1137,19 @@ function virtual_redirect_template_assignment( $post_type, $this_type = null ) {
 		case 'location':
 			include_once get_stylesheet_directory().'/single-location.php';
 			break; exit;
-	}	
+	}
 }
 
-function virtual_redirect_get_post( $post_type, $post_parent, $post_name, $post_subject = null, $url_segments = null ) {			
-	if( !empty($post_type) ){		
+function virtual_redirect_get_post( $post_type, $post_parent, $post_name, $post_subject = null, $url_segments = null ) {
+	if( !empty($post_type) ){
 		$query_params = [
 			'post_type' => $post_type,
 			'post_parent' => $post_parent,
 			'name' => $post_name,
 			'posts_per_page' => 1,
 			'post_status' => 'publish',
-		];	
-		
+		];
+
 		if( $url_segments != null && $post_subject == 'kids-dentist-blog' ){
 			$brand = is_brand();
 			$query_params['meta_query'] = [
@@ -1158,7 +1158,7 @@ function virtual_redirect_get_post( $post_type, $post_parent, $post_name, $post_
 					'value' => $brand->ID,
 					'compare' => 'LIKE'
 				]
-			];                
+			];
 		}
 
 		$q = new WP_Query($query_params);
@@ -1333,37 +1333,37 @@ add_filter('aioseop_canonical_url', function($url) {
 	$url = empty($relative_url) ? brand_url('/') : brand_url('/'.get_relative_pediatric_location_url($relative_url).'/');
 	$this_type = $post_name = null;
 	$post_parent = 0;
-	
+
 	if(count($segments) == 3 || count($segments) == 4 || count($segments) == 5) {
 		$location = get_page_by_path($segments[1], OBJECT, 'location');
-		if(empty($location)) return $url;		
+		if(empty($location)) return $url;
 
 		if (count($segments) == 3) {
 			$post_name = $segments[2];
 			$post_parent = $location->ID;
 			$post_type = 'page';
-		} 
-		
+		}
+
 		if (count($segments) == 4) {
 			$post_name = $segments[3];
 			$post_subject = $segments[2];
-			
+
 			if ($post_subject === 'kids-dentist-blog') $post_type = 'post';
 			if ($post_subject === 'pediatric-dental-team') $post_type = 'provider';
 			if ($post_subject === 'pediatric-dentist') $post_type = 'location';
-		} 
-		
+		}
+
 		if (count($segments) == 5 && $segments[3] === 'category') {
 			$post_type = 'post';
 			$this_type = 'archive';
 		}
 
-		if($this_type == 'archive') {            
+		if($this_type == 'archive') {
             $term = get_term_by('slug', $segments[4], 'category');
             $term_path = get_relative_url( get_term_link( $term->term_id ) );
             $url = brand_host().'/'.get_relative_pediatric_location_url($segments[0]).'/'.$segments[1].'/'.($term_path).'/';
             return $url;
-        } 
+        }
 
 		$q = new WP_Query([
 			'post_type' => $post_type,
@@ -1382,37 +1382,37 @@ add_filter('aioseop_canonical_url', function($url) {
             ($post_type === 'post' && $this_type != 'archive')
           ) {
             $url = brand_host().'/'.get_relative_pediatric_location_url($segments[0]).'/'.$segments[1].'/'.get_relative_pediatric_provider_url($relative_url).'/';
-        } 
+        }
 	}
 
 	return $url;
 }, 1e6, 1);
 
 // All in One SEO sitemap.xml filters
-add_filter('aiosp_sitemap_data', function($sitemap_data, $sitemap_type, $page_number, $aioseop_options) {
+add_filter('aioseo_sitemap_indexes', function( $indexes ) {
 	$brand = is_brand();
-	$sitemap_data = [];
+	$indexes = [];
 	$location_objects = get_locations_for_brand($brand->ID);
 	usort($location_objects, function($a, $b) {
 		return $a->post_title <=> $b->post_title;
 	});
 	if ($sitemap_type == 'root') {
-		$sitemap_data[] = [
+		$indexes[] = [
 			'loc' => brand_host().'/post-sitemap.xml',
 			'changefreq' => 'weekly',
 			'priority' => 0.7,
 		];
-		$sitemap_data[] = [
+		$indexes[] = [
 			'loc' => site_url('/page-sitemap.xml'),
 			'changefreq' => 'weekly',
 			'priority' => 0.7,
 		];
-		$sitemap_data[] = [
+		$indexes[] = [
 			'loc' => brand_host().'/location-sitemap.xml',
 			'changefreq' => 'weekly',
 			'priority' => 0.7,
 		];
-		$sitemap_data[] = [
+		$indexes[] = [
 			'loc' => site_url('/provider-sitemap.xml'),
 			'changefreq' => 'weekly',
 			'priority' => 0.7,
@@ -1442,7 +1442,7 @@ add_filter('aiosp_sitemap_data', function($sitemap_data, $sitemap_type, $page_nu
 				}
 			}
 		}
-		$sitemap_data = array_merge($sitemap_data, $posts_sitemap);
+		$indexes = array_merge($indexes, $posts_sitemap);
 	} elseif ($sitemap_type == 'page') {
 		// Filter out pages for brand
 		$pages_sitemap = [];
@@ -1463,7 +1463,7 @@ add_filter('aiosp_sitemap_data', function($sitemap_data, $sitemap_type, $page_nu
 				];
 			}
 		}
-		$sitemap_data = array_merge($sitemap_data, $pages_sitemap);
+		$indexes = array_merge($indexes, $pages_sitemap);
 	} elseif ($sitemap_type == 'location') {
 		// Filter out pages for brand
 		$locations_sitemap = [];
@@ -1477,7 +1477,7 @@ add_filter('aiosp_sitemap_data', function($sitemap_data, $sitemap_type, $page_nu
 				];
 			}
 		}
-		$sitemap_data = array_merge($sitemap_data, $locations_sitemap);
+		$indexes = array_merge($indexes, $locations_sitemap);
 	} elseif ($sitemap_type == 'provider') {
 		// Filter out pages for brand
 		$providers_sitemap = [];
@@ -1508,11 +1508,11 @@ add_filter('aiosp_sitemap_data', function($sitemap_data, $sitemap_type, $page_nu
 				}
 			}
 		}
-		
-		$sitemap_data = array_merge($sitemap_data, $providers_sitemap);
+
+		$indexes = array_merge($indexes, $providers_sitemap);
 	}
 
-	return $sitemap_data;
+	return $indexes;
 }, 10, 4);
 
 add_filter('body_class', function($class) {
@@ -1558,7 +1558,7 @@ add_filter('body_class', function($class) {
 
 	// add brand to body tag class
     if($brand != false) $body_class = array_merge($body_class, [$brand->post_name]);
-	
+
 	return $body_class;
 });
 
@@ -1907,7 +1907,7 @@ add_action('wp_enqueue_media', function() {
 	wp_localize_script('media-library-taxonomy-filter', 'BrandMediaLibraryTaxonomyFilterData', [
 		'terms' => get_terms('brand', ['hide_empty' => false])
 	]);
-	
+
 	wp_localize_script('media-library-taxonomy-filter', 'PageMediaLibraryTaxonomyFilterData', [
 		'terms' => get_terms('page_name', ['hide_empty' => false])
 	]);
@@ -1986,33 +1986,33 @@ add_action('wp_enqueue_media', function() {
 function filter_attachments_by_brand_filter() {
     $screen = get_current_screen();
     if ( 'upload' == $screen->id ) {
-        $dropdown_options = array( 
-            'taxonomy' => 'brand', 
-            'show_option_all' => __( 'View all Brands', 'Brands' ), 
-            'hide_empty' => false, 
+        $dropdown_options = array(
+            'taxonomy' => 'brand',
+            'show_option_all' => __( 'View all Brands', 'Brands' ),
+            'hide_empty' => false,
             'hierarchical' => false,
             'value_field'       => 'slug',
-            'name'              => 'brand', 
+            'name'              => 'brand',
             'orderby' => 'name', );
         wp_dropdown_categories( $dropdown_options );
 
-		$dropdown_options_page = array( 
-            'taxonomy' => 'page_name', 
+		$dropdown_options_page = array(
+            'taxonomy' => 'page_name',
             'show_option_all' => 'View all Pages',
-            'hide_empty' => false, 
+            'hide_empty' => false,
             'hierarchical' => false,
             'value_field'       => 'slug',
-            'name'              => 'page_name', 
+            'name'              => 'page_name',
             'orderby' => 'name', );
         wp_dropdown_categories( $dropdown_options_page );
 
-		$dropdown_options_placement = array( 
-            'taxonomy' => 'placement', 
-            'show_option_all' => __( 'View all Placements', 'Placements' ), 
-            'hide_empty' => false, 
+		$dropdown_options_placement = array(
+            'taxonomy' => 'placement',
+            'show_option_all' => __( 'View all Placements', 'Placements' ),
+            'hide_empty' => false,
             'hierarchical' => false,
             'value_field'       => 'slug',
-            'name'              => 'placement', 
+            'name'              => 'placement',
             'orderby' => 'name', );
         wp_dropdown_categories( $dropdown_options_placement );
     }
@@ -2031,7 +2031,7 @@ function filter_pages_by_brand_dropdown() {
 			foreach($brands->brands as $brand) {
 				$choices[$brand->ID] = $brand->post_title;
 			}
-	
+
 		echo'<select name="'. $meta_val .'">';
 			echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>All Brands</option>';
 			foreach( $choices as $key => $value ) {
@@ -2046,7 +2046,7 @@ function filter_pages_by_brand_filter($query) {
 	if(is_admin() && array_key_exists( 'post_type', $_GET )) {
 		if ( $query->is_main_query() && $_GET['post_type'] == 'page' || $_GET['post_type'] == 'post') {
 			$_GET['post_type'] == 'page' ? $meta_val = 'page_brand_relationship' : $meta_val = 'post_brand_relationship';
-	
+
 			if (isset($_GET[$meta_val]) && $_GET[$meta_val] != 'all') {
 			$query->set('meta_query', array( array(
 				'key' => $meta_val,
@@ -2056,7 +2056,7 @@ function filter_pages_by_brand_filter($query) {
 		}
 	}
 }
-add_action('pre_get_posts','filter_pages_by_brand_filter'); 
+add_action('pre_get_posts','filter_pages_by_brand_filter');
 
 //	Filter providers
 function filter_providers_by_brand_dropdown() {
@@ -2069,7 +2069,7 @@ function filter_providers_by_brand_dropdown() {
 		foreach($brands->brands as $brand) {
 			$choices[$brand->ID] = $brand->post_title;
 		}
-	
+
 		echo'<select name="'. $meta_val .'">';
 			echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>All Brands</option>';
 			foreach( $choices as $key => $value ) {
@@ -2092,7 +2092,7 @@ function filter_providers_by_brand_filter($query) {
 		}
     }
 }
-add_action('pre_get_posts','filter_providers_by_brand_filter'); 
+add_action('pre_get_posts','filter_providers_by_brand_filter');
 
 //	Filter Smile Transformations
 function filter_smile_transformations_by_region_dropdown() {
@@ -2105,7 +2105,7 @@ function filter_smile_transformations_by_region_dropdown() {
 		foreach($regions->regions as $region) {
 			$choices[$region->ID] = $region->post_title;
 		}
-	
+
 		echo'<select name="'. $meta_val .'">';
 			echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>All regions</option>';
 			foreach( $choices as $key => $value ) {
@@ -2128,7 +2128,7 @@ function filter_smile_transformations_by_region_filter($query) {
 		}
     }
 }
-add_action('pre_get_posts','filter_smile_transformations_by_region_filter'); 
+add_action('pre_get_posts','filter_smile_transformations_by_region_filter');
 
 //	Filter locations
 function filter_locations_by_brand_dropdown() {
@@ -2141,7 +2141,7 @@ function filter_locations_by_brand_dropdown() {
 		foreach($brands->brands as $brand) {
 			$choices[$brand->ID] = $brand->post_title;
 		}
-	
+
 		echo'<select name="'. $meta_val .'">';
 			echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>All Brands</option>';
 			foreach( $choices as $key => $value ) {
@@ -2164,7 +2164,7 @@ function filter_locations_by_brand_filter($query) {
 		}
     }
 }
-add_action('pre_get_posts','filter_locations_by_brand_filter'); 
+add_action('pre_get_posts','filter_locations_by_brand_filter');
 
 //	Filter reviews
 function filter_reviews_by_brand_dropdown() {
@@ -2177,7 +2177,7 @@ function filter_reviews_by_brand_dropdown() {
 		foreach($brands->brands as $brand) {
 			$choices[$brand->ID] = $brand->post_title;
 		}
-	
+
 		echo'<select name="'. $meta_val .'">';
 			echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>All Brands</option>';
 			foreach( $choices as $key => $value ) {
@@ -2200,7 +2200,7 @@ function filter_reviews_by_brand_filter($query) {
 		}
     }
 }
-add_action('pre_get_posts','filter_reviews_by_brand_filter'); 
+add_action('pre_get_posts','filter_reviews_by_brand_filter');
 
 //	Filter Edu associations by Provider
 function filter_edu_associations_by_provider_dropdown() {
@@ -2213,7 +2213,7 @@ function filter_edu_associations_by_provider_dropdown() {
 		foreach($providers->providers as $provider) {
 			$choices[$provider->ID] = $provider->post_title;
 		}
-	
+
 		echo'<select name="'. $meta_val .'">';
 			echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>All Providers</option>';
 			foreach( $choices as $key => $value ) {
@@ -2236,7 +2236,7 @@ function filter_edu_associations_by_provider_filter($query) {
 		}
     }
 }
-add_action('pre_get_posts','filter_edu_associations_by_provider_filter'); 
+add_action('pre_get_posts','filter_edu_associations_by_provider_filter');
 
 // Filter Edu associations by Brand
 function filter_edu_associations_by_brand_dropdown() {
@@ -2249,7 +2249,7 @@ function filter_edu_associations_by_brand_dropdown() {
 		foreach($brands->brands as $brand) {
 			$choices[$brand->ID] = $brand->post_title;
 		}
-	
+
 		echo'<select name="'. $meta_val .'">';
 			echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>All Brands</option>';
 			foreach( $choices as $key => $value ) {
@@ -2265,7 +2265,7 @@ function filter_edu_associations_by_brand_filter($query) {
 
 	if(is_admin() && isset($_GET['post_type']) && $_GET['post_type'] === 'edu_association' && $query->is_main_query()) {
 		$meta_val = 'edu_association_brand_relationship';
-		
+
 		if( isset($_GET[$meta_val]) && $_GET[$meta_val] != 'all' ) {
 			$provider_id_listing = $wpdb->get_var( "SELECT GROUP_CONCAT(p.ID SEPARATOR '|') as providerIDs FROM $wpdb->posts p WHERE ID in ( SELECT pm.post_id as pId FROM $wpdb->postmeta pm WHERE pm.meta_key = 'provider_brand_relationship' AND pm.meta_value LIKE '%$_GET[$meta_val]%' ) AND p.post_status = 'publish'" );
 
@@ -2274,12 +2274,12 @@ function filter_edu_associations_by_brand_filter($query) {
 					'key' => 'edu_association_provider_relationship',
 					'value' => $provider_id_listing,
 					'compare' => 'REGEXP'
-				) 
+				)
 			) );
 		}
     }
 }
-add_action('pre_get_posts','filter_edu_associations_by_brand_filter'); 
+add_action('pre_get_posts','filter_edu_associations_by_brand_filter');
 
 //	Filter Edu associations by Region
 function filter_edu_associations_by_region_dropdown() {
@@ -2292,7 +2292,7 @@ function filter_edu_associations_by_region_dropdown() {
 		foreach($regions->regions as $region) {
 			$choices[$region->ID] = $region->post_title;
 		}
-	
+
 		echo'<select name="'. $meta_val .'">';
 			echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>All Regions</option>';
 			foreach( $choices as $key => $value ) {
@@ -2319,7 +2319,7 @@ function filter_edu_associations_by_region_filter($query) {
 
 				foreach ($providers_for_location as $inner_key => $provider) {
 					$provider_id_listing_str .= $provider->post_id;
-					
+
 					if ( (COUNT($providers_for_location) - 1) > $inner_key) {
 						$provider_id_listing_str .= '|';
 					}
@@ -2335,12 +2335,12 @@ function filter_edu_associations_by_region_filter($query) {
 					'key' => 'edu_association_provider_relationship',
 					'value' => $provider_id_listing_str,
 					'compare' => 'REGEXP'
-				) 
+				)
 			) );
 		}
     }
 }
-add_action('pre_get_posts','filter_edu_associations_by_region_filter'); 
+add_action('pre_get_posts','filter_edu_associations_by_region_filter');
 
 //	Filter Professional Associations by Provider
 function filter_pro_affiliations_by_provider_dropdown() {
@@ -2353,7 +2353,7 @@ function filter_pro_affiliations_by_provider_dropdown() {
 		foreach($providers->providers as $provider) {
 			$choices[$provider->ID] = $provider->post_title;
 		}
-	
+
 		echo'<select name="'. $meta_val .'">';
 			echo '<option value="all" '. (( $selected == 'all' ) ? 'selected="selected"' : "") . '>All Providers</option>';
 			foreach( $choices as $key => $value ) {
@@ -2376,4 +2376,4 @@ function filter_pro_affiliations_by_provider_filter($query) {
 		}
     }
 }
-add_action('pre_get_posts','filter_pro_affiliations_by_provider_filter'); 
+add_action('pre_get_posts','filter_pro_affiliations_by_provider_filter');
