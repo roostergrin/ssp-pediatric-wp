@@ -1390,7 +1390,7 @@ add_filter('aioseop_canonical_url', function($url) {
 
 // All in One SEO sitemap.xml filters
 add_filter('aioseo_sitemap_indexes', function( $indexes ) {
-	console.log($indexes)
+	echo $indexes;
 	$brand = is_brand();
 	$indexes = [];
 	$location_objects = get_locations_for_brand($brand->ID);
