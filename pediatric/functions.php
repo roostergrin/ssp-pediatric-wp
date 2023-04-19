@@ -1389,31 +1389,30 @@ add_filter('aioseop_canonical_url', function($url) {
 }, 1e6, 1);
 
 // All in One SEO sitemap.xml filters
-add_filter('aioseo_sitemap_indexes', function( $indexes ) {
-	// echo $indexes;
+add_filter('aiosp_sitemap_data', function($sitemap_data, $sitemap_type, $page_number, $aioseop_options) {
 	$brand = is_brand();
-	$indexes = [];
+	$sitemap_data = [];
 	$location_objects = get_locations_for_brand($brand->ID);
 	usort($location_objects, function($a, $b) {
 		return $a->post_title <=> $b->post_title;
 	});
 	if ($sitemap_type == 'root') {
-		$indexes[] = [
+		$sitemap_data[] = [
 			'loc' => brand_host().'/post-sitemap.xml',
 			'changefreq' => 'weekly',
 			'priority' => 0.7,
 		];
-		$indexes[] = [
+		$sitemap_data[] = [
 			'loc' => site_url('/page-sitemap.xml'),
 			'changefreq' => 'weekly',
 			'priority' => 0.7,
 		];
-		$indexes[] = [
+		$sitemap_data[] = [
 			'loc' => brand_host().'/location-sitemap.xml',
 			'changefreq' => 'weekly',
 			'priority' => 0.7,
 		];
-		$indexes[] = [
+		$sitemap_data[] = [
 			'loc' => site_url('/provider-sitemap.xml'),
 			'changefreq' => 'weekly',
 			'priority' => 0.7,
@@ -1443,7 +1442,7 @@ add_filter('aioseo_sitemap_indexes', function( $indexes ) {
 				}
 			}
 		}
-		$indexes = array_merge($indexes, $posts_sitemap);
+		$sitemap_data = array_merge($sitemap_data, $posts_sitemap);
 	} elseif ($sitemap_type == 'page') {
 		// Filter out pages for brand
 		$pages_sitemap = [];
@@ -1464,7 +1463,7 @@ add_filter('aioseo_sitemap_indexes', function( $indexes ) {
 				];
 			}
 		}
-		$indexes = array_merge($indexes, $pages_sitemap);
+		$sitemap_data = array_merge($sitemap_data, $pages_sitemap);
 	} elseif ($sitemap_type == 'location') {
 		// Filter out pages for brand
 		$locations_sitemap = [];
@@ -1478,7 +1477,7 @@ add_filter('aioseo_sitemap_indexes', function( $indexes ) {
 				];
 			}
 		}
-		$indexes = array_merge($indexes, $locations_sitemap);
+		$sitemap_data = array_merge($sitemap_data, $locations_sitemap);
 	} elseif ($sitemap_type == 'provider') {
 		// Filter out pages for brand
 		$providers_sitemap = [];
@@ -1510,10 +1509,10 @@ add_filter('aioseo_sitemap_indexes', function( $indexes ) {
 			}
 		}
 
-		$indexes = array_merge($indexes, $providers_sitemap);
+		$sitemap_data = array_merge($sitemap_data, $providers_sitemap);
 	}
 
-	return $indexes;
+	return $sitemap_data;
 }, 10, 4);
 
 add_filter('body_class', function($class) {
