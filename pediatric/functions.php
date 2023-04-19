@@ -1389,130 +1389,134 @@ add_filter('aioseop_canonical_url', function($url) {
 }, 1e6, 1);
 
 // All in One SEO sitemap.xml filters
-add_filter('aiosp_sitemap_data', function($sitemap_data, $sitemap_type, $page_number, $aioseop_options) {
-	$brand = is_brand();
-	$sitemap_data = [];
-	$location_objects = get_locations_for_brand($brand->ID);
-	usort($location_objects, function($a, $b) {
-		return $a->post_title <=> $b->post_title;
-	});
-	if ($sitemap_type == 'root') {
-		$sitemap_data[] = [
-			'loc' => brand_host().'/post-sitemap.xml',
-			'changefreq' => 'weekly',
-			'priority' => 0.7,
-		];
-		$sitemap_data[] = [
-			'loc' => site_url('/page-sitemap.xml'),
-			'changefreq' => 'weekly',
-			'priority' => 0.7,
-		];
-		$sitemap_data[] = [
-			'loc' => brand_host().'/location-sitemap.xml',
-			'changefreq' => 'weekly',
-			'priority' => 0.7,
-		];
-		$sitemap_data[] = [
-			'loc' => site_url('/provider-sitemap.xml'),
-			'changefreq' => 'weekly',
-			'priority' => 0.7,
-		];
-	} elseif ($sitemap_type == 'post') {
-		// Filter out posts for brand
-		$posts_sitemap = [];
-		$post_slugs = list_all_blogs(true);
-		if (!empty($post_slugs)) {
-			foreach ($post_slugs as $post) {
-				$post_url = get_permalink($post->ID);
-				$relative_url = get_relative_url($post_url);
-				$posts_sitemap[] = [
-					'loc' => brand_url('/'.($relative_url).'/'),
-					'changefreq' => 'weekly',
-					'priority' => 0.7,
-				];
-				if (!empty($location_objects && !is_single_location_brand())) {
-					foreach ($location_objects as $location) {
-						$location_url = brand_url('/'.get_relative_pediatric_location_url($location->relative_url).'/kids-dentist-blog/'.$post->post_name.'/');
-						$posts_sitemap[] = [
-							'loc' => $location_url,
-							'changefreq' => 'weekly',
-							'priority' => 0.7,
-						];
-					}
-				}
-			}
-		}
-		$sitemap_data = array_merge($sitemap_data, $posts_sitemap);
-	} elseif ($sitemap_type == 'page') {
-		// Filter out pages for brand
-		$pages_sitemap = [];
-		$exclusions = sitemap_exclusions();
-		$page_slugs = list_all_pages(true);
-		if (!empty($page_slugs)) {
-			usort($page_slugs, function($a, $b) {
-				return $a->post_title <=> $b->post_title;
-			});
-			foreach ($page_slugs as $page) {
-				$url = get_permalink($page->ID);
-				$relative_url = get_relative_url($url);
-				if (in_array($page->post_name, $exclusions)) continue;
-				$pages_sitemap[] = [
-					'loc' => brand_url('/'.get_relative_pediatric_location_url($relative_url).'/'),
-					'changefreq' => 'weekly',
-					'priority' => 0.7,
-				];
-			}
-		}
-		$sitemap_data = array_merge($sitemap_data, $pages_sitemap);
-	} elseif ($sitemap_type == 'location') {
-		// Filter out pages for brand
-		$locations_sitemap = [];
-		if (!empty($location_objects)) {
-			foreach ($location_objects as $location) {
-				$url = !is_single_location_brand() ? brand_url('/'.get_relative_pediatric_location_url($location->relative_url).'/') : brand_url('/');
-				$locations_sitemap[] = [
-					'loc' => $url,
-					'changefreq' => 'weekly',
-					'priority' => 0.7,
-				];
-			}
-		}
-		$sitemap_data = array_merge($sitemap_data, $locations_sitemap);
-	} elseif ($sitemap_type == 'provider') {
-		// Filter out pages for brand
-		$providers_sitemap = [];
-		$provider_objects = get_providers();
-		if (!empty($provider_objects)) {
-			usort($provider_objects, function($a, $b) {
-				return $a->menu_order <=> $b->menu_order;
-			});
-			foreach ($provider_objects as $provider) {
-				$provider_url = brand_url('/'.get_relative_pediatric_provider_url($provider->relative_url).'/');
-				$location_provider_relationship = !empty($provider->location_relationship) ? unserialize($provider->location_relationship) : false;
-				$providers_sitemap[] = [
-					'loc' => $provider_url,
-					'changefreq' => 'weekly',
-					'priority' => 0.7,
-				];
-				if (!empty($location_objects && !is_single_location_brand())) {
-					foreach ($location_objects as $location) {
-						if (in_array($location->ID, $location_provider_relationship)) {
-							$location_url = brand_url('/'.get_relative_pediatric_location_url($location->relative_url).'/pediatric-dental-team/'.$provider->post_name.'/');
-							$providers_sitemap[] = [
-								'loc' => $location_url,
-								'changefreq' => 'weekly',
-								'priority' => 0.7,
-							];
-						}
-					}
-				}
-			}
-		}
+add_filter('aioseo_sitemap_indexes', function($indexes) {
+	echo $indexes
+	$indexes[] = [
+		'loc'     => 'https://somedomain.com/custom-sitemap.xml'
+	];
+// 	$brand = is_brand();
+// 	$sitemap_data = [];
+// 	$location_objects = get_locations_for_brand($brand->ID);
+// 	usort($location_objects, function($a, $b) {
+// 		return $a->post_title <=> $b->post_title;
+// 	});
+// 	if ($sitemap_type == 'root') {
+// 		$sitemap_data[] = [
+// 			'loc' => brand_host().'/post-sitemap.xml',
+// 			'changefreq' => 'weekly',
+// 			'priority' => 0.7,
+// 		];
+// 		$sitemap_data[] = [
+// 			'loc' => site_url('/page-sitemap.xml'),
+// 			'changefreq' => 'weekly',
+// 			'priority' => 0.7,
+// 		];
+// 		$sitemap_data[] = [
+// 			'loc' => brand_host().'/location-sitemap.xml',
+// 			'changefreq' => 'weekly',
+// 			'priority' => 0.7,
+// 		];
+// 		$sitemap_data[] = [
+// 			'loc' => site_url('/provider-sitemap.xml'),
+// 			'changefreq' => 'weekly',
+// 			'priority' => 0.7,
+// 		];
+// 	} elseif ($sitemap_type == 'post') {
+// 		// Filter out posts for brand
+// 		$posts_sitemap = [];
+// 		$post_slugs = list_all_blogs(true);
+// 		if (!empty($post_slugs)) {
+// 			foreach ($post_slugs as $post) {
+// 				$post_url = get_permalink($post->ID);
+// 				$relative_url = get_relative_url($post_url);
+// 				$posts_sitemap[] = [
+// 					'loc' => brand_url('/'.($relative_url).'/'),
+// 					'changefreq' => 'weekly',
+// 					'priority' => 0.7,
+// 				];
+// 				if (!empty($location_objects && !is_single_location_brand())) {
+// 					foreach ($location_objects as $location) {
+// 						$location_url = brand_url('/'.get_relative_pediatric_location_url($location->relative_url).'/kids-dentist-blog/'.$post->post_name.'/');
+// 						$posts_sitemap[] = [
+// 							'loc' => $location_url,
+// 							'changefreq' => 'weekly',
+// 							'priority' => 0.7,
+// 						];
+// 					}
+// 				}
+// 			}
+// 		}
+// 		$sitemap_data = array_merge($sitemap_data, $posts_sitemap);
+// 	} elseif ($sitemap_type == 'page') {
+// 		// Filter out pages for brand
+// 		$pages_sitemap = [];
+// 		$exclusions = sitemap_exclusions();
+// 		$page_slugs = list_all_pages(true);
+// 		if (!empty($page_slugs)) {
+// 			usort($page_slugs, function($a, $b) {
+// 				return $a->post_title <=> $b->post_title;
+// 			});
+// 			foreach ($page_slugs as $page) {
+// 				$url = get_permalink($page->ID);
+// 				$relative_url = get_relative_url($url);
+// 				if (in_array($page->post_name, $exclusions)) continue;
+// 				$pages_sitemap[] = [
+// 					'loc' => brand_url('/'.get_relative_pediatric_location_url($relative_url).'/'),
+// 					'changefreq' => 'weekly',
+// 					'priority' => 0.7,
+// 				];
+// 			}
+// 		}
+// 		$sitemap_data = array_merge($sitemap_data, $pages_sitemap);
+// 	} elseif ($sitemap_type == 'location') {
+// 		// Filter out pages for brand
+// 		$locations_sitemap = [];
+// 		if (!empty($location_objects)) {
+// 			foreach ($location_objects as $location) {
+// 				$url = !is_single_location_brand() ? brand_url('/'.get_relative_pediatric_location_url($location->relative_url).'/') : brand_url('/');
+// 				$locations_sitemap[] = [
+// 					'loc' => $url,
+// 					'changefreq' => 'weekly',
+// 					'priority' => 0.7,
+// 				];
+// 			}
+// 		}
+// 		$sitemap_data = array_merge($sitemap_data, $locations_sitemap);
+// 	} elseif ($sitemap_type == 'provider') {
+// 		// Filter out pages for brand
+// 		$providers_sitemap = [];
+// 		$provider_objects = get_providers();
+// 		if (!empty($provider_objects)) {
+// 			usort($provider_objects, function($a, $b) {
+// 				return $a->menu_order <=> $b->menu_order;
+// 			});
+// 			foreach ($provider_objects as $provider) {
+// 				$provider_url = brand_url('/'.get_relative_pediatric_provider_url($provider->relative_url).'/');
+// 				$location_provider_relationship = !empty($provider->location_relationship) ? unserialize($provider->location_relationship) : false;
+// 				$providers_sitemap[] = [
+// 					'loc' => $provider_url,
+// 					'changefreq' => 'weekly',
+// 					'priority' => 0.7,
+// 				];
+// 				if (!empty($location_objects && !is_single_location_brand())) {
+// 					foreach ($location_objects as $location) {
+// 						if (in_array($location->ID, $location_provider_relationship)) {
+// 							$location_url = brand_url('/'.get_relative_pediatric_location_url($location->relative_url).'/pediatric-dental-team/'.$provider->post_name.'/');
+// 							$providers_sitemap[] = [
+// 								'loc' => $location_url,
+// 								'changefreq' => 'weekly',
+// 								'priority' => 0.7,
+// 							];
+// 						}
+// 					}
+// 				}
+// 			}
+// 		}
 
-		$sitemap_data = array_merge($sitemap_data, $providers_sitemap);
-	}
+	// 	$sitemap_data = array_merge($sitemap_data, $providers_sitemap);
+	// }
 
-	return $sitemap_data;
+	return $indexes;
 }, 10, 4);
 
 add_filter('body_class', function($class) {
