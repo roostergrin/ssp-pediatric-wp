@@ -6596,7 +6596,7 @@ if(function_exists('acf_add_local_field_group')) {
 				'layout' => 'block',
 				'sub_fields' => [
 					[
-						'key' => 'financing_section_two_desktop_hero',
+						'key' => 'desktop_hero',
 						'name' => 'desktop_hero',
 						'label' => 'Desktop Hero',
 						'type' => 'image',
@@ -6610,7 +6610,7 @@ if(function_exists('acf_add_local_field_group')) {
 						],
 					],
 					[
-						'key' => 'financing_section_two_heading',
+						'key' => 'heading',
 						'name' => 'heading',
 						'label' => 'Heading',
 						'type' => 'text',
@@ -6619,7 +6619,7 @@ if(function_exists('acf_add_local_field_group')) {
 						],
 					],
 					[
-						'key' => 'financing_section_two_cta',
+						'key' => 'cta',
 						'name' => 'cta',
 						'label' => 'Shortcode',
 						'type' => 'text',
@@ -6628,7 +6628,7 @@ if(function_exists('acf_add_local_field_group')) {
 						],
 					],
 					[
-						'key' => 'financing_section_two_content',
+						'key' => 'content',
 						'name' => 'content',
 						'label' => 'Content',
 						'type' => 'wysiwyg',
