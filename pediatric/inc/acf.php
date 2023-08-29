@@ -6656,6 +6656,19 @@ if(function_exists('acf_add_local_field_group')) {
 				],
 			],
 			[
+				'key' => 'financing_options_section_three_copy',
+				'name' => 'financing_options_section_three_copy',
+				'label' => 'Section Copy',
+				'type' => 'wysiwyg',
+				'tabs' => 'all',
+				'toolbar' => 'simple',
+				'media_upload' => 0,
+				'delay' => 0,
+				'wrapper' => [
+					'width' => 100,
+				],
+			],
+			[
 				'key' => 'financing_options_section_three_slide_0',
 				'name' => 'financing_options_section_three_slide_0',
 				'label' => 'Slide 1',

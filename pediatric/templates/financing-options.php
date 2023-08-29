@@ -34,7 +34,7 @@ partial('section.wrapper', [
 
 $sec_2_main_img_id = get_post_meta(get_the_id(), 'financing_section_two_group_desktop_hero', true);
 partial('section.pediatric.split-static', [
-  'classes' => ['big-img-left'],
+  'classes' => ['overlap-top'],
   'heading' => get_post_meta(get_the_id(), 'financing_section_two_group_heading', true),
   'heading_classes' => ['line-height-1', 'h1', 'mb-20'],
   'copy' => apply_filters('the_content',get_post_meta(get_the_id(), 'financing_section_two_group_content', true)),
@@ -78,6 +78,7 @@ partial('section.wrapper', [
                 'classes' => ['bg-gray', $sec_three_icons_main_color, 'icons-red'],
                 'heading' => get_post_meta(get_the_ID(), 'financing_options_section_three_heading', true),
                 'heading_classes' => [$sec_three_icons_main_color, 'h2'],
+                'copy' => get_post_meta(get_the_ID(), 'financing_options_section_three_copy', true),
                 'carousel_container_classes' => ['kill-carousel'],
                 'copy_classes' => ['h5 blue'],
                 'static_icons' => false,
