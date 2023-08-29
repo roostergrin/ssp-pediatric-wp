@@ -32,22 +32,19 @@ partial('section.wrapper', [
     ],
 ]);
 
-$overlapping_bubbles = array();
-if(get_post_meta(get_the_id(), 'financing_options_section_two_toggle', true)) {
-    $overlapping_bubbles = [
-        'bb_heading' => get_post_meta(get_the_id(), 'financing_options_section_two_bb_heading', true),
-        'bb_copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'financing_options_section_two_bb_copy', true)),
-        'sb_heading' => get_post_meta(get_the_id(), 'financing_options_section_two_sb_heading', true),
-        'sb_copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'financing_options_section_two_sb_copy', true)),
-    ];
-}
-
-partial('section.copy.overlapping-bubbles', [
-    'classes' => [$brand->post_name],
-    'bubbles' => $overlapping_bubbles,
-    'right_heading' =>  get_post_meta(get_the_id(), 'financing_options_section_two_heading', true),
-    'right_copy' =>  apply_filters('the_content', get_post_meta(get_the_id(), 'financing_options_section_two_copy', true)),
+partial('section.pediatric.split-static', [
+  'classes' => ['reverse', 'middle', 'mt', 'mb-neg-130', 'z-3'],
+  'h1' => get_post_meta(get_the_id(), 'financing_section_two_heading', true),
+  'h1_classes' => ['line-height-1', 'mb-20'],
+  'copy' => apply_filters('the_content',get_post_meta(get_the_id(), 'financing_section_two_content', true)),
+  'image' => [                    
+      'src' => wp_get_attachment_image_src('financing_section_two_desktop_hero', 'medium_large')[0],
+      'alt' => get_post_meta(get_post_meta($brand->ID, 'financing_section_two_desktop_hero', true),'_wp_attachment_image_alt', true),
+      'classes' => ['bubble']
+  ],
+  'cta' => do_shortcode(get_post_meta(get_the_id(), 'financing_section_two_cta', true)),
 ]);
+
 
 $icons = [
 	[

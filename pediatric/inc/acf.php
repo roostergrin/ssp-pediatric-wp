@@ -6583,20 +6583,20 @@ if(function_exists('acf_add_local_field_group')) {
 				],
 			],
 			[
-				'key' => 'financing_options_section_four',
-				'name' => 'financing_options_section_four',
-				'label' => 'Section Four Financing',
+				'key' => 'financing_options_section_two',
+				'name' => 'financing_options_section_two',
+				'label' => 'Section Two Financing',
 				'type' => 'tab',
 			],
 			[
-				'key' => 'financing_section_four_group',
-				'name' => 'financing_section_four_group',
-				'label' => 'Financing Section Four',
+				'key' => 'financing_section_two_group',
+				'name' => 'financing_section_two_group',
+				'label' => 'Financing Section Two',
 				'type' => 'group',
 				'layout' => 'block',
 				'sub_fields' => [
 					[
-						'key' => 'financing_section_four_desktop_hero',
+						'key' => 'financing_section_two_desktop_hero',
 						'name' => 'desktop_hero',
 						'label' => 'Desktop Hero',
 						'type' => 'image',
@@ -6610,7 +6610,7 @@ if(function_exists('acf_add_local_field_group')) {
 						],
 					],
 					[
-						'key' => 'financing_section_four_heading',
+						'key' => 'financing_section_two_heading',
 						'name' => 'heading',
 						'label' => 'Heading',
 						'type' => 'text',
@@ -6619,7 +6619,7 @@ if(function_exists('acf_add_local_field_group')) {
 						],
 					],
 					[
-						'key' => 'financing_section_four_cta',
+						'key' => 'financing_section_two_cta',
 						'name' => 'cta',
 						'label' => 'Shortcode',
 						'type' => 'text',
@@ -6628,7 +6628,7 @@ if(function_exists('acf_add_local_field_group')) {
 						],
 					],
 					[
-						'key' => 'financing_section_four_content',
+						'key' => 'financing_section_two_content',
 						'name' => 'content',
 						'label' => 'Content',
 						'type' => 'wysiwyg',
