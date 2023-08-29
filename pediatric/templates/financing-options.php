@@ -33,16 +33,33 @@ partial('section.wrapper', [
 ]);
 
 $sec_2_main_img_id = get_post_meta(get_the_id(), 'financing_section_two_group_desktop_hero', true);
-partial('section.pediatric.split-static', [
-  'classes' => ['overlap-top'],
-  'heading' => get_post_meta(get_the_id(), 'financing_section_two_group_heading', true),
-  'heading_classes' => ['line-height-1', 'h1', 'mb-20'],
-  'copy' => apply_filters('the_content',get_post_meta(get_the_id(), 'financing_section_two_group_content', true)),
-  'image' => [                    
-      'src' => wp_get_attachment_image_src($sec_2_main_img_id, 'medium_large')[0],
-      'alt' => get_post_meta($sec_2_main_img_id, '_wp_attachment_image_alt', true),
-      'classes' => ['bubble', 'animatable']
-  ]
+// partial('section.pediatric.split-static', [
+//   'classes' => ['overlap-top'],
+//   'heading' => get_post_meta(get_the_id(), 'financing_section_two_group_heading', true),
+//   'heading_classes' => ['line-height-1', 'h1', 'mb-20'],
+//   'copy' => apply_filters('the_content',get_post_meta(get_the_id(), 'financing_section_two_group_content', true)),
+//   'image' => [                    
+//       'src' => wp_get_attachment_image_src($sec_2_main_img_id, 'medium_large')[0],
+//       'alt' => get_post_meta($sec_2_main_img_id, '_wp_attachment_image_alt', true),
+//       'classes' => ['bubble', 'animatable']
+//   ]
+// ]);
+
+partial('section.wrapper', [
+    'classes' => [],
+    'partials' => [
+      [
+        'classes' => ['overlap-top'],
+        'heading' => get_post_meta(get_the_id(), 'financing_section_two_group_heading', true),
+        'heading_classes' => ['line-height-1', 'h1', 'mb-20'],
+        'copy' => apply_filters('the_content',get_post_meta(get_the_id(), 'financing_section_two_group_content', true)),
+        'image' => [                    
+            'src' => wp_get_attachment_image_src($sec_2_main_img_id, 'medium_large')[0],
+            'alt' => get_post_meta($sec_2_main_img_id, '_wp_attachment_image_alt', true),
+            'classes' => ['bubble', 'animatable']
+        ]
+      ],
+    ]
 ]);
 
 
