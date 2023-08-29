@@ -6583,15 +6583,15 @@ if(function_exists('acf_add_local_field_group')) {
 				],
 			],
 			[
-				'key' => 'financing_section_four',
-				'name' => 'financing_section_four',
+				'key' => 'financing_options_section_four',
+				'name' => 'financing_options_section_four',
 				'label' => 'Section Four Financing',
 				'type' => 'tab',
 			],
 			[
-				'key' => 'financing_section_four',
-				'name' => 'financing_section_four',
-				'label' => 'Section Four',
+				'key' => 'financing_section_four_group',
+				'name' => 'financing_section_four_group',
+				'label' => 'Financing Section Four',
 				'type' => 'group',
 				'layout' => 'block',
 				'sub_fields' => [
