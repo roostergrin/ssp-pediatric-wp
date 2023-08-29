@@ -6138,64 +6138,6 @@ if(function_exists('acf_add_local_field_group')) {
 				],
 			],
 			[
-				'key' => 'financing_section_four',
-				'name' => 'financing_section_four',
-				'label' => 'Section Four Financing',
-				'type' => 'tab',
-			],
-			[
-				'key' => 'financing_section_four',
-				'name' => 'financing_section_four',
-				'label' => 'Section Four',
-				'type' => 'group',
-				'layout' => 'block',
-				'sub_fields' => [
-					[
-						'key' => 'financing_section_four_desktop_hero',
-						'name' => 'desktop_hero',
-						'label' => 'Desktop Hero',
-						'type' => 'image',
-						'mime_types' => 'png,jpeg,jpg',
-						'library' => 'all',
-						'required' => false,
-						'return_format' => 'id',
-						'preview_size' => 'thumbnail',
-						'wrapper' => [
-							'width' => 50,
-						],
-					],
-					[
-						'key' => 'financing_section_four_heading',
-						'name' => 'heading',
-						'label' => 'Heading',
-						'type' => 'text',
-						'wrapper' => [
-							'width' => 50,
-						],
-					],
-					[
-						'key' => 'financing_section_four_cta',
-						'name' => 'cta',
-						'label' => 'Shortcode',
-						'type' => 'text',
-						'wrapper' => [
-							'width' => 50,
-						],
-					],
-					[
-						'key' => 'financing_section_four_content',
-						'name' => 'content',
-						'label' => 'Content',
-						'type' => 'wysiwyg',
-						'required' => false,
-						'tabs' => 'all',
-						'toolbar' => 'simple',
-						'media_upload' => 0,
-						'delay' => 0,
-					],
-				],
-			],
-			[
 				'key' => 'section_three_tab_payment_options',
 				'name' => 'section_three_tab_payment_options',
 				'label' => 'Section three "3 Icons"',
@@ -6210,10 +6152,6 @@ if(function_exists('acf_add_local_field_group')) {
 					'width' => 100,
 				],
 			],
-
-
-
-
 			[
 				'key' => 'payment_options_section_three_slide_0',
 				'name' => 'payment_options_section_three_slide_0',
@@ -6598,7 +6536,7 @@ if(function_exists('acf_add_local_field_group')) {
 	// Financing options
 	acf_add_local_field_group([
 		'key' => 'financing_options',
-		'title' => 'Service Template 1',
+		'title' => 'Financing Options Template',
 		'fields' => [
 			[
 				'key' => 'hero_tab_financing_options',
@@ -6645,106 +6583,61 @@ if(function_exists('acf_add_local_field_group')) {
 				],
 			],
 			[
-				'key' => 'section_two_tab_financing_options',
-				'name' => 'section_two_tab_financing_options',
-				'label' => 'Overlapping bubbles left, copy right',
+				'key' => 'financing_section_four',
+				'name' => 'financing_section_four',
+				'label' => 'Section Four Financing',
 				'type' => 'tab',
 			],
 			[
-				'key' => 'financing_options_section_two_toggle',
-				'name' => 'financing_options_section_two_toggle',
-				'label' => 'Show/hide Overlapping bubbles',
-				'type' => 'true_false',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => [
-						'width' => 20,
-						'class' => '',
-						'id' => '',
-				],
-				'message' => '',
-				'default_value' => 1,
-				'ui' => 1,
-				'ui_on_text' => 'Show',
-				'ui_off_text' => 'Hide',
-			],
-			[
-				'key' => 'financing_options_section_two_bb_heading',
-				'name' => 'financing_options_section_two_bb_heading',
-				'label' => 'Big Bubble Heading',
-				'type' => 'text',
-				'wrapper' => [
-					'width' => 40,
-				],
-			],
-			[
-				'key' => 'financing_options_section_two_bb_copy',
-				'name' => 'financing_options_section_two_bb_copy',
-				'label' => ' Big Bubble Copy',
-				'instructions' => 'One return is a break, two returns is a separate paragraph. Accepts short codes',
-				'type' => 'wysiwyg',
-				'required' => false,
-				'tabs' => 'all',
-				'toolbar' => 'simple',
-				'media_upload' => 0,
-				'delay' => 0,
-				'wrapper' => [
-					'width' => 40,
-				],
-			],
-			[
-				'key' => 'financing_options_section_two_sb_heading',
-				'name' => 'financing_options_section_two_sb_heading',
-				'label' => 'Small Bubble Heading',
-				'type' => 'text',
-				'wrapper' => [
-					'width' => 50,
-				],
-			],
-			[
-				'key' => 'financing_options_section_two_sb_copy',
-				'name' => 'financing_options_section_two_sb_copy',
-				'label' => ' Small Bubble Copy',
-				'instructions' => 'One return is a break, two returns is a separate paragraph. Accepts short codes',
-				'type' => 'wysiwyg',
-				'required' => false,
-				'tabs' => 'all',
-				'toolbar' => 'simple',
-				'media_upload' => 0,
-				'delay' => 0,
-				'wrapper' => [
-					'width' => 50,
-				],
-			],
-			[
-				'key' => 'financing_options_section_two_heading',
-				'name' => 'financing_options_section_two_heading',
-				'label' => 'Right-side heading',
-				'instructions' => 'One return is a break, two returns is a separate paragraph. Accepts short codes',
-				'type' => 'wysiwyg',
-				'required' => false,
-				'tabs' => 'all',
-				'toolbar' => 'simple',
-				'media_upload' => 0,
-				'delay' => 0,
-				'wrapper' => [
-					'width' => 50,
-				],
-			],
-			[
-				'key' => 'financing_options_section_two_copy',
-				'name' => 'financing_options_section_two_copy',
-				'label' => 'Right-side Copy',
-				'instructions' => 'One return is a break, two returns is a separate paragraph. Accepts short codes',
-				'type' => 'wysiwyg',
-				'required' => false,
-				'tabs' => 'all',
-				'toolbar' => 'simple',
-				'media_upload' => 0,
-				'delay' => 0,
-				'wrapper' => [
-					'width' => 50,
+				'key' => 'financing_section_four',
+				'name' => 'financing_section_four',
+				'label' => 'Section Four',
+				'type' => 'group',
+				'layout' => 'block',
+				'sub_fields' => [
+					[
+						'key' => 'financing_section_four_desktop_hero',
+						'name' => 'desktop_hero',
+						'label' => 'Desktop Hero',
+						'type' => 'image',
+						'mime_types' => 'png,jpeg,jpg',
+						'library' => 'all',
+						'required' => false,
+						'return_format' => 'id',
+						'preview_size' => 'thumbnail',
+						'wrapper' => [
+							'width' => 50,
+						],
+					],
+					[
+						'key' => 'financing_section_four_heading',
+						'name' => 'heading',
+						'label' => 'Heading',
+						'type' => 'text',
+						'wrapper' => [
+							'width' => 50,
+						],
+					],
+					[
+						'key' => 'financing_section_four_cta',
+						'name' => 'cta',
+						'label' => 'Shortcode',
+						'type' => 'text',
+						'wrapper' => [
+							'width' => 50,
+						],
+					],
+					[
+						'key' => 'financing_section_four_content',
+						'name' => 'content',
+						'label' => 'Content',
+						'type' => 'wysiwyg',
+						'required' => false,
+						'tabs' => 'all',
+						'toolbar' => 'simple',
+						'media_upload' => 0,
+						'delay' => 0,
+					],
 				],
 			],
 			[
