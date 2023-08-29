@@ -32,31 +32,16 @@ partial('section.wrapper', [
     ],
 ]);
 
-$hero_img_id = get_post_meta(get_the_id(), 'financing_section_two_desktop_hero', true);
-partial('section.wrapper', [
-    'classes' => [],
-    'partials' => [
-        [
-            'name' => 'section.pediatric.bubbles',
-            'parts' => [
-                'classes' => ['green', 'top', 'var-3']
-            ],
-        ],
-        [
-            'name' => 'section.pediatric.split-static',
-            'parts' => [
-                'classes' => ['bg-green', 'last-section', 'big-img-left'],
-                'heading' => get_post_meta(get_the_id(), 'financing_section_two_heading', true),
-                'heading_classes' => ['line-height-1', 'h1', 'mb-20'],
-                'copy' => apply_filters('the_content',get_post_meta(get_the_id(), 'financing_section_two_content', true)),
-                'image' => [                    
-                    'src' => wp_get_attachment_image_src($hero_img_id, 'medium_large')[0],
-                    'alt' => get_post_meta($hero_img_id, '_wp_attachment_image_alt', true),
-                    'classes' => ['bubble']
-                ],
-            ],
-        ],
-    ]
+partial('section.pediatric.split-static', [
+  'classes' => ['bg-green', 'last-section', 'big-img-left'],
+  'heading' => get_post_meta(get_the_id(), 'financing_options_bottom_hero_heading', true),
+  'heading_classes' => ['line-height-1', 'h1', 'mb-20'],
+  'copy' => apply_filters('the_content',get_post_meta(get_the_id(), 'financing_options_bottom_hero_copy', true)),
+  'image' => [                    
+      'src' => wp_get_attachment_image_src($bottom_hero_img_id, 'medium_large')[0],
+      'alt' => get_post_meta($bottom_hero_img_id, '_wp_attachment_image_alt', true),
+      'classes' => ['bubble', 'animatable']
+  ]
 ]);
 
 
