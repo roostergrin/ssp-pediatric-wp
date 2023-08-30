@@ -109,7 +109,7 @@ $all_insurance_providers = array_filter($insurance_providers->insurance_provider
 	return !empty($relationships) && is_array($relationships) ? in_array(get_the_ID(), $relationships) : get_the_ID() == $relationships;
 });
 if (!empty($all_insurance_providers)) {
-  echo("<script>console.log('PHP: " . $all_insurance_providers . "');</script>");
+  echo("<script>console.log('Console log: " . json_encode($all_insurance_providers) . "');</script>");
 	usort($all_insurance_providers, function ($a, $b) {
 		return $a->post_title <=> $b->post_title;
 	});
