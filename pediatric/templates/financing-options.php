@@ -34,18 +34,6 @@ partial('section.wrapper', [
 ]);
 
 $sec_2_main_img_id = get_post_meta(get_the_id(), 'financing_section_two_group_desktop_hero', true);
-// partial('section.pediatric.split-static', [
-//   'classes' => ['overlap-top'],
-//   'heading' => get_post_meta(get_the_id(), 'financing_section_two_group_heading', true),
-//   'heading_classes' => ['line-height-1', 'h1', 'mb-20'],
-//   'copy' => apply_filters('the_content',get_post_meta(get_the_id(), 'financing_section_two_group_content', true)),
-//   'image' => [                    
-//       'src' => wp_get_attachment_image_src($sec_2_main_img_id, 'medium_large')[0],
-//       'alt' => get_post_meta($sec_2_main_img_id, '_wp_attachment_image_alt', true),
-//       'classes' => ['bubble', 'animatable']
-//   ]
-// ]);
-
 partial('section.wrapper', [
   'classes' => ['service-spacer'],
   'partials' => [
@@ -115,27 +103,6 @@ partial('section.wrapper', [
     ]
 ]);
 
-$slides = [];
-$counter = 0;
-for($i = 0; $i < 4; $i++) {
-    $heading = get_post_meta(get_the_id(), 'financing_options_section_four_slide_' . $i . '_financing_options_section_four_slide_' . $i . '_heading', true);
-    $copy = get_post_meta(get_the_id(), 'financing_options_section_four_slide_' . $i . '_financing_options_section_four_slide_' . $i . '_copy', true);
-    if( empty($heading) || empty($copy) ) {
-        break;
-    } else {
-        $counter++;
-        $slides[] = [
-            'heading' => $heading,
-            'content' => $copy,
-        ];
-    }
-}
-partial('section.pediatric.variable-slide-up-carousel', [
-    'classes' => ['mb', 'bg-white'],
-    'carousel_classes' => ['slides-'. $counter, 'kill-carousel', 'payment'],
-    'heading' => get_post_meta(get_the_id(), 'financing_options_section_four_heading', true),
-    'slides' => $slides, 
-]);
 
 $all_insurance_providers = array_filter($insurance_providers->insurance_providers, function($ins) {
 	$relationships = property_exists($ins, 'page_relationship') ? unserialize($ins->page_relationship) : false;
