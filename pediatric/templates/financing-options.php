@@ -35,7 +35,7 @@ partial('section.wrapper', [
 
 $sec_2_main_img_id = get_post_meta(get_the_id(), 'financing_section_two_group_desktop_hero', true);
 partial('section.wrapper', [
-  'classes' => ['middle', 'mb-150', 'z-3', 'mt'],
+  'classes' => ['middle', 'mb-150'],
   'partials' => [
       [
           'name' => 'section.pediatric.split-static',
@@ -116,7 +116,7 @@ if (!empty($all_insurance_providers)) {
 	partial('section.icons.health-plans', [
 		'classes' => [''],
 		'content_classes' => ['small-width'],
-		'h3' => get_post_meta(get_the_ID(),'financing_section_four_heading',true),
+		'h3' => get_post_meta(get_the_ID(),'section_four_tab_financing_heading',true),
 		'h3_classes' => ['h2'],
 		'content' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_section_four_content',true)),
 		'logos' => $all_insurance_providers
