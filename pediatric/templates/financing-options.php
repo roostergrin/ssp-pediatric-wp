@@ -54,7 +54,7 @@ partial('section.wrapper', [
       [
         'name' => 'section.pediatric.bubbles',
         'parts' => [
-            'classes' => ['white', 'bottom', 'var-1']
+            'classes' => ['white', 'bottom', 'var-3']
         ]
     ]
   ]
@@ -118,7 +118,7 @@ if (!empty($all_insurance_providers)) {
 	usort($all_insurance_providers, function ($a, $b) {
 		return $a->post_title <=> $b->post_title;
 	});
-	partial('section.icons.health-plans', [
+	partial('section.pediatric.health-plans', [
 		'classes' => [''],
 		'content_classes' => ['small-width'],
 		'h3' => get_post_meta(get_the_ID(),'financing_section_four_heading',true),
