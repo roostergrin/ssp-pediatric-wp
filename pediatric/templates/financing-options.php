@@ -35,7 +35,7 @@ partial('section.wrapper', [
 
 $sec_2_main_img_id = get_post_meta(get_the_id(), 'financing_section_two_group_desktop_hero', true);
 partial('section.wrapper', [
-  'classes' => ['middle', 'mt', 'mb-neg-130', 'z-3'],
+  'classes' => ['middle', 'mt', 'mb-150', 'z-3'],
   'partials' => [
       [
           'name' => 'section.pediatric.split-static',
