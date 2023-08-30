@@ -118,14 +118,34 @@ if (!empty($all_insurance_providers)) {
 	usort($all_insurance_providers, function ($a, $b) {
 		return $a->post_title <=> $b->post_title;
 	});
-	partial('section.pediatric.health-plans', [
-		'classes' => [''],
-		'content_classes' => ['small-width'],
-		'h3' => get_post_meta(get_the_ID(),'financing_section_four_heading',true),
-		'h3_classes' => ['h2'],
-		'content' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_section_four_content',true)),
-		'logos' => $all_insurance_providers
-	]);
+  partial('section.wrapper', [
+    'classes' => ['middle', 'mt', 'mb-neg-130'],
+    'partials' => [
+        [
+          'name' => 'section.pediatric.bubbles',
+          'parts' => [
+              'classes' => ['white', 'top', 'var-3']
+          ]
+          ],
+        [
+            'name' => 'section.pediatric.health-plans',
+            'parts' => [
+              'classes' => ['small-width'],
+              'content_classes' => [''],
+              'h3' => get_post_meta(get_the_ID(),'financing_section_four_heading',true),
+              'h3_classes' => ['h2'],
+              'content' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_section_four_content',true)),
+              'logos' => $all_insurance_providers
+            ],
+        ],
+        [
+          'name' => 'section.pediatric.bubbles',
+          'parts' => [
+              'classes' => ['white', 'bottom', 'var-3']
+          ]
+      ]
+    ]
+  ]);
 }
 
 $bottom_hero_img_id = get_post_meta(get_the_id(), 'financing_options_bottom_hero_image', true);
