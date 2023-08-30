@@ -6795,8 +6795,8 @@ if(function_exists('acf_add_local_field_group')) {
 				'type' => 'tab',
 			],
 			[
-				'key' => 'heading',
-				'name' => 'heading',
+				'key' => 'financing_section_four_heading',
+				'name' => 'financing_section_four_heading',
 				'label' => 'Heading',
 				'type' => 'text',
 			],

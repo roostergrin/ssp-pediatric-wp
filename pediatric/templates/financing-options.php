@@ -35,7 +35,7 @@ partial('section.wrapper', [
 
 $sec_2_main_img_id = get_post_meta(get_the_id(), 'financing_section_two_group_desktop_hero', true);
 partial('section.wrapper', [
-  'classes' => ['middle', 'mb-150'],
+  'classes' => ['middle', 'mt', 'mb-neg-130'],
   'partials' => [
       [
           'name' => 'section.pediatric.split-static',
@@ -51,6 +51,12 @@ partial('section.wrapper', [
               ]
           ],
       ],
+      [
+        'name' => 'section.pediatric.bubbles',
+        'parts' => [
+            'classes' => ['white', 'bottom', 'var-1']
+        ]
+    ]
   ]
 ]);
 
@@ -109,14 +115,13 @@ $all_insurance_providers = array_filter($insurance_providers->insurance_provider
 	return !empty($relationships) && is_array($relationships) ? in_array(get_the_ID(), $relationships) : get_the_ID() == $relationships;
 });
 if (!empty($all_insurance_providers)) {
-  echo("<script>console.log('Console log: " . json_encode($all_insurance_providers) . "');</script>");
 	usort($all_insurance_providers, function ($a, $b) {
 		return $a->post_title <=> $b->post_title;
 	});
 	partial('section.icons.health-plans', [
 		'classes' => [''],
 		'content_classes' => ['small-width'],
-		'h3' => get_post_meta(get_the_ID(),'section_four_tab_financing_heading',true),
+		'h3' => get_post_meta(get_the_ID(),'financing_section_four_heading',true),
 		'h3_classes' => ['h2'],
 		'content' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_section_four_content',true)),
 		'logos' => $all_insurance_providers

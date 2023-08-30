@@ -1,0 +1,108 @@
+section.health-plans {
+	text-align:center;
+	padding:2*@gutter-md 0 4*@gutter-md;
+	@media @mobileMax{
+		padding-bottom:0;
+	}
+	.page-template-affordable-orthodontist & {
+		padding: @gutter-lg 0 0;
+	}
+	.content{
+		.inner-content{
+			.content-wrapper{
+				&.small-width{
+					width:75%;
+					margin:0 auto;
+					@media @mobileMax{
+						width:100%;
+					}
+				}
+			}
+			ul.tiles {
+				margin:3*@gutter-lg -1*@gutter-md @gutter-md;
+				width: ~'calc(100% + 50px)';
+				.display-flex;
+				.flex-justify-content-center;
+				.flex-align-items-center;
+				.flex-wrap-wrap;
+    			@media @mobileMax{
+    				margin-top:0;
+    			}
+				.logo{
+					@width: percentage(1/4);
+					width: @width;
+					.flex(0, 0, @width);
+					padding:0 @gutter-md;
+					position:relative;
+					min-height:180px;
+					&.no-image {
+						.display-flex;
+						.flex-justify-content-flex-start;
+						.flex-align-items-center;
+						h3 {
+							font-size: 20px;
+							padding-bottom: 20px;
+						}
+					}
+
+					// transition: all 0.3s ease-out;
+					// .transition(~"all 0.3s ease-out");
+					@media @tabletMax{
+						@width: percentage(1/2);
+						width: @width;
+						.flex(0, 0, @width);
+
+					}
+					@media @mobileMax{
+						@width: percentage(1/1);
+						width: @width;
+						.flex(0, 0, @width);
+					}
+					@media @ipads{
+						@width: percentage(1/2);
+						width: @width;
+						.flex(0, 0, @width);
+					}
+					img {
+						margin:0 auto;
+						width:100%;
+						max-width: 275px;
+						opacity:1;
+						position:absolute;
+						.transition(~"all 0.3s ease-out");
+						transition-delay: 0;
+						// .transition(~"opacity 0.3s linear, top 0.3s linear");
+						top:0;
+						@media @tabletMax{ position:relative; }
+					}
+					h3.hover{
+						font-size:20px;
+						line-height:1;
+						position:absolute;
+						opacity:0;
+						.transition(~"all 0.3s ease-out");
+						transition-delay: 0;
+						padding:0 25px;
+						// .transition(~"opacity 0.3s linear, top 0.3s linear");
+						top: 100px;
+
+					}
+					@media @desktopMin{
+						&:hover{
+							img {
+								transition-delay: .3s;
+								opacity:0;
+								top: 40px;
+							}
+							h3.hover{
+								transition-delay: .3s;
+								opacity:1;
+								top: 70px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
