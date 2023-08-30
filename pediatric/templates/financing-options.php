@@ -119,7 +119,7 @@ if (!empty($all_insurance_providers)) {
 		return $a->post_title <=> $b->post_title;
 	});
   partial('section.wrapper', [
-    'classes' => [],
+    'classes' => ['middle', 'mt'],
     'partials' => [
       [
         'name' => 'section.pediatric.bubbles',
