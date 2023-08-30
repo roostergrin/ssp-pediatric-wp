@@ -426,6 +426,11 @@ add_hover_icon_selection_fields('acf/load_field/key=payment_options_section_thre
 add_hover_icon_selection_fields('acf/load_field/key=payment_options_section_three_slide_1_icon');
 add_hover_icon_selection_fields('acf/load_field/key=payment_options_section_three_slide_2_icon');
 
+// Financing Options
+add_hover_icon_selection_fields('acf/load_field/key=financing_options_section_three_slide_0_icon');
+add_hover_icon_selection_fields('acf/load_field/key=financing_options_section_three_slide_1_icon');
+add_hover_icon_selection_fields('acf/load_field/key=financing_options_section_three_slide_2_icon');
+
 //=====================================[Custom Columns for Posts & Pages]=====================================//
 add_filter('manage_post_posts_columns', function($columns) {
 	$columns = [
