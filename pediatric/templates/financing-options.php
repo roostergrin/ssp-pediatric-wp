@@ -122,12 +122,6 @@ if (!empty($all_insurance_providers)) {
     'classes' => ['middle', 'mt'],
     'partials' => [
       [
-        'name' => 'section.pediatric.bubbles',
-        'parts' => [
-            'classes' => ['white', 'top', 'var-5-sparse']
-        ]
-      ],
-      [
         'name' => 'section.pediatric.health-plans',
         'parts' => [
           'classes' => ['small-width'],
