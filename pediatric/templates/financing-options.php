@@ -137,12 +137,6 @@ if (!empty($all_insurance_providers)) {
           'content' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_section_four_content',true)),
           'logos' => $all_insurance_providers
         ],
-      ],
-      [
-        'name' => 'section.pediatric.bubbles',
-        'parts' => [
-            'classes' => ['white', 'bottom', 'var-5-sparse']
-        ]
       ]
     ]
   ]);
