@@ -104,23 +104,23 @@ partial('section.wrapper', [
 ]);
 
 
-$all_insurance_providers = array_filter($insurance_providers->insurance_providers, function($ins) {
-	$relationships = property_exists($ins, 'page_relationship') ? unserialize($ins->page_relationship) : false;
-	return !empty($relationships) && is_array($relationships) ? in_array(get_the_ID(), $relationships) : get_the_ID() == $relationships;
-});
+// $all_insurance_providers = array_filter($insurance_providers->insurance_providers, function($ins) {
+// 	$relationships = property_exists($ins, 'page_relationship') ? unserialize($ins->page_relationship) : false;
+// 	return !empty($relationships) && is_array($relationships) ? in_array(get_the_ID(), $relationships) : get_the_ID() == $relationships;
+// });
 // if (!empty($all_insurance_providers)) {
 // 	usort($all_insurance_providers, function ($a, $b) {
 // 		return $a->post_title <=> $b->post_title;
 // 	});
-	partial('section.icons.health-plans', [
-		'classes' => [''],
-		'content_classes' => ['small-width'],
-		'h3' => get_post_meta(get_the_ID(),'financing_section_four_heading',true),
-		'h3_classes' => ['h2'],
-		'content' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_section_four_content',true)),
-		'logos' => $all_insurance_providers
-	]);
-//}
+// 	partial('section.icons.health-plans', [
+// 		'classes' => [''],
+// 		'content_classes' => ['small-width'],
+// 		'h3' => get_post_meta(get_the_ID(),'financing_section_four_heading',true),
+// 		'h3_classes' => ['h2'],
+// 		'content' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_section_four_content',true)),
+// 		'logos' => $all_insurance_providers
+// 	]);
+// }
 
 $bottom_hero_img_id = get_post_meta(get_the_id(), 'financing_options_bottom_hero_image', true);
 partial('section.wrapper', [
