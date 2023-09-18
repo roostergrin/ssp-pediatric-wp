@@ -33,9 +33,11 @@ partial('section.wrapper', [
     ],
 ]);
 
+
+
 $sec_2_main_img_id = get_post_meta(get_the_id(), 'financing_section_two_group_desktop_hero', true);
 partial('section.wrapper', [
-  'classes' => ['middle', 'mt', 'mb-neg-130'],
+  'classes' => ['middle'],
   'partials' => [
       [
           'name' => 'section.pediatric.split-static',
@@ -60,6 +62,12 @@ partial('section.wrapper', [
   ]
 ]);
 
+partial('section.copy.overlapping-bubbles', [
+    'classes' => [$brand->post_name],
+    'bubbles' => $overlapping_bubbles,
+    'right_heading' =>  '',
+    'right_copy' =>  '',
+]);
 
 $icons = [
 	[
