@@ -52,12 +52,6 @@ partial('section.wrapper', [
                   'classes' => ['bubble', 'animatable']
               ]
           ],
-      ],
-      [
-        'name' => 'section.pediatric.bubbles',
-        'parts' => [
-            'classes' => ['blue', 'bottom', 'var-1']
-        ]
       ]
   ]
 ]);
