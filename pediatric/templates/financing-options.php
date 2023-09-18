@@ -42,7 +42,7 @@ partial('section.wrapper', [
       [
           'name' => 'section.pediatric.split-static',
           'parts' => [
-              'classes' => ['overlap-top', 'big-img-left'],
+              'classes' => ['big-img-left'],
               'heading' => get_post_meta(get_the_id(), 'financing_section_two_group_heading', true),
               'heading_classes' => ['line-height-1', 'h1', 'mb-20'],
               'copy' => apply_filters('the_content',get_post_meta(get_the_id(), 'financing_section_two_group_content', true)),
