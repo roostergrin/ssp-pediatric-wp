@@ -68,6 +68,10 @@ $icons = [
 	[
 		'img' => get_post_meta(get_the_ID(),'financing_options_section_three_slide_2_financing_options_section_three_slide_2_icon', true),
 		'copy' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_options_section_three_slide_2_financing_options_section_three_slide_2_copy', true)),
+    ],
+    [
+		'img' => get_post_meta(get_the_ID(),'financing_options_section_three_slide_3_financing_options_section_three_slide_3_icon', true),
+		'copy' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_options_section_three_slide_3_financing_options_section_three_slide_3_copy', true)),
 	]
 ];
 
