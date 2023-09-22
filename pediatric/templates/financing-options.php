@@ -123,8 +123,8 @@ if (!empty($all_insurance_providers)) {
       [
         'name' => 'section.pediatric.health-plans',
         'parts' => [
-          'classes' => ['small-width'],
-          'content_classes' => [''],
+          'classes' => [''],
+          'content_classes' => ['small-width'],
           'h3' => get_post_meta(get_the_ID(),'financing_section_four_heading',true),
           'h3_classes' => ['h2'],
           'content' => apply_filters('the_content', get_post_meta(get_the_ID(),'financing_section_four_content',true)),
