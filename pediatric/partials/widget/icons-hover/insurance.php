@@ -1,6 +1,6 @@
 <div class="icons-hover-container">
     <div class="widget icons-hover icon-h-insurance">
-    <svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.32 99.72">
+    <svg id="Design" xmlns="http://www.w3.org/2000/svg" width="110" height="110">
         <defs>
             <style>
             .cls-1 {
