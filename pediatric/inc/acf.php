@@ -6643,7 +6643,7 @@ if(function_exists('acf_add_local_field_group')) {
 			[
 				'key' => 'section_three_tab_financing_options',
 				'name' => 'section_three_tab_financing_options',
-				'label' => 'Section three "3 Icons"',
+				'label' => 'Section three "4 Icons"',
 				'type' => 'tab',
 			],
 			[
@@ -6711,7 +6711,7 @@ if(function_exists('acf_add_local_field_group')) {
 			[
 				'key' => 'financing_options_section_three_slide_1',
 				'name' => 'financing_options_section_three_slide_1',
-				'label' => 'Slide 1',
+				'label' => 'Slide 2',
 				'type' => 'group',
 				'layout' => 'block',
 				'sub_fields' => [
@@ -6751,7 +6751,7 @@ if(function_exists('acf_add_local_field_group')) {
 			[
 				'key' => 'financing_options_section_three_slide_2',
 				'name' => 'financing_options_section_three_slide_2',
-				'label' => 'Slide 1',
+				'label' => 'Slide 3',
 				'type' => 'group',
 				'layout' => 'block',
 				'sub_fields' => [
@@ -6774,6 +6774,46 @@ if(function_exists('acf_add_local_field_group')) {
 					[
 						'key' => 'financing_options_section_three_slide_2_copy',
 						'name' => 'financing_options_section_three_slide_2_copy',
+						'label' => 'Copy',
+						'instructions' => 'One return is a break, two returns is a separate paragraph. Accepts short codes',
+						'type' => 'wysiwyg',
+						'required' => false,
+						'tabs' => 'all',
+						'toolbar' => 'simple',
+						'media_upload' => 0,
+						'delay' => 0,
+						'wrapper' => [
+							'width' => 100,
+						],
+					],
+				],
+			],
+			[
+				'key' => 'financing_options_section_three_slide_3',
+				'name' => 'financing_options_section_three_slide_3',
+				'label' => 'Slide 4',
+				'type' => 'group',
+				'layout' => 'block',
+				'sub_fields' => [
+					[
+						'key' => 'financing_options_section_three_slide_3_icon',
+						'name' => 'financing_options_section_three_slide_3_icon',
+						'label' => 'Icon',
+						'type' => 'select',
+						'wrapper' => [
+							'width' => 50,
+						],
+						'choices' => [],
+						'default_value' => [],
+						'allow_null' => true,
+						'multiple' => false,
+						'ui' => true,
+						'return_format' => 'value',
+						'ajax' => false,
+					],
+					[
+						'key' => 'financing_options_section_three_slide_3_copy',
+						'name' => 'financing_options_section_three_slide_3_copy',
 						'label' => 'Copy',
 						'instructions' => 'One return is a break, two returns is a separate paragraph. Accepts short codes',
 						'type' => 'wysiwyg',

@@ -82,7 +82,7 @@ partial('section.wrapper', [
           ]
         ],
         [
-          'name' => 'section.pediatric.three-icons',
+          'name' => 'section.pediatric.four-icons',
           'parts' => [
               'section_id' => 'payment-options',
               'classes' => ['bg-gray', $sec_three_icons_main_color, 'icons-red'],
