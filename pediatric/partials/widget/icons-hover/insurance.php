@@ -1,31 +1,40 @@
 <div class="icons-hover-container">
     <div class="widget icons-hover icon-h-insurance">
-    <div class="icon-insur active">
-							<svg xmlns="http://www.w3.org/2000/svg" width="120.075" height="107" viewBox="0 0 120.075 107" style="height: inherit;">
-				<g id="sim_insurance" data-name="Group 9" transform="translate(-211 -160)">
-				  <rect id="Rectangle_1" data-name="Rectangle 1" width="78" height="107" rx="5" transform="translate(211 160)" fill="#558bdb"/>
-				  <path id="Path_7" data-name="Path 7" d="M14.617,28.336H60.986" transform="translate(207.199 151.062)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-				  <path id="Path_8" data-name="Path 8" d="M14.617,28.336H50.175" transform="translate(207.199 163.062)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-				  <path id="Path_9" data-name="Path 9" d="M14.617,28.336H60.986" transform="translate(207.199 175.062)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-				  <path id="Path_10" data-name="Path 10" d="M14.617,28.336H50.175" transform="translate(207.199 187.062)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-				  <path id="Path_11" data-name="Path 11" d="M14.617,28.336H60.986" transform="translate(207.199 199.062)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-				  <path id="Path_12" data-name="Path 12" d="M14.617,28.336H50.175" transform="translate(207.199 211.062)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-				  <path id="Path_13" data-name="Path 13" d="M14.617,28.336H60.986" transform="translate(207.199 223.062)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="3"/>
-				  <g id="Group_5" data-name="Group 5">
-					<g id="Group_2" data-name="Group 2" transform="translate(132 -12074.593)">
-					  <g id="Group_1" data-name="Group 1" transform="translate(145 12253.99)">
-						<path id="incurance-icon-right" data-name="Path 1" d="M172.038,12322.2c-27.247-10.02-26.987-43.183-26.987-43.183l-.051.022v-15.617h6.69c14.783,0,20.278-9.428,20.278-9.428h.14s5.5,9.428,20.278,9.428h6.689v15.617l-.048-.022s.265,33.163-26.99,43.183" transform="translate(-145 -12253.99)" fill="#a7c5ec"/>
-					  </g>
-					</g>
-					<g id="Group_4" data-name="Group 4" transform="translate(-253 -12314.999)">
-					  <g id="Group_3" data-name="Group 3">
-						<path id="Path_2" data-name="Path 2" d="M555.953,12538a2,2,0,0,1-1.332-.509l-8.954-8a2,2,0,0,1,2.666-2.982l7.262,6.489,9.759-14.135a2,2,0,0,1,3.292,2.273l-11.047,16a2,2,0,0,1-1.409.85A2.143,2.143,0,0,1,555.953,12538Z" fill="#fff"/>
-					  </g>
-					</g>
-				  </g>
-				</g>
-			</svg>			
+    <svg id="Design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340.32 99.72">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
 
-			</div>
+      .cls-2 {
+        fill: #d50032;
+      }
+    </style>
+  </defs>
+  <circle class="cls-2" cx="49.86" cy="49.86" r="49.86"/>
+  <circle class="cls-2" cx="290.46" cy="49.86" r="49.86"/>
+  <path class="cls-1" d="m66.58,23.41h-33.51c-1.36,0-2.49,1.13-2.49,2.49v47.92c0,1.36,1.13,2.49,2.49,2.49h33.58c1.36,0,2.49-1.13,2.49-2.49V25.9c-.08-1.36-1.21-2.49-2.57-2.49Zm-7.77,45.88h-22.87c-.38,0-.75-.3-.75-.75,0-.38.3-.75.75-.75h22.87c.38,0,.75.3.75.75,0,.38-.38.75-.75.75Zm-23.62-6.72c0-.38.3-.75.75-.75h17.58c.38,0,.75.3.75.75,0,.38-.3.75-.75.75h-17.58c-.45,0-.75-.3-.75-.75Zm23.62-5.13h-22.87c-.38,0-.75-.3-.75-.75,0-.38.3-.75.75-.75h22.87c.38,0,.75.3.75.75,0,.38-.38.75-.75.75Zm-23.62-6.72c0-.38.3-.75.75-.75h17.58c.38,0,.75.3.75.75,0,.38-.3.75-.75.75h-17.58c-.45,0-.75-.3-.75-.75Zm23.62-5.13h-22.87c-.38,0-.75-.3-.75-.75,0-.38.3-.75.75-.75h22.87c.38,0,.75.3.75.75,0,.38-.38.75-.75.75Zm-23.62-6.72c0-.38.3-.75.75-.75h17.58c.38,0,.75.3.75.75,0,.38-.3.75-.75.75h-17.58c-.45,0-.75-.3-.75-.75Zm23.62-5.13h-22.87c-.38,0-.75-.3-.75-.75s.3-.75.75-.75h22.87c.38,0,.75.3.75.75s-.38.75-.75.75Z"/>
+  <g id="Group_2" data-name="Group 2">
+    <g id="Group_1" data-name="Group 1">
+      <path id="Path_1" data-name="Path 1" class="cls-1" d="m290.39,80.45c-24.5-9.03-24.22-38.73-24.22-38.73h0v-13.96h6.02c13.27,0,18.2-8.48,18.2-8.48h.14s4.93,8.48,18.2,8.48h6.02v13.96h0c-.14.14.14,29.83-24.36,38.73"/>
+    </g>
+  </g>
+  <g id="Group_4" data-name="Group 4">
+    <g id="Group_3" data-name="Group 3">
+      <path id="Path_2" data-name="Path 2" class="cls-2" d="m289.43,58.31c-.41,0-.82-.14-1.23-.41l-8.07-7.12c-.68-.68-.82-1.78-.14-2.46s1.78-.82,2.6-.14h0l6.57,5.88,8.76-12.73c.55-.82,1.64-.96,2.46-.41s.96,1.64.41,2.46l-9.85,14.37c-.27.41-.68.68-1.23.82-.14-.41-.14-.27-.27-.27Z"/>
+    </g>
+  </g>
+  <g id="Group_2-2" data-name="Group 2">
+    <g id="Group_1-2" data-name="Group 1">
+      <path id="Path_1-2" data-name="Path 1" class="cls-1" d="m171.95,80.45c-24.5-9.03-24.22-38.73-24.22-38.73h0v-13.96h6.02c13.27,0,18.2-8.48,18.2-8.48h.14s4.93,8.48,18.2,8.48h6.02v13.96h0c-.14.14.14,29.83-24.36,38.73"/>
+    </g>
+  </g>
+  <g id="Group_4-2" data-name="Group 4">
+    <g id="Group_3-2" data-name="Group 3">
+      <path id="Path_2-2" data-name="Path 2" class="cls-2" d="m170.99,58.31c-.41,0-.82-.14-1.23-.41l-8.07-7.12c-.68-.68-.82-1.78-.14-2.46s1.78-.82,2.6-.14h0l6.57,5.88,8.76-12.73c.55-.82,1.64-.96,2.46-.41s.96,1.64.41,2.46l-9.85,14.37c-.27.41-.68.68-1.23.82-.14-.41-.14-.27-.27-.27Z"/>
+    </g>
+  </g>
+</svg>
     </div>
 </div>
