@@ -57,7 +57,7 @@ $phone = !empty($location) ? $location->phone : get_locations_for_brand($brand->
                             <a href="#">Your visit<span class="dropdown mobile icon-plus" aria-disabled="true"></span><div class="hover-bar"></div></a>
                             <ul class="sub-menu">
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('kids-dental-care-visits/') ?>">Preparing for your visit</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('accepted-payment/') ?>">Payment options</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('financing/') ?>">Payment options</a></li>
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('patient-forms/') ?>">Forms</a></li>
                             </ul>
                         </li>
