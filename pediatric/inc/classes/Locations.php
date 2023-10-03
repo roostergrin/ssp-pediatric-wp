@@ -57,7 +57,7 @@ class Locations
 				'show_in_menu' => true,
 				// 'menu_position' => 3,
 				'menu_icon' => 'dashicons-admin-multisite',
-				'rewrite' => ['slug' => 'orthodontist-office', 'with_front' => false],
+				'rewrite' => ['slug' => 'pediatric-dentist', 'with_front' => false],
 				'show_in_nav_menus' => true,
 				'publicly_queryable' => true,
 				'exclude_from_search' => false,
