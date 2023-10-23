@@ -1,6 +1,6 @@
 <?
 wp_enqueue_style('lib-owl-carousel');
-wp_enqueue_script('three-icons-carousel');
+wp_enqueue_script('four-icons-carousel');
 $static_icons = $static_icons ?? false;
 ?>
 
@@ -15,7 +15,7 @@ $static_icons = $static_icons ?? false;
 			            <?= apply_filters('the_content', $copy); ?>
                     </div>
 	            <?php endif; ?>
-            <div class="icons-container three-icons-carousel<?= $carousel_container_classes ? ' ' . implode(' ', $carousel_container_classes) : '';?>">
+            <div class="icons-container four-icons-carousel<?= $carousel_container_classes ? ' ' . implode(' ', $carousel_container_classes) : '';?>">
                 <? foreach($icons as $icon) :?>
                     <div class="icon-container">
                         <div class="img-container <?= $icon['bg_color'] ? $icon['bg_color'] : '' ; ?>">
