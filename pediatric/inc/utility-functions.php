@@ -1306,10 +1306,10 @@ function do_location_page($loc = NULL, $pro = NULL) {
 		'icons' => $icons
 	]);
 
-	partial('section.pediatric.four-icons', [
-		'static_icons' => true,
-		'icons' => $icons
-	]);
+	// partial('section.pediatric.four-icons', [
+	// 	'static_icons' => true,
+	// 	'icons' => $icons
+	// ]);
 
 	partial('section.providers.carousel', [
 		'h2' => $location->section_three_heading,
