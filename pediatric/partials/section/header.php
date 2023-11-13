@@ -84,7 +84,7 @@ $phone = !empty($location) ? $location->phone : get_locations_for_brand($brand->
 						<div id="header-utility-navigation">
 							<ul>
 								<li><a href="<?= brand_url('pediatric-dentist', $brand);?>"><?= empty($location) ? 'Find a location' : 'View more locations'; ?></a></li>
-								<? if($brand->ID != 18088): ?><li><a target="_blank" href="https://pay.yourdentistoffice.com/">Pay online</a></li><? endif; ?>
+								<li><a target="_blank" href="https://pay.yourdentistoffice.com/">Pay online</a></li>
 								<li><a href="<?= brand_url('patient-forms', $brand); ?>">Patient forms</a></li>
 							</ul>
 						</div>
