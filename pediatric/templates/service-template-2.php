@@ -159,6 +159,11 @@ if(!empty($sec_seven_heading)) {
 $show_testimonials = get_post_meta(get_the_id(), 'service_template_2_section_eight_toggle', true);
 $sec_8_page_faqs = get_faqs_for_page();
 
+$sec_bottom = get_post_meta(get_the_id(), 'section_eight_tab_about_our_practice', true);
+
+echo '<pre>' . print_r($sec_bottom, true) . '</pre>';
+
+
 if($show_testimonials) {
     $sec_8_slides = array();
     foreach($sec_8_page_faqs as $f) {
