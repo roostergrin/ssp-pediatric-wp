@@ -5722,6 +5722,67 @@ if(function_exists('acf_add_local_field_group')) {
 					'width' => 80,
 				],
 			],
+			[
+				'key' => 'section_eight_tab_about_our_practice',
+				'name' => 'section_eight_tab_about_our_practice',
+				'label' => 'Section Eight Bottom',
+				'type' => 'tab',
+			],
+			[
+				'key' => 'about_our_practice_section_eight_heading',
+				'name' => 'about_our_practice_section_eight_heading',
+				'label' => 'Heading',
+				'type' => 'text',
+				'allow_null' => true,
+				'required' => false,
+				'wrapper' => [
+					'width' => 100,
+				],
+			],			
+			[
+				'key' => 'about_our_practice_section_eight_copy',
+				'name' => 'about_our_practice_section_eight_copy',
+				'label' => 'Copy',
+				'type' => 'wysiwyg',
+				'required' => false,
+				'tabs' => 'all',
+				'toolbar' => 'simple',
+				'media_upload' => 0,
+				'delay' => 0,
+				'wrapper' => [
+					'width' => 50,
+				],
+			],
+			[
+				'key' => 'about_our_practice_section_eight_slides',
+				'name' => 'about_our_practice_section_eight_slides',
+				'label' => 'Slides',
+				'type' => 'repeater',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'collapsed' => '',
+				'min' => '',
+				'max' => '',
+				'layout' => 'row',
+				'button_label' => 'Add Slide',
+				'sub_fields' => [
+					[
+						'key' => 'image',
+						'name' => 'image',
+						'label' => 'Image',
+						'type' => 'image',
+						'mime_types' => 'png,jpeg,jpg',
+						'library' => 'all',
+						'required' => false,
+						'return_format' => 'id',
+						'preview_size' => 'thumbnail',
+						'wrapper' => [
+							'width' => 50,
+						],
+					],
+				]
+			],
 		],
 		'location' => [
 			[[
