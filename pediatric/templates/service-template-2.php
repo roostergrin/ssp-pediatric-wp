@@ -161,8 +161,47 @@ $sec_8_page_faqs = get_faqs_for_page();
 
 $sec_bottom = get_post_meta(get_the_id(), 'section_eight_tab_about_our_practice', true);
 
-echo '<pre>' . print_r($sec_bottom, true) . '</pre>';
-
+if(!empty($sec_bottom)) {
+$sec_8_heading = get_post_meta(get_the_id(), 'about_our_practice_section_eight_heading', true);
+$sec_8_copy = apply_filters('the_content', get_post_meta(get_the_id(), 'about_our_practice_section_eight_copy', true));
+$sec_8_slides = array();
+$sec_8_slide_count = get_post_meta(get_the_id(), 'about_our_practice_section_eight_slides', true);
+if ($sec_8_slide_count > 0) {
+	for ($z = 0; $z < $sec_8_slide_count; $z++) {
+		$attachment_id = get_post_meta(get_the_id(), 'about_our_practice_section_eight_slides_'.($z).'_image', true);
+		$attachment = wp_get_attachment_image_src($attachment_id, 'medium_large');
+		$sec_8_slides[] = [
+            'src' => $attachment[0],
+			'width' => $attachment[1],
+			'height' => $attachment[2],
+			'alt' => !empty(get_post_meta($attachment_id, '_wp_attachment_image_alt', true)) ? str_replace('_', ' ', get_post_meta($attachment_id, '_wp_attachment_image_alt', true)) : str_replace('_', ' ', get_the_title($attachment_id)),
+		];
+	}
+}
+partial('section.wrapper', [
+	'classes' => ['treatments'],
+	'partials' => [
+		[
+			'name' => 'section.pediatric.bubbles',
+			'parts' => [
+				'classes' => ['top', 'var-3', 'green']
+			]
+		],
+		[
+			'name' => 'section.slider.slider',
+			'parts' => [
+				'classes' => ['bg-green'],
+				'htag' => 'h3',
+				'heading_classes' => ['white'],
+				'heading' => $sec_8_heading,
+				'static_copy' => $sec_8_copy,
+				'slides' => $sec_8_slides,
+				'pagination' => 0,
+			]
+		],
+	]
+]);
+}
 
 if($show_testimonials) {
     $sec_8_slides = array();
