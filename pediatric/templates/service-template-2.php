@@ -161,7 +161,6 @@ $sec_8_page_faqs = get_faqs_for_page();
 
 $sec_bottom = get_post_meta(get_the_id(), 'section_eight_tab_about_our_practice', true);
 
-if(!empty($sec_bottom)) {
 $sec_8_heading = get_post_meta(get_the_id(), 'about_our_practice_section_eight_heading', true);
 $sec_8_copy = apply_filters('the_content', get_post_meta(get_the_id(), 'about_our_practice_section_eight_copy', true));
 $sec_8_slides = array();
@@ -201,7 +200,6 @@ partial('section.wrapper', [
 		],
 	]
 ]);
-}
 
 if($show_testimonials) {
     $sec_8_slides = array();
