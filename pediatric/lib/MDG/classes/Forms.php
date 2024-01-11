@@ -25,7 +25,7 @@ class Forms {
 			$phpmailer->Port = 587;
 			$phpmailer->SMTPSecure = 'tls';
 			$phpmailer->Username = 'website-notifications@simkosupport.com';
-			$phpmailer->Password = 'nvxldfqrqkrbtqtg';
+			$phpmailer->Password = 'Temp1357$';
 			$phpmailer->SetFrom('website-notifications@simkosupport.com', $this->brand->post_title);
 			$phpmailer->addReplyTo('website-notifications@simkosupport.com', $this->brand->post_title);
 		});
