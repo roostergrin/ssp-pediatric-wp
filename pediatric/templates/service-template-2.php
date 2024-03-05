@@ -189,7 +189,7 @@ partial('section.wrapper', [
 		[
 			'name' => 'section.slider.slider',
 			'parts' => [
-				'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'bg-green' : 'bg-blue')],
+				'classes' => ['three-icons', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'bg-green' : 'bg-blue')],
 				'htag' => 'h3',
 				'heading_classes' => ['white'],
 				'heading' => $sec_8_heading,
