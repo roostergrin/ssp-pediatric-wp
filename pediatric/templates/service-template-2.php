@@ -183,7 +183,7 @@ partial('section.wrapper', [
 		[
 			'name' => 'section.pediatric.bubbles',
 			'parts' => [
-				'classes' => ['top', 'var-3', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'bg-green' : 'bg-blue')]
+				'classes' => ['top', 'var-3', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue')]
 			]
 		],
 		[
