@@ -246,6 +246,27 @@ section.variable-slide-up-carousel {
         }
     }
 
+    &.southmoor-kids-palette {
+        .slide {
+            &-container .copy-container {
+                h3 {
+                    color: @blue;
+                }
+                li::before {
+                    background-color: @green !important;
+                }
+            }             
+        }
+
+        #variable-slide-up-owl-carousel:not(.owl-loaded).slides-4 {
+            margin-top: 5*@gutter-sm;
+
+            .slide:nth-of-type(1), .slide:nth-of-type(2) {
+                margin-bottom: 4*@gutter-lg;
+            }
+        }
+    }
+
     .pagination-container,
     .owl-nav {
         @media @menuMin {
