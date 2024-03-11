@@ -1426,6 +1426,17 @@ class Brands
 			                    'width' => 20,
 		                    ],
 	                    ],
+						[
+							'key' => 'homepage_section5_video',
+							'name' => 'homepage_section5_video',
+							'label' => 'Video Text',
+							'instructions' => 'Enter url related to the video',
+							'type' => 'text',
+							'required' => false,
+							'wrapper' => [
+								'width' => 80,
+							],
+						],
                         [
                             'key' => 'homepage_section5_heading',
                             'name' => 'homepage_section5_heading',
