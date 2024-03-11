@@ -104,6 +104,7 @@ partial('section.pediatric.split-static', [
 		'alt' => get_post_meta(get_post_meta($brand->ID, 'section5_group_homepage_section5_image', true),'_wp_attachment_image_alt', true),
 		'classes' => ['bubble']
 	],
+	'video' => get_post_meta($brand->ID,'section5_group_homepage_section5_video', true),
 	'cta' => do_shortcode(get_post_meta($brand->ID,'section5_group_homepage_section5_link_text', true)),
 
 ]);

@@ -1430,7 +1430,7 @@ class Brands
 							'key' => 'homepage_section5_video',
 							'name' => 'homepage_section5_video',
 							'label' => 'Video Text',
-							'instructions' => 'Enter url related to the video',
+							'instructions' => 'Enter url related to the video (if no video then image will render)',
 							'type' => 'text',
 							'required' => false,
 							'wrapper' => [
