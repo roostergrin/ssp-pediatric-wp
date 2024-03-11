@@ -6,8 +6,8 @@
             <div class="content-wrapper">
                 <div class="split left-side">
                     <?php if(!empty($video)) :?>
-                        <video controls>
-                            <source src="<?= $video; ?>" type="video/mp4">
+                        <video class="main-video" style="width: 100%; padding: 20px;" muted>
+                            <source src="<?= $video; ?>" type="video/mp4" >
                             Your browser does not support the video tag.
                         </video>
                     <?php elseif(!empty($image)) :?>
@@ -32,4 +32,26 @@
         </div>  
     </div>
 </section>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var observer;
+    var video = document.querySelector('.main-video');
+    if ('IntersectionObserver' in window) {
+        observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    video.play();
+                    setTimeout(() => {
+                        video.muted = false;
+                    }, 500);
+                } else {
+                    video.pause();
+                    video.muted = true;
+                }
+            });
+        }, { threshold: 0.5 });
+        observer.observe(video);
+    }
+});
+</script>
 <?php endif;?>
