@@ -37,11 +37,11 @@ $all_providers = get_providers();
 							<? endif; ?>
 						</li>
                         <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= brand_url('kids-dental-fillings-crowns', $brand) ?>">Restorative treatments</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= brand_url('emergency-kids-dentist', $brand) ?>">Dental emergencies</a></li>
-                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= brand_url('kids-custom-mouthguard', $brand) ?>">Custom mouthguards</a></li>                        
 						<? if($brand->ID == 18088): ?>
 							<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('frenectomy/') ?>">Frenectomies</a></li>
 						<? endif; ?>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= brand_url('emergency-kids-dentist', $brand) ?>">Dental emergencies</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= brand_url('kids-custom-mouthguard', $brand) ?>">Custom mouthguards</a></li>                        
                     </ul>
                 </li>
 				<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-340"><a href="#">Your visit<span class="dropdown mobile icon-close" aria-disabled="true"></span></a>

@@ -46,11 +46,11 @@ $phone = !empty($location) ? $location->phone : get_locations_for_brand($brand->
 									<? endif; ?>
 								</li>
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('kids-dental-fillings-crowns/') ?>">Restorative treatments</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('emergency-kids-dentist/') ?>">Dental emergencies</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('kids-custom-mouthguard/') ?>">Custom mouthguards</a></li>
 								<? if($brand->ID == 18088): ?>
 								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('frenectomy/') ?>">Frenectomies</a></li>
 								<? endif; ?>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('emergency-kids-dentist/') ?>">Dental emergencies</a></li>
+                                <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="<?= _location_based_url('kids-custom-mouthguard/') ?>">Custom mouthguards</a></li>
                             </ul>
                         </li>
                         <li class="menu-item menu-item-has-children">
