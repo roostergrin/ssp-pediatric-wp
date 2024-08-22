@@ -8,7 +8,7 @@ wp_enqueue_script('two-icons-with-image-carousel');
         <div class="inner-content">
             <div class="image-container">
                 <?php if (!empty($video_link)): ?>
-                    <iframe style="margin-left: 50px;" width="560" height="315" src="<?= $video_link; ?>" title="Video player" frameborder="0"
+                    <iframe style="margin-left: 100px;" width="560" height="315" src="<?= $video_link; ?>" title="Video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
