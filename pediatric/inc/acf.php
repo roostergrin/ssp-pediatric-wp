@@ -5272,6 +5272,33 @@ if(function_exists('acf_add_local_field_group')) {
 				'delay' => 0,
 			],
 			[
+				'key' => 'section_nine_tab_service_template_2',
+				'name' => 'section_nine_tab_service_template_2',
+				'label' => 'Section Nine "Full Width Heading and Copy"',
+				'type' => 'tab',
+			],
+			[
+				'key' => 'service_template_2_section_nine_heading',
+				'name' => 'service_template_2_section_nine_heading',
+				'label' => 'Heading',
+				'type' => 'text',
+				'allow_null' => true,
+				'required' => false,
+			],
+			[
+				'key' => 'service_template_2_section_nine_content',
+				'name' => 'service_template_2_section_nine_content',
+				'label' => 'Copy',
+				'type' => 'wysiwyg',
+				'instructions' => 'One return is a break, two returns is a separate paragraph. Accepts short codes',
+				'required' => false,
+				'tabs' => 'all',
+				'toolbar' => 'simple',
+				'media_upload' => 0,
+				'delay' => 0,
+			],
+			
+			[
 				'key' => 'section_five_tab_service_template_2',
 				'name' => 'section_five_tab_service_template_2',
 				'label' => 'Section Five "Two Icon Carousel with Image(left)"',
