@@ -11,7 +11,7 @@
             
             <?php if(!empty($video_link)): ?>
                 <div class="video-container">
-                    <iframe width="560" height="315" 
+                    <iframe width="460" height="215" 
                             src="<?= esc_url($video_link); ?>" 
                             title="Video player" 
                             frameborder="0" 
@@ -19,6 +19,7 @@
                             referrerpolicy="strict-origin-when-cross-origin" 
                             allowfullscreen>
                     </iframe>
+                    <div style="padding: 20px;"></div>
                 </div>
             <?php endif; ?>
         </div>
