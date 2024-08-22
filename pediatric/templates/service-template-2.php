@@ -116,7 +116,8 @@ partial('section.copy.full', [
     'classes' => ['heading-orange'],
     'heading' => get_post_meta(get_the_id(), 'service_template_2_section_nine_heading', true),
     'heading_classes' => ['h1', 'orange'],
-    'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_nine_content', true))
+    'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_nine_content', true)),
+    'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_nine_video_link', true),
 ]);
 
 
