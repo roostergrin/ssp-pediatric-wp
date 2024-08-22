@@ -5315,6 +5315,17 @@ if(function_exists('acf_add_local_field_group')) {
 				],
 			],
 			[
+				'key' => 'service_template_2_section_five_video_link',
+				'name' => 'service_template_2_section_five_video_link',
+				'label' => 'Video Link',
+				'type' => 'url',
+				'instructions' => 'Add a link to the video',
+				'required' => false,
+				'wrapper' => [
+					'width' => 100,
+				],
+			],
+			[
 				'key' => 'service_template_2_section_five_slide_0',
 				'name' => 'service_template_2_section_five_slide_0',
 				'label' => 'Slide 1',
