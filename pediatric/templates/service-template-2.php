@@ -88,6 +88,13 @@ partial('section.copy.full', [
     'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_four_content', true))
 ]);
 
+partial('section.copy.full', [
+    'classes' => ['heading-orange'],
+    'heading' => get_post_meta(get_the_id(), 'service_template_2_section_nine_heading', true),
+    'heading_classes' => ['h1', 'orange'],
+    'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_four_content', true))
+]);
+
 $icon_slides_1 = array();
 for($j = 0; $j < 2; $j++) {
     $icon_slides_1[] = [
