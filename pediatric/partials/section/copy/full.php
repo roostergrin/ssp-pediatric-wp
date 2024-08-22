@@ -10,7 +10,7 @@
             <?php endif; ?>
             
             <?php if(!empty($video_link)): ?>
-                <div class="video-container" style="padding: 10px 20px;">
+                <div class="video-container" style=" margin: 0 auto; margin-bottom: 35px; width: 75%;">
                     <iframe width="460" height="215" 
                             src="<?= esc_url($video_link); ?>" 
                             title="Video player" 
