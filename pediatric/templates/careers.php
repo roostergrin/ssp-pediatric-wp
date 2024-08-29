@@ -72,6 +72,14 @@ partial('section.copy.side-by-side-with-box ', [
 	" target="_blank">'. $careers_hero_email_text .'</a></p>'
 ]);
 
+// sim
+if ($brand->ID === 18088) {
+    echo "<div style='padding: 2rem;'> <script src='https://workforcenow.adp.com/mascsr/default/mdf/recwebcomponents/recruitment/main-config/recruitment.js'></script><recruitment-current-openings cid='ddbaaed6-ae19-4112-a714-e3ed99d3fed1' ccid='9200431463123_3' host='DP' locale='en_US'></recruitment-current-openings> </div>";
+}
+// southmoore
+else if ($brand->ID === 12374) {
+    echo "<div style='padding: 2rem;'> <script src='https://workforcenow.adp.com/mascsr/default/mdf/recwebcomponents/recruitment/main-config/recruitment.js'></script><recruitment-current-openings cid='ddbaaed6-ae19-4112-a714-e3ed99d3fed1' ccid='9200431463886_3' host='DP' locale='en_US'></recruitment-current-openings> </div>";
+}
 
 partial('section.wrapper', [
 	'partials' => [
