@@ -5349,6 +5349,17 @@ if(function_exists('acf_add_local_field_group')) {
 						'preview_size' => 'thumbnail',
 					],
 					[
+						'key' => 'section_ten_age_group_slides_heading',
+						'name' => 'section_ten_age_group_slides_heading',
+						'label' => 'Heading',
+						'type' => 'text',
+						'allow_null' => true,
+						'required' => false,
+						'wrapper' => [
+							'width' => 50,
+						],
+					],
+					[
 						'key' => 'section_ten_age_group_slides_copy',
 						'name' => 'section_ten_age_group_slides_copy',
 						'label' => 'Copy',
