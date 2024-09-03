@@ -10,7 +10,7 @@ $(document).ready(function() {
         }
     }
 
-    var variableSlideUpCarousel = $('#variable-slide-up-owl-carousel');
+    var variableSlideUpCarousel = $('.caro');
     function vsuCarousel() {
         var checkWidth = $(window).width();
         variableSlideUpCarousel.each(function() {
