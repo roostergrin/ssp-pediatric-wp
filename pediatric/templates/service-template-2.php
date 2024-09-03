@@ -188,34 +188,6 @@ if (!empty($slides_count1)) {
 }
 
 
-	$bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
-	partial('section.wrapper', [
-		'partials' => [
-			[
-				'name' => 'section.pediatric.bubbles',
-				'parts' => [
-					'classes' => ['top', 'var-1', $bubbles_color]
-				]
-			],
-			[
-				'name' => 'section.pediatric.variable-slide-up-carousel',
-				'parts' => [
-					'classes' => ['service', 'bg-'.$bubbles_color],
-					'carousel_classes' => ['slides-3'],
-					'heading' => get_post_meta($brand->ID, 'age_group_slides_section_age_group_section_heading', true),
-					'slides' => $slides,
-				]
-			],
-			[
-				'name' => 'section.pediatric.bubbles',
-				'parts' => [
-					'classes' => ['bottom', 'var-3', $bubbles_color]
-				]
-			],
-
-		]
-	]);
-}
 
 
 $sec_six_heading = get_post_meta(get_the_id(), 'service_template_2_section_six_heading', true);
