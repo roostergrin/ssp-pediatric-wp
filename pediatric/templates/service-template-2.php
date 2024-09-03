@@ -121,6 +121,28 @@ partial('section.copy.full', [
 ]);
 
 
+// partial('section.wrapper', [
+//     'partials' => [
+//         [
+//             'name' => 'section.pediatric.variable-slide-up-carousel',
+//             'parts' => [
+//                 'classes' => ['service', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'bg-green' : 'bg-blue'), sanitize_title($brand->palette).'-palette'],
+//                 'carousel_classes' => ['slides-'. $counter, 'kill-carousel'],
+//                 'heading' => get_post_meta(get_the_id(), 'service_template_2_section_two_heading', true),
+//                 'content' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_two_content', true)),
+//                 'slides' => $slides,                
+//             ]
+//         ],
+//         [
+//             'name' => 'section.pediatric.bubbles',
+//             'parts' => [
+//                 'classes' => ['bottom', 'var-2', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue')]
+//             ]
+//         ],
+//     ]
+// ]);
+
+
 $sec_six_heading = get_post_meta(get_the_id(), 'service_template_2_section_six_heading', true);
 if(!empty($sec_six_heading)) {
     $icon_slides_2 = array();

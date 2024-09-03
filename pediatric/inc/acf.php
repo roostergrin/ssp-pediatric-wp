@@ -5308,6 +5308,83 @@ if(function_exists('acf_add_local_field_group')) {
 					'width' => 100,
 				],
 			],
+			[
+				'key' => 'section_ten_tab_service_template_2',
+				'name' => 'section_ten_tab_service_template_2',
+				'label' => 'Section Ten Carousel',
+				'type' => 'tab',
+			],
+			[
+				'key' => 'section_ten_age_group_section_heading',
+				'name' => 'section_ten_location_age_group_section_heading',
+				'label' => 'Heading',
+				'type' => 'text',
+				'wrapper' => [
+					'width' => 80,
+				],
+			],
+			[
+				'key' => 'section_ten_age_group_slides',
+				'name' => 'section_ten_age_group_slides',
+				'label' => 'Age group carousel',
+				'type' => 'repeater',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'collapsed' => '',
+				'min' => '',
+				'max' => '',
+				'layout' => 'row',
+				'button_label' => 'Add Slide',
+				'sub_fields' => [
+					[
+						'key' => 'section_ten_age_group_slides_image',
+						'name' => 'section_ten_age_group_slides_image',
+						'label' => 'Image',
+						'wrapper' => [
+							'width' => 50,
+						],
+						'type' => 'image',
+						'mime_types' => 'png,jpeg,jpg',
+						'library' => 'all',
+						'required' => false,
+						'return_format' => 'id',
+						'preview_size' => 'thumbnail',
+					],
+					[
+						'key' => 'section_ten_age_group_slides_heading',
+						'name' => 'section_ten_age_group_slides_heading',
+						'label' => 'Heading',
+						'type' => 'text',
+						'allow_null' => true,
+						'required' => false,
+						'wrapper' => [
+							'width' => 50,
+						],
+					],
+					[
+						'key' => 'section_ten_age_group_slides_copy',
+						'name' => 'section_ten_age_group_slides_copy',
+						'label' => 'Copy',
+						'type' => 'wysiwyg',
+						'allow_null' => true,
+						'required' => false,
+						'wrapper' => [
+							'width' => 100,
+						],
+					],
+					[
+						'key' => 'section_ten_age_group_slides_link_text',
+						'name' => 'section_ten_age_group_slides_link_text',
+						'label' => 'Anchor link',
+						'type' => 'text',
+						'default_value' => '[BRAND_URL path="#" text="Learn more" class="cta red" title="Learn more"]',
+						'wrapper' => [
+							'width' => 100,
+						],
+					],
+				]
+			],
 
 			[
 				'key' => 'section_five_tab_service_template_2',
