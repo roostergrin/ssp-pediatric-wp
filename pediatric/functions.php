@@ -1047,12 +1047,11 @@ add_action('wp', function($template) {
 				print_stmt('entered inside the location function', 1);
 
 				if(!empty($p) && !empty($p->ID)) {
+					print_stmt('NOT EMPTY', 1);
 					do_virtual_page(get_post($p->ID));
 					virtual_redirect_seo( $p->ID );
 					virtual_redirect_template_assignment( $post_type );
-				} else {
-					print_stmt('REDIRECT TO A 404 PAGE', 1);
-				}
+				} 
 			} elseif( count($url_segments) === 1 ) {
 				$meta_title = 'Locations';
 				$meta_description = 'Find an pediatric dentist near you! Serving communities in Centennial and Denver.';
