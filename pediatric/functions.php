@@ -1046,10 +1046,6 @@ add_action('wp', function($template) {
 				// don't know if this is ever accessed???
 				print_stmt('entered inside the location function', 1);
 
-				if(empty($p) || empty($p->ID)) {
-					print_stmt('EMPTY SEND 404', 1);
-				}
-
 				if(!empty($p) && !empty($p->ID)) {
 					do_virtual_page(get_post($p->ID));
 					virtual_redirect_seo( $p->ID );
