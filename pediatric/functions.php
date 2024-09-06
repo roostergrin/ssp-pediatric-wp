@@ -1050,6 +1050,8 @@ add_action('wp', function($template) {
 					do_virtual_page(get_post($p->ID));
 					virtual_redirect_seo( $p->ID );
 					virtual_redirect_template_assignment( $post_type );
+				} else {
+					print_stmt('REDIRECT TO A 404 PAGE', 1);
 				}
 			} elseif( count($url_segments) === 1 ) {
 				$meta_title = 'Locations';
