@@ -1046,7 +1046,7 @@ add_action('wp', function($template) {
 
 				// don't know if this is ever accessed???
 				if(empty($p)) {
-					print_stmt($post_name, 1);
+					wp_redirect('/404');
 				}
 				// print_stmt($post_name, 1);
 
