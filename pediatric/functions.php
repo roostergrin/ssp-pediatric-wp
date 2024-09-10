@@ -1037,6 +1037,7 @@ add_action('wp', function($template) {
 		}
 
 		if( $url_segments[0] === $location_key ) {
+			
 			if(count($url_segments) == 2) {
 				$post_name = $url_segments[1];
 				$post_parent = 0;
@@ -1044,7 +1045,7 @@ add_action('wp', function($template) {
 				$p = virtual_redirect_get_post( $post_type, $post_parent, $post_name );
 
 				// don't know if this is ever accessed???
-				print_stmt('entered inside the location function', 1);
+				print_stmt('entered inside the location function 2', 1);
 
 				if(!empty($p) && !empty($p->ID)) {
 					do_virtual_page(get_post($p->ID));
