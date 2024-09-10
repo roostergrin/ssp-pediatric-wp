@@ -1045,7 +1045,7 @@ add_action('wp', function($template) {
 				$p = virtual_redirect_get_post( $post_type, $post_parent, $post_name );
 
 				// don't know if this is ever accessed???
-				print_stmt($p, 1);
+				print_stmt($post_name, 1);
 
 				if(!empty($p) && !empty($p->ID)) {
 					do_virtual_page(get_post($p->ID));
