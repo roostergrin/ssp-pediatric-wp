@@ -547,7 +547,7 @@ function get_email_addresses_for_form($form, $location_id) {
 			$ret .= ($i == 0) ? $brand->{$form_to_address_name.'_'.($i).'_email'} : ','.$brand->{$form_to_address_name.'_'.($i).'_email'};
 		}
 	}
-	
+	echo("<script>console.log('PHP: " . $ret . "');</script>");
 	return $ret;
 }
 
