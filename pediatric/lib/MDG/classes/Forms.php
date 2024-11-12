@@ -965,7 +965,7 @@ class Forms {
 				'g-recaptcha-response',
 			],
 			'subject' => 'Dentist Referral - Form Submission',
-			'recipients' => 'bbuisker@simspecialty.com',
+			'recipients' => $brand->brand_orthodontic_referral_to_emails,
 			'cc' => 'kathleenf@mdgadvertising.com',
 			'bcc' => 'webdept@mdgadvertising.com, bbuisker@simspecialty.com',
 			'supports_email_notification' => true,
