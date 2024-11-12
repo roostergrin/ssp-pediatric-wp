@@ -1387,7 +1387,7 @@ class Forms {
 		# Deploy email
 		if(!is_live()) $this->current_form->subject = '(DEV) '.$this->current_form->subject;
 		if(!is_local()) wp_mail($recipient, $this->current_form->subject, $this->getTemplateBody(), $headers, $attachments);
-		if(!is_local()) wp_mail('priscilla@roostergrin.com', $recipient, $this->getTemplateBody(), $headers, $attachments);
+		wp_mail('priscilla@roostergrin.com', $recipient, $this->getTemplateBody(), $headers, $attachments);
 		if(is_local()) wp_mail('webdept@mdgadvertising.com', $this->current_form->subject, $this->getTemplateBody(), $headers, $attachments);
 
 		// Delete attachments after attaching them to the email
