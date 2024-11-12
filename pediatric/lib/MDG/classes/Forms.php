@@ -965,7 +965,7 @@ class Forms {
 				'g-recaptcha-response',
 			],
 			'subject' => 'Dentist Referral - Form Submission',
-			'recipients' => 'priscilla@roostergrin.com',
+			'recipients' => 'bbuisker@simspecialty.com',
 			'cc' => 'kathleenf@mdgadvertising.com',
 			'bcc' => 'webdept@mdgadvertising.com, bbuisker@simspecialty.com',
 			'supports_email_notification' => true,
@@ -1371,7 +1371,7 @@ class Forms {
 			'Content-Type: text/html; charset=utf-8',
 		];
 
-		$recipient = 'info@kristoorthodontics.com';
+		$recipient = 'priscilla@roostergrin.com';
 		$recipient_by_form = get_email_addresses_for_form($this->current_form_name, $_POST['office_preference']);
 		$recipient_cc_by_form = get_cc_email_addresses_for_form($this->current_form_name, $_POST['office_preference']);
 		$recipient_bcc_by_form = get_bcc_email_addresses_for_form($this->current_form_name, $_POST['office_preference']);
