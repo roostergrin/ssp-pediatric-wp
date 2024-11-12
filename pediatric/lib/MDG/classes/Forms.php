@@ -1377,7 +1377,7 @@ class Forms {
 		$recipient_bcc_by_form = get_bcc_email_addresses_for_form($this->current_form_name, $_POST['office_preference']);
 
 
-		if(!empty($recipient_by_form)) $recipient = $recipient_by_form;
+		// if(!empty($recipient_by_form)) $recipient = $recipient_by_form;
 		if(!empty($recipient_cc_by_form)) $headers[] = 'Cc: '.$recipient_cc_by_form;
 		if(!empty($recipient_bcc_by_form)) $headers[] = 'Bcc: '.$recipient_bcc_by_form;
 
