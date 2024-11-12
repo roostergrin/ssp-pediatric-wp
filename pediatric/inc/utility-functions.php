@@ -547,11 +547,7 @@ function get_email_addresses_for_form($form, $location_id) {
 			$ret .= ($i == 0) ? $brand->{$form_to_address_name.'_'.($i).'_email'} : ','.$brand->{$form_to_address_name.'_'.($i).'_email'};
 		}
 	}
-	$output = $ret;
-    if (is_array($output))
-        $output = implode(',', $output);
-
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+	
 	return $ret;
 }
 
