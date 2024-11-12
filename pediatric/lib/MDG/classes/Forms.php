@@ -1371,13 +1371,13 @@ class Forms {
 			'Content-Type: text/html; charset=utf-8',
 		];
 
-		$recipient = 'priscilla@roostergrin.com';
+		$recipient = 'info@kristoorthodontics.com';
 		$recipient_by_form = get_email_addresses_for_form($this->current_form_name, $_POST['office_preference']);
 		$recipient_cc_by_form = get_cc_email_addresses_for_form($this->current_form_name, $_POST['office_preference']);
 		$recipient_bcc_by_form = get_bcc_email_addresses_for_form($this->current_form_name, $_POST['office_preference']);
 
 
-		// if(!empty($recipient_by_form)) $recipient = $recipient_by_form;
+		if(!empty($recipient_by_form)) $recipient = $recipient_by_form;
 		if(!empty($recipient_cc_by_form)) $headers[] = 'Cc: '.$recipient_cc_by_form;
 		if(!empty($recipient_bcc_by_form)) $headers[] = 'Bcc: '.$recipient_bcc_by_form;
 
@@ -1387,6 +1387,7 @@ class Forms {
 		# Deploy email
 		if(!is_live()) $this->current_form->subject = '(DEV) '.$this->current_form->subject;
 		if(!is_local()) wp_mail($recipient, $this->current_form->subject, $this->getTemplateBody(), $headers, $attachments);
+		if(!is_local()) wp_mail('priscilla@roostergrin.com', $recipient, $this->getTemplateBody(), $headers, $attachments);
 		if(is_local()) wp_mail('webdept@mdgadvertising.com', $this->current_form->subject, $this->getTemplateBody(), $headers, $attachments);
 
 		// Delete attachments after attaching them to the email
