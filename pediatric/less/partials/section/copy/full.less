@@ -17,27 +17,34 @@ section.copy.full {
         margin: -50px 0 30px 0;
     }
     body.page-template-fillings-crowns-restoration & {
-        @media screen and (max-width: 375px){
+        @media screen and (max-width: 375px) {
             margin-top: -30px !important;
         }
     }
 }
+
 section.wrapper {
     + section.copy.full {
         @media @mobileMax {
             margin: 20px 0;
             body.page-template-kids-dental-exams &,
             body.page-template-kids-custom-mouthguard &,
-            body.page-template-kids-dental-fillings-crowns & { margin: -50px 0 30px 0; }
+            body.page-template-kids-dental-fillings-crowns & {
+                margin: -50px 0 30px 0;
+            }
         }
     }
 }
+
 .video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin: 0 auto;
     width: 75%;
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .video-grid .video-container {
@@ -48,12 +55,13 @@ section.wrapper {
 .video-grid .video-container .video-title {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 35px;
-    color: orange;
+    margin-bottom: 15px;
+    color: @orange;
 }
 
 .video-grid .video-container iframe {
+    width: 100%;
+    height: auto;
     display: block;
     margin: 0 auto;
-    margin-top: 15px;
 }
