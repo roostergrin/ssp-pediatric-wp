@@ -26,33 +26,20 @@ section.copy.full {
 .video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin: 0 auto;
-    width: 90%;
-    @media screen and (max-width: 768px) {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    grid-gap: 20px;
+
+    .video-container {
+        display: flex;
+        flex-direction: column;
+
+        .video-title {
+            margin-bottom: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9; // Ensures the iframe maintains a 16:9 aspect ratio
+        }
     }
-}
-
-.video-container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.video-container .video-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 15px 0;
-    color: @orange;
-}
-
-.video-container iframe {
-    width: 100%;
-    max-width: 460px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
 }
