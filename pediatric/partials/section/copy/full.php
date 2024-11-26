@@ -11,7 +11,7 @@
 
             <?php if (!empty($video_link)): ?>
                 <div class="video-grid"
-                    style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 0 auto; width: 75%;">
+                    style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin: 0 auto; width: 75%;">
                     <?php for ($i = 0; $i < 4; $i++): ?>
                         <div class="video-container" style="margin: 0 auto;">
                             <iframe width="460" height="215" src="<?= esc_url($video_link); ?>" title="Video player"
@@ -23,6 +23,7 @@
                     <?php endfor; ?>
                 </div>
             <?php endif; ?>
+
 
         </div>
     </div>
