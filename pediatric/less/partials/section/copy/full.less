@@ -34,25 +34,26 @@ section.wrapper {
 }
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); // Creates a 2x2 layout
-    gap: 30px; // Sets the spacing between videos
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
     margin: 0 auto;
     width: 75%;
+}
 
-    .video-container {
-        margin: 0 auto;
-        text-align: center;
+.video-grid .video-container {
+    margin: 0 auto;
+    text-align: center;
+}
 
-        .video-title {
-            font-size: 16px; // Adjust title font size as needed
-            font-weight: bold;
-            margin-bottom: 10px; // Space between title and video
-            color: @orange; // Placeholder color variable from your Less file
-        }
+.video-grid .video-container .video-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: orange;
+}
 
-        iframe {
-            display: block; // Ensures proper alignment
-            margin: 0 auto; // Centers the iframe
-        }
-    }
+.video-grid .video-container iframe {
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
 }
