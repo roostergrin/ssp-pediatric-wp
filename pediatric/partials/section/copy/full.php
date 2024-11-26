@@ -12,9 +12,9 @@
             <?php if (!empty($video_link)): ?>
                 <div class="video-grid">
                     <?php for ($i = 0; $i < 4; $i++): ?>
-                        <div class="video-container">
+                        <div class="video-container apple">
                             <h3 class="video-title">Placeholder Title <?= $i + 1; ?></h3>
-                            <iframe width="460" height="215" src="<?= esc_url($video_link); ?>" title="Video player"
+                            <iframe width="" height="" src="<?= esc_url($video_link); ?>" title="Video player"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
