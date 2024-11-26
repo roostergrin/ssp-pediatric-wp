@@ -10,10 +10,10 @@
             <?php endif; ?>
 
             <?php if (!empty($video_link)): ?>
-                <div class="video-grid"
-                    style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin: 0 auto; width: 75%;">
+                <div class="video-grid">
                     <?php for ($i = 0; $i < 4; $i++): ?>
-                        <div class="video-container" style="margin: 0 auto;">
+                        <div class="video-container">
+                            <h3 class="video-title">Placeholder Title <?= $i + 1; ?></h3>
                             <iframe width="460" height="215" src="<?= esc_url($video_link); ?>" title="Video player"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -23,6 +23,7 @@
                     <?php endfor; ?>
                 </div>
             <?php endif; ?>
+
 
 
         </div>
