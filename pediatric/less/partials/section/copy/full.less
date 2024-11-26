@@ -23,44 +23,35 @@ section.copy.full {
     }
 }
 
-section.wrapper {
-    + section.copy.full {
-        @media @mobileMax {
-            margin: 20px 0;
-            body.page-template-kids-dental-exams &,
-            body.page-template-kids-custom-mouthguard &,
-            body.page-template-kids-dental-fillings-crowns & {
-                margin: -50px 0 30px 0;
-            }
-        }
-    }
-}
-
 .video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin: 0 auto;
-    width: 75%;
-    @media screen and (max-width: 600px) {
+    width: 90%;
+    @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
-.video-grid .video-container {
-    margin: 0 auto;
+.video-container {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.video-grid .video-container .video-title {
+.video-container .video-title {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin: 15px 0;
     color: @orange;
 }
 
-.video-grid .video-container iframe {
+.video-container iframe {
     width: 100%;
+    max-width: 460px;
     height: auto;
     display: block;
     margin: 0 auto;
