@@ -24,22 +24,18 @@ section.copy.full {
 }
 
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
     .video-container {
         display: flex;
         flex-direction: column;
-
-        .video-title {
-            margin-bottom: 10px;
-        }
-
+        gap: 10px;
+        width: 50%;
         iframe {
             width: 100%;
-            height: auto;
-            aspect-ratio: 16 / 9; // Ensures the iframe maintains a 16:9 aspect ratio
+            height: 100%;
         }
     }
 }
