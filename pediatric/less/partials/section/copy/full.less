@@ -32,28 +32,34 @@ section.wrapper {
         }
     }
 }
+
 .video-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin: 0 auto;
     width: 75%;
-}
 
-.video-grid .video-container {
-    margin: 0 auto;
-    text-align: center;
-}
+    .video-container {
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
 
-.video-grid .video-container .video-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 35px;
-    color: orange;
-}
+        .video-title {
+            font-size: 16px;
+            font-weight: bold;
+            padding-bottom: 15px;
+            z-index: 1;
+            position: relative;
+            color: @orange;
+        }
 
-.video-grid .video-container iframe {
-    display: block;
-    margin: 0 auto;
-    margin-top: 15px;
+        iframe {
+            display: block;
+            margin: 0 auto;
+            z-index: 0;
+            position: relative;
+            margin-top: 15px;
+        }
+    }
 }
