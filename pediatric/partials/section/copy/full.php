@@ -9,7 +9,7 @@
                 <?= $copy; ?>
             <?php endif; ?>
 
-            <?php if (!empty($video_links) && is_array($video_links)): ?>
+            <?php if (!empty($video_links)): ?>
                 <div class="video-grid">
                     <?php foreach ($video_links as $index => $video_link): ?>
                         <?php if ($index < 4): // Limit to 4 videos ?>
