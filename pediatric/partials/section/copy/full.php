@@ -1,4 +1,4 @@
-<section class="copy full<?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
+<section class="cojy full<?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
     <div class="content">
         <div class="inner-content">
             <?php if ($heading): ?>
@@ -9,13 +9,14 @@
                 <?= $copy; ?>
             <?php endif; ?>
 
-            <?php if (!empty($video_links)): ?>
+            <?php if (!empty($video_links) && is_array($video_links)): ?>
                 <div class="video-grid">
                     <?php foreach ($video_links as $index => $video_link): ?>
-                        <?php if ($index < 4): // Limit to 4 videos ?>
+                        <?php if (!empty($video_link) && $index < 4): // Ensure the video link is not empty and limit to 4 ?>
                             <div class="video-container-1">
                                 <h3 class="video-title">Placeholder Title <?= $index + 1; ?></h3>
-                                <iframe width="" height="" src="<?= esc_url($video_link); ?>" title="Video player" frameborder="0"
+                                <iframe width="560" height="315" src="<?= esc_url($video_link); ?>" title="Video player"
+                                    frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                                 </iframe>
@@ -23,7 +24,12 @@
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
+            <?php else: ?>
+                <p>No videos available to display.</p>
+                <pre><?php print_r($video_links); ?></pre>
+
             <?php endif; ?>
+
 
 
 
