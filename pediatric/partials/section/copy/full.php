@@ -8,7 +8,7 @@ $vid_links = [
 ];
 ?>
 
-<section class="cojy full<?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
+<section class="copy full<?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
     <div class="content">
         <div class="inner-content">
             <?php if ($heading): ?>
