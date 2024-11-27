@@ -108,7 +108,7 @@ partial('section.pediatric.two-icons-with-image', [
         'classes' => ['animatable'],
     ],
     'slides' => $icon_slides_1,
-    'video_links' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_links', true),
+    'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_link', true),
 
 ]);
 
@@ -117,7 +117,7 @@ partial('section.copy.full', [
     'heading' => get_post_meta(get_the_id(), 'service_template_2_section_nine_heading', true),
     'heading_classes' => ['h1', 'orange'],
     'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_nine_content', true)),
-    'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_nine_video_link', true),
+    'video_links' => get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links', true),
 ]);
 
 
