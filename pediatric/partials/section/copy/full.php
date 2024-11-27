@@ -1,3 +1,13 @@
+<?php
+// Define an array of video links
+$vid_links = [
+    "https://www.youtube.com/watch?v=eTsjjettpVE",
+    "https://youtu.be/B9w836TKHn4",
+    "https://youtu.be/M0o2DKD4M1c",
+    "https://youtu.be/YBnN8DNSu4U",
+];
+?>
+
 <section class="cojy full<?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
     <div class="content">
         <div class="inner-content">
@@ -9,9 +19,9 @@
                 <?= $copy; ?>
             <?php endif; ?>
 
-            <?php if (!empty($video_links) && is_array($video_links)): ?>
+            <?php if (!empty($video_links) && is_array($vid_links)): ?>
                 <div class="video-grid">
-                    <?php foreach ($video_links as $index => $video_link): ?>
+                    <?php foreach ($vid_links as $index => $video_link): ?>
                         <?php if (!empty($video_link) && $index < 4): // Ensure the video link is not empty and limit to 4 ?>
                             <div class="video-container-1">
                                 <h3 class="video-title">Placeholder Title <?= $index + 1; ?></h3>
@@ -24,16 +34,7 @@
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
-            <?php else: ?>
-                <p>No videos available to display.</p>
-                <pre><?php print_r($video_links); ?></pre>
-
             <?php endif; ?>
-
-
-
-
-
         </div>
     </div>
 </section>
