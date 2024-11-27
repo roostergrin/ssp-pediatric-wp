@@ -9,20 +9,22 @@
                 <?= $copy; ?>
             <?php endif; ?>
 
-            <?php if (!empty($video_links)): ?>
+            <?php if (!empty($video_links) && is_array($video_links)): ?>
                 <div class="video-grid">
-                    <?php for ($i = 0; $i < 4; $i++): ?>
-                        <div class="video-container-1">
-                            <h3 class="video-title">Placeholder Title <?= $i + 1; ?></h3>
-                            <iframe width="" height="" src="https://www.youtube.com/watch?v=B9w836TKHn4" title="Video player"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                            </iframe>
-                        </div>
-                    <?php endfor; ?>
+                    <?php foreach ($video_links as $index => $video_link): ?>
+                        <?php if ($index < 4): // Limit to 4 videos ?>
+                            <div class="video-container-1">
+                                <h3 class="video-title">Placeholder Title <?= $index + 1; ?></h3>
+                                <iframe width="" height="" src="<?= esc_url($video_link); ?>" title="Video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                </iframe>
+                            </div>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
             <?php endif; ?>
+
 
 
 
