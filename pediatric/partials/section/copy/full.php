@@ -2,9 +2,9 @@
 // Define an array of video links
 $vid_links = [
     "https://www.youtube.com/embed/eTsjjettpVE",
-    "https://youtu.be/embed/B9w836TKHn4",
-    "https://youtu.be/embed/M0o2DKD4M1c",
-    "https://youtu.be/embed/YBnN8DNSu4U",
+    "https://youtube.com/embed/B9w836TKHn4",
+    "https://youtube.com/embed/M0o2DKD4M1c",
+    "https://youtube.com/embed/YBnN8DNSu4U",
 ];
 ?>
 
