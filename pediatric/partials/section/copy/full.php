@@ -1,10 +1,10 @@
 <?php
 // Define an array of video links
 $vid_links = [
-    "https://www.youtube.com/watch?v=eTsjjettpVE",
-    "https://youtu.be/B9w836TKHn4",
-    "https://youtu.be/M0o2DKD4M1c",
-    "https://youtu.be/YBnN8DNSu4U",
+    "https://www.youtube.com/embed/eTsjjettpVE",
+    "https://youtu.be/embed/B9w836TKHn4",
+    "https://youtu.be/embed/M0o2DKD4M1c",
+    "https://youtu.be/embed/YBnN8DNSu4U",
 ];
 ?>
 
