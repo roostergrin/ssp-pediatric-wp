@@ -5298,16 +5298,31 @@ if(function_exists('acf_add_local_field_group')) {
 				'delay' => 0,
 			],
 			[
-				'key' => 'service_template_2_section_nine_video_link',
-				'name' => 'service_template_2_section_nine_video_link',
-				'label' => 'Video Link',
-				'type' => 'url',
-				'instructions' => 'Add a link to the video',
+				'key' => 'service_template_2_section_nine_video_links',
+				'name' => 'service_template_2_section_nine_video_links',
+				'label' => 'Video Links',
+				'type' => 'repeater',
+				'instructions' => 'Add up to 4 video links.',
 				'required' => false,
 				'wrapper' => [
 					'width' => 100,
 				],
+				'min' => 1, // Minimum number of links required
+				'max' => 4, // Maximum number of links allowed
+				'layout' => 'block',
+				'button_label' => 'Add Video Link',
+				'sub_fields' => [
+					[
+						'key' => 'service_template_2_section_nine_video_link',
+						'name' => 'video_link',
+						'label' => 'Video Link',
+						'type' => 'url',
+						'instructions' => 'Enter the video URL.',
+						'required' => true,
+					],
+				],
 			],
+			
 			[
 				'key' => 'section_ten_tab_service_template_2',
 				'name' => 'section_ten_tab_service_template_2',
