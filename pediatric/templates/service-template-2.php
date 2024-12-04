@@ -133,6 +133,29 @@ partial('section.copy.full', [
     'video_links' => $video_links,
 ]);
 
+$video_links_count2 = get_post_meta(get_the_id(), 'service_template_2_section_parent_video_links', true);
+$video_links2 = [];
+if (!empty($video_links_count)) {
+    for ($i = 0; $i < $video_links_count2; $i++) {
+        $vid_link2 = get_post_meta(get_the_id(), 'service_template_2_section_parent_video_links_' . $i . '_service_template_2_section_parent_video_links_link', true);
+        $vid_title2 = get_post_meta(get_the_id(), 'service_template_2_section_parent_video_links_' . $i . '_service_template_2_section_parent_video_links_title', true);
+        $video_links2[] = [
+            'link' => $vid_link2,
+            'title' => $vid_title2,
+        ];
+    }
+}
+
+if(!empty($video_links2)) {
+    partial('section.copy.full', [
+        'classes' => ['heading-orange'],
+        'heading' => get_post_meta(get_the_id(), 'service_template_2_section_parent_video_heading', true),
+        'heading_classes' => ['h1', 'orange'],
+        'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_parent_video_content', true)),
+        'video_links' => $video_links2,
+    ]);
+}
+
 
 // partial('section.wrapper', [
 //     'partials' => [
