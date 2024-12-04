@@ -10,9 +10,6 @@ $vid_links = [
 
 <section class="copy full<?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
     <div class="content">
-    <h1> <?php var_dump($video_links); ?> </h1>
-
-
         <div class="inner-content">
             <?php if ($heading): ?>
                 <h2 class="<?= !empty($heading_classes) ? implode(' ', $heading_classes) : ''; ?>"><?= $heading; ?></h2>

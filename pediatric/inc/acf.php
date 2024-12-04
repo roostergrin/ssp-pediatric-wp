@@ -5330,6 +5330,65 @@ if(function_exists('acf_add_local_field_group')) {
 					],
 				],
 			],
+			[
+				'key' => 'section_parent_service_template_2',
+				'name' => 'section_parent_service_template_2',
+				'label' => 'Section Parent Testimonials "Full Width Heading and Copy"',
+				'type' => 'tab',
+			],
+			[
+				'key' => 'service_template_2_section_parent_heading',
+				'name' => 'service_template_2_section_parent_heading',
+				'label' => 'Heading',
+				'type' => 'text',
+				'allow_null' => true,
+				'required' => false,
+			],
+			[
+				'key' => 'service_template_2_section_parent_content',
+				'name' => 'service_template_2_section_parent_content',
+				'label' => 'Copy',
+				'type' => 'wysiwyg',
+				'instructions' => 'One return is a break, two returns is a separate paragraph. Accepts short codes',
+				'required' => false,
+				'tabs' => 'all',
+				'toolbar' => 'simple',
+				'media_upload' => 0,
+				'delay' => 0,
+			],
+			[
+				'key' => 'service_template_2_section_parent_video_links',
+				'name' => 'service_template_2_section_parent_video_links',
+				'label' => 'Video Links',
+				'type' => 'repeater',
+				'instructions' => 'Add up to 4 video links.',
+				'required' => false,
+				'wrapper' => [
+					'width' => 100,
+				],
+				'min' => 1, // Minimum number of links required
+				'max' => 4, // Maximum number of links allowed
+				'layout' => 'block',
+				'button_label' => 'Add Video Link',
+				'sub_fields' => [
+					[
+						'key' => 'service_template_2_section_parent_video_links_link',
+						'name' => 'service_template_2_section_parent_video_links_link',
+						'label' => 'Video Link',
+						'type' => 'url',
+						'instructions' => 'Enter the video URL.',
+						'required' => true,
+					],
+					[
+						'key' => 'service_template_2_section_parent_video_links_title',
+						'name' => 'service_template_2_section_parent_video_links_title',
+						'label' => 'Video Title',
+						'type' => 'text',
+						'instructions' => 'Enter the video title.',
+						'required' => false,
+					],
+				],
+			],
 			
 			[
 				'key' => 'section_ten_tab_service_template_2',
