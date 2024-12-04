@@ -5320,6 +5320,14 @@ if(function_exists('acf_add_local_field_group')) {
 						'instructions' => 'Enter the video URL.',
 						'required' => true,
 					],
+					[
+						'key' => 'service_template_2_section_nine_video_links_title',
+						'name' => 'service_template_2_section_nine_video_links_title',
+						'label' => 'Video Title',
+						'type' => 'text',
+						'instructions' => 'Enter the video title.',
+						'required' => false,
+					],
 				],
 			],
 			

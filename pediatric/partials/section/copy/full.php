@@ -22,13 +22,13 @@ $vid_links = [
                 <?= $copy; ?>
             <?php endif; ?>
 
-            <?php if (!empty($video_links) && is_array($vid_links)): ?>
+            <?php if (!empty($video_links) && is_array($video_links)): ?>
                 <div class="video-grid">
-                    <?php foreach ($vid_links as $index => $video_link): ?>
+                    <?php foreach ($video_links as $index => $video_link): ?>
                         <?php if (!empty($video_link) && $index < 4): // Ensure the video link is not empty and limit to 4 ?>
                             <div class="video-container-1">
-                                <h3 class="video-title">Placeholder Title <?= $index + 1; ?></h3>
-                                <iframe width="560" height="315" src="<?= esc_url($video_link); ?>" title="Video player"
+                                <h3 class="video-title"><?= $video_link['title'] ?></h3>
+                                <iframe width="560" height="315" src="<?= esc_url($video_link['link']); ?>" title="Video player"
                                     frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
