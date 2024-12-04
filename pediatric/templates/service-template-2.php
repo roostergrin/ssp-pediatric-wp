@@ -112,51 +112,51 @@ partial('section.pediatric.two-icons-with-image', [
     'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_link', true),
 
 ]);
-$slides_count5 = get_post_meta(get_the_id(),'section_symptoms_age_group_slides', true);
-$slides5 = [];
-if (!empty($slides_count5)) {
-        for ($i = 0; $i < $slides_count5; $i++) {
-            $icon = get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_image', true);
-            $slides5[] = [
-                'heading' => get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_heading', true),
-                'content' => apply_filters('the_content', get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_copy', true)),
-                'cta' => get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_link_text', true),
-                'image' => [
-                    'src' => wp_get_attachment_image_src($icon, 'medium_large')[0],
-                    'alt' => get_post_meta($icon, '_wp_attachment_image_alt', true),
-                ]
-            ];
-        }
+$slides_symptoms = [];
+$counter1 = 0;
+$y1 = 2;
 
-	$bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
-	partial('section.wrapper', [
-		'partials' => [
-			[
-				'name' => 'section.pediatric.bubbles',
-				'parts' => [
-					'classes' => ['top', 'var-1', $bubbles_color]
-				]
-			],
-			[
-				'name' => 'section.pediatric.variable-slide-up-carousel',
-				'parts' => [
-					'classes' => ['service', 'bg-'.$bubbles_color],
-					'carousel_classes' => ['slides-3'],
-					'heading' => get_post_meta(get_the_id(), 'section_ten_location_age_group_section_heading', true),
-					'slides' => $slides5,
-				]
-			],
-			[
-				'name' => 'section.pediatric.bubbles',
-				'parts' => [
-					'classes' => ['bottom', 'var-3', $bubbles_color]
-				]
-			],
+// SIM4KIDS brand
+if ($brand->ID == 18088) $y1 = 4;
 
-		]
-	]);
+for($i = 0; $i < $y1; $i++) {
+    $icon = get_post_meta(get_the_id(), 'service_template_2_section_symptoms_slide_' . $i . '_service_template_2_section_symptoms_slide_' . $i . '_icon', true);
+    $heading = get_post_meta(get_the_id(), 'service_template_2_section_symptoms_slide_' . $i . '_service_template_2_section_symptoms_slide_' . $i . '_heading', true);
+    $copy = get_post_meta(get_the_id(), 'service_template_2_section_symptoms_slide_' . $i . '_service_template_2_section_symptoms_slide_' . $i . '_copy', true);
 
+    if(empty($icon) && empty($heading) && empty($copy) ) {
+        break;
+    } else {
+        $counter1++;
+        $slides_symptoms[] = [
+            'icon' => $icon,
+            'icon_classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'green')],
+            'heading' => $heading,
+            'content' => $copy,
+        ];
+    }
 }
+
+partial('section.wrapper', [
+    'partials' => [
+        [
+            'name' => 'section.pediatric.variable-slide-up-carousel',
+            'parts' => [
+                'classes' => ['service', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'bg-green' : 'bg-blue'), sanitize_title($brand->palette).'-palette'],
+                'carousel_classes' => ['slides-'. $counter, 'kill-carousel'],
+                'heading' => get_post_meta(get_the_id(), 'service_template_2_section_symptoms_heading', true),
+                'content' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_symptoms_content', true)),
+                'slides' => $slides_symptoms,                
+            ]
+        ],
+        [
+            'name' => 'section.pediatric.bubbles',
+            'parts' => [
+                'classes' => ['bottom', 'var-2', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue')]
+            ]
+        ],
+    ]
+]);
 
 $video_links_count = get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links', true);
 $video_links = [];
