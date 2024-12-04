@@ -98,6 +98,7 @@ for($j = 0; $j < 2; $j++) {
     ];
 }
 $section_5_image_id = get_post_meta(get_the_id(), 'service_template_2_section_five_main_image', true);
+
 partial('section.pediatric.two-icons-with-image', [
     'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'mb-150'],
     'heading' => get_post_meta(get_the_id(), 'service_template_2_section_five_heading', true),
@@ -112,12 +113,19 @@ partial('section.pediatric.two-icons-with-image', [
 
 ]);
 
+$video_links_count = get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links', true);
+$video_links = [];
+if (!empty($video_links_count)) {
+    for ($i = 0; $i < $video_links_count; $i++) {
+        $video_links[] = get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links_' . $i . '_service_template_2_section_nine_video_link', true);
+    }
+}
 partial('section.copy.full', [
     'classes' => ['heading-orange'],
     'heading' => get_post_meta(get_the_id(), 'service_template_2_section_nine_heading', true),
     'heading_classes' => ['h1', 'orange'],
     'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_nine_content', true)),
-    'video_links' => get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links', true),
+    'video_links' => $video_links,
 ]);
 
 
@@ -141,6 +149,7 @@ partial('section.copy.full', [
 //         ],
 //     ]
 // ]);
+
 $slides_count1 = get_post_meta(get_the_id(),'section_ten_age_group_slides', true);
 $slides1 = [];
 if (!empty($slides_count1)) {
