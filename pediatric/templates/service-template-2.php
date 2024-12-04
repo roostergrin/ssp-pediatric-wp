@@ -346,6 +346,7 @@ if ($sec_8_slide_count > 0) {
 		];
 	}
 }
+if(!empty($sec_8_slides)) {
 partial('section.wrapper', [
 	'classes' => ['treatments'],
 	'partials' => [
@@ -369,6 +370,8 @@ partial('section.wrapper', [
 		],
 	]
 ]);
+
+}
 
 if($show_testimonials) {
     $sec_8_slides = array();
