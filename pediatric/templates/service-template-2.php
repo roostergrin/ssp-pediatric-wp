@@ -112,6 +112,7 @@ partial('section.pediatric.two-icons-with-image', [
     'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_link', true),
 
 ]);
+$bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
 $slides_symptoms = [];
 $counter1 = 0;
 $y1 = 2;
@@ -246,7 +247,7 @@ if (!empty($slides_count1)) {
             ];
         }
 
-	$bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
+	// $bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
 	partial('section.wrapper', [
 		'partials' => [
 			[
