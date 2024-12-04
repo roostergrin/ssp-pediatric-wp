@@ -147,6 +147,7 @@ if (!empty($video_links_count)) {
 }
 
 if(!empty($video_links2)) {
+    echo '<div class="mt-3" style="margin-top: 3rem;"></div>';
     partial('section.copy.full', [
         'classes' => ['heading-orange'],
         'heading' => get_post_meta(get_the_id(), 'service_template_2_section_parent_heading', true),
