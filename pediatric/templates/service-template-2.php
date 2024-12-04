@@ -149,7 +149,7 @@ if (!empty($video_links_count)) {
 if(!empty($video_links2)) {
     partial('section.copy.full', [
         'classes' => ['heading-orange'],
-        'heading' => get_post_meta(get_the_id(), 'service_template_2_section_parent_video_heading', true),
+        'heading' => get_post_meta(get_the_id(), 'service_template_2_section_parent_heading', true),
         'heading_classes' => ['h1', 'orange'],
         'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_parent_video_content', true)),
         'video_links' => $video_links2,
