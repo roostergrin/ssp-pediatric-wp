@@ -138,6 +138,8 @@ for($i = 0; $i < $y1; $i++) {
     }
 }
 
+if(!empty($slides_symptoms)) {
+
 partial('section.wrapper', [
     'partials' => [
         [
@@ -164,6 +166,7 @@ partial('section.wrapper', [
         ],
     ]
 ]);
+}
 
 $video_links_count = get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links', true);
 $video_links = [];
