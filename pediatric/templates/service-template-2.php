@@ -140,6 +140,12 @@ for($i = 0; $i < $y1; $i++) {
 partial('section.wrapper', [
     'partials' => [
         [
+            'name' => 'section.pediatric.bubbles',
+            'parts' => [
+                'classes' => ['top', 'var-1', $bubbles_color]
+            ]
+        ],
+        [
             'name' => 'section.pediatric.variable-slide-up-carousel',
             'parts' => [
                 'classes' => ['service', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'bg-green' : 'bg-blue'), sanitize_title($brand->palette).'-palette'],
