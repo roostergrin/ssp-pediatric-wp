@@ -117,7 +117,10 @@ $video_links_count = get_post_meta(get_the_id(), 'service_template_2_section_nin
 $video_links = [];
 if (!empty($video_links_count)) {
     for ($i = 0; $i < $video_links_count; $i++) {
-        $video_links[] = get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links_' . $i . '_service_template_2_section_nine_video_link', true);
+        $vid_link = get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links_' . $i . '_service_template_2_section_nine_video_link', true);
+        $video_links[] = [
+            'link' => $vid_link,
+        ];
     }
 }
 partial('section.copy.full', [
