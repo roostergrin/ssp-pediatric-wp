@@ -12,6 +12,7 @@ wp_enqueue_script('two-icons-with-image-carousel');
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
+                    <img src="https://dev.sim4kids.com/wp-content/uploads/2024/12/SimKO-20-1.jpg" style="transform: scale(.75);">
                 <?php elseif (!empty($image['src'])): ?>
                     <img src="<?= $image['src']; ?>" <?= !empty($image['alt']) ? 'alt="' . $image['alt'] . '"' : ''; ?>
                         <?= !empty($image['classes']) ? 'class="' . implode(' ', $image['classes']) . '"' : ''; ?>>
