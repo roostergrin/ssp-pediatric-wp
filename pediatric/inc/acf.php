@@ -6230,8 +6230,8 @@ if(function_exists('acf_add_local_field_group')) {
 	]);
 	//  frenectomy 
 	acf_add_local_field_group([
-		'key' => 'service_template_2',
-		'title' => 'Service Template 2',
+		'key' => 'frenectomy',
+		'title' => 'Frenectomy',
 		'fields' => [
 			[
 				'key' => 'hero_tab_service_template_2',
