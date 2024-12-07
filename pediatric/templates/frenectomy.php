@@ -105,7 +105,7 @@ $sec_3_l_slides_num = 3;
 for($i = 0; $i < $sec_3_l_slides_num; $i++) {
     $sec_3_l_slides[] = [
         'icon' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_section_three_left_col_slides_'. $i . '_icon', true),
-        'heading' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_three_left_col_slides_'. $i . '_heading', true),
+        'heading' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_section_three_left_col_slides_'. $i . '_heading', true),
         'copy' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_section_three_left_col_slides_'. $i . '_copy', true),
     ];
 }
