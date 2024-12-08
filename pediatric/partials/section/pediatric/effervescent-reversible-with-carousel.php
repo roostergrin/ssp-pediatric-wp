@@ -23,11 +23,38 @@ wp_enqueue_script('effervescent-reversible-carousel');
                 <div class="inner-box-left">
                     <div class="heading">
                         <?php if (!empty($video_link)): ?>
-                            <video class="sec-3-video" controls
+                            <video id="sec-3-video" class="sec-3-video" 
                                 style="width: 300px;height: 300px;border-radius: 50%; overflow: hidden;transform: translate(-21%, 90%) scale(2.05);object-fit: cover;">
                                 <source src="<?php echo esc_url($video_link); ?>" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                    const video = document.getElementById("sec-3-video");
+
+                                    if (video) {
+                                        const observer = new IntersectionObserver((entries) => {
+                                            entries.forEach(entry => {
+                                                if (entry.isIntersecting) {
+                                                    video.play();
+                                                } else {
+                                                    video.pause();
+                                                }
+                                            });
+                                        }, { threshold: 0.5 });
+
+                                        observer.observe(video);
+
+                                        video.addEventListener("click", () => {
+                                            if (video.paused) {
+                                                video.play();
+                                            } else {
+                                                video.pause();
+                                            }
+                                        });
+                                    }
+                                });
+                            </script>
                         <?php endif; ?>
 
                         <h3><?= $wrapper_left_heading; ?></h3>
