@@ -6530,6 +6530,15 @@ if(function_exists('acf_add_local_field_group')) {
     'required' => false,
 ],
 [
+    'key' => 'frenectomy_section_three_video_url',
+    'name' => 'frenectomy_section_three_video_url',
+    'label' => 'Video URL',
+    'type' => 'url',
+    'allow_null' => true,
+    'required' => false,
+],
+
+[
     'key' => 'frenectomy_section_three_bubble_heading',
     'name' => 'frenectomy_section_three_bubble_heading',
     'label' => 'Bubble heading',

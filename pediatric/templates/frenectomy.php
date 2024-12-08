@@ -120,6 +120,7 @@ for($i = 0; $i < $sec_3_r_slides_num; $i++) {
 }
 
 $sec_3_color_class = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'orange': 'red'); // Smiles in Motion
+$sec_3_video_link = get_post_meta(get_the_id(), 'frenectomy_section_three_video_link', true);
 partial('section.pediatric.effervescent-reversible-with-carousel', [
     'classes' => [$sec_3_color_class],
     'heading'=> get_post_meta(get_the_id(), 'frenectomy_section_three_main_heading', true),
@@ -133,7 +134,8 @@ partial('section.pediatric.effervescent-reversible-with-carousel', [
     ],
     'sub_wrapper_right'=> [
         'slides' => $sec_3_r_slides        
-    ] 
+    ] ,
+    'video_link' => $sec_3_video_link,
 ]);
 
 
