@@ -29,6 +29,11 @@ wp_enqueue_script('effervescent-reversible-carousel');
                                 Your browser does not support the video tag.
                             </video>
                             <script>
+                                const unmute = () => {
+                                    const video = document.getElementById("sec-3-video");
+                                    video.muted = false;
+                                };
+
                                 document.addEventListener("DOMContentLoaded", function () {
                                     const video = document.getElementById("sec-3-video");
 
@@ -37,6 +42,7 @@ wp_enqueue_script('effervescent-reversible-carousel');
                                             entries.forEach(entry => {
                                                 if (entry.isIntersecting) {
                                                     video.play();
+                                                    unmute();
                                                 } else {
                                                     video.pause();
                                                 }
@@ -48,6 +54,7 @@ wp_enqueue_script('effervescent-reversible-carousel');
                                         video.addEventListener("click", () => {
                                             if (video.paused) {
                                                 video.play();
+                                                unmute();
                                             } else {
                                                 video.pause();
                                             }
