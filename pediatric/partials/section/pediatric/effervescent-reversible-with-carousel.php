@@ -24,7 +24,7 @@ wp_enqueue_script('effervescent-reversible-carousel');
                     <div class="heading">
                         <?php if (!empty($video_link)): ?>
                             <video class="sec-3-video" controls
-                                style="width: 300px;height: 300px;border-radius: 50%;overflow: hidden;transform: translate(-21%, 25%) scale(1.999);object-fit: cover;">
+                                style="width: 300px;height: 300px;border-radius: 50%; overflow: hidden;transform: translate(-21%, 90%) scale(2.05);object-fit: cover;">
                                 <source src="<?php echo esc_url($video_link); ?>" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
