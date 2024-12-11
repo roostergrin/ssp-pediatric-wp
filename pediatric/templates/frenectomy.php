@@ -284,13 +284,32 @@ if (!empty($video_links_count)) {
         ];
     }
 }
-partial('section.copy.full', [
-    'classes' => ['mt-0', 'bg-green', 'pb-l'],
+
+partial('section.wrapper', [
+    'partials' => [
+        [
+    'classes' => ['mt-0', 'bg-green'],
     'heading' => get_post_meta(get_the_id(), 'service_template_2_section_nine_heading', true),
     'heading_classes' => ['h1', 'white'],
     'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_nine_content', true)),
     'video_links' => $video_links,
+        ],
+        [
+            'name' => 'section.pediatric.bubbles',
+            'parts' => [
+                'classes' => ['bottom', 'var-2', $bubbles_color]
+            ]
+        ],
+    ]
 ]);
+
+// partial('section.copy.full', [
+//     'classes' => ['mt-0', 'bg-green', 'pb-l'],
+//     'heading' => get_post_meta(get_the_id(), 'service_template_2_section_nine_heading', true),
+//     'heading_classes' => ['h1', 'white'],
+//     'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_nine_content', true)),
+//     'video_links' => $video_links,
+// ]);
 
 $video_links_count2 = get_post_meta(get_the_id(), 'service_template_2_section_parent_video_links', true);
 $video_links2 = [];
