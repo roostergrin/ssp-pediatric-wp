@@ -28,16 +28,13 @@ wp_enqueue_script('two-icons-with-image-carousel');
                     <? if (!empty($slides)): ?>
                         <div class="slides-container two-icons-with-image-carousel">
                             <? foreach ($slides as $slide): ?>
-                                <div class="slide">
                                     <?php if (!$no_icon): ?>
+                                <div class="slide">
                                         <div class="icon"><i class="widget static icon-<?= $slide['icon']; ?>"></i></div>
-                                    <?php endif; ?>
-                                    <?php
-                                    echo ('<div></div>' . $no_icon);
-                                     ?>
                                     <div class="heading"><?= $slide['heading']; ?></div>
                                     <div class="copy"><?= $slide['copy']; ?></div>
                                 </div>
+                                    <?php endif; ?>
                             <? endforeach; ?>
                         </div>
                     <? endif; ?>
