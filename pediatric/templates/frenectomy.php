@@ -300,7 +300,7 @@ partial('section.wrapper', [
         [
             'name' => 'section.pediatric.bubbles',
             'parts' => [
-                'classes' => ['bottom', 'var-2', $bubbles_color]
+                'classes' => ['bottom', 'var-1', $bubbles_color]
             ]
         ],
     ]
