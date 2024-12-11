@@ -254,7 +254,7 @@ if (!empty($slides_count1)) {
 			[
 				'name' => 'section.pediatric.bubbles',
 				'parts' => [
-					'classes' => ['top', 'var-1', $bubbles_color]
+					'classes' => ['top', 'var-1', $bubbles_color, 'mt-l']
 				]
 			],
 			[
