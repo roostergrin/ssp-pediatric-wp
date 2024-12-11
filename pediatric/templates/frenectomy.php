@@ -81,76 +81,76 @@ partial('section.wrapper', [
     ]
 ]);
 
-// partial('section.copy.full', [
-//     'classes' => ['heading-orange'],
-//     'heading' => get_post_meta(get_the_id(), 'service_template_2_section_four_heading', true),
-//     'heading_classes' => ['h1', 'orange'],
-//     'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_four_content', true))
-// ]);
-
-
-$icon_slides_1 = array();
-for($j = 0; $j < 2; $j++) {
-    $icon_slides_1[] = [
-        'icon' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_icon', true),
-        'heading' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_heading', true),
-        'copy' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_copy', true),
-    ];
-}
-$section_5_image_id = get_post_meta(get_the_id(), 'service_template_2_section_five_main_image', true);
-
-
-$sec_3_l_slides = array();
-$sec_3_l_slides_num = 3;
-for($i = 0; $i < $sec_3_l_slides_num; $i++) {
-    $sec_3_l_slides[] = [
-        'icon' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_section_three_left_col_slides_'. $i . '_icon', true),
-        'heading' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_section_three_left_col_slides_'. $i . '_heading', true),
-        'copy' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_section_three_left_col_slides_'. $i . '_copy', true),
-    ];
-}
-$sec_3_r_slides = array();
-$sec_3_r_slides_num = 3;
-for($i = 0; $i < $sec_3_r_slides_num; $i++) {
-    $sec_3_r_slides[] = [
-        'icon' => get_post_meta(get_the_id(), 'frenectomy_section_three_right_col_slides_'. $i . '_frenectomy_section_three_right_col_slides_'. $i . '_icon', true),
-        'heading' => get_post_meta(get_the_id(), 'frenectomy_section_three_right_col_slides_'. $i . '_frenectomy_section_three_right_col_slides_'. $i . '_heading', true),
-        'copy' => get_post_meta(get_the_id(), 'frenectomy_section_three_right_col_slides_'. $i . '_frenectomy_section_three_right_col_slides_'. $i . '_copy', true),
-    ];
-}
-
-$sec_3_color_class = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'orange': 'red'); // Smiles in Motion
-partial('section.pediatric.effervescent-reversible-with-carousel', [
-    'classes' => [$sec_3_color_class],
-    'heading'=> get_post_meta(get_the_id(), 'frenectomy_section_three_main_heading', true),
-    'heading_classes' => ['h1'],
-    'wrapper_left_heading' => get_post_meta(get_the_id(), 'frenectomy_section_three_bubble_heading', true),
-    'wrapper_left_subheading' => get_post_meta(get_the_id(), 'frenectomy_section_three_bubble_subheading', true),
-    'wrapper_left_copy' => get_post_meta(get_the_id(), 'frenectomy_section_three_bubble_content', true),
-    'eyebrow_text' => get_post_meta(get_the_id(), 'frenectomy_section_three_eyebrows', true),
-    'sub_wrapper_left'=> [
-        'slides' => $sec_3_l_slides
-    ],
-    'sub_wrapper_right'=> [
-        'slides' => $sec_3_r_slides        
-    ] ,
-    'video_link' => get_post_meta(get_the_id(), 'frenectomy_section_three_video_url', true),
+partial('section.copy.full', [
+    'classes' => ['heading-orange'],
+    'heading' => get_post_meta(get_the_id(), 'service_template_2_section_four_heading', true),
+    'heading_classes' => ['h1', 'orange'],
+    'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_four_content', true))
 ]);
 
 
-// partial('section.pediatric.two-icons-with-image', [
-//     'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'mb-150'],
-//     'heading' => get_post_meta(get_the_id(), 'service_template_2_section_five_heading', true),
-//     'copy' =>  apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_five_content', true)),
-//     'image' => [
-//         'src' => wp_get_attachment_image_src($section_5_image_id, 'medium_large')[0],
-//         'alt' => get_post_meta($section_5_image_id, '_wp_attachment_image_alt', true),
-//         'classes' => ['animatable'],
-//     ],
-//     'slides' => $icon_slides_1,
-//     'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_link', true),
+// $icon_slides_1 = array();
+// for($j = 0; $j < 2; $j++) {
+//     $icon_slides_1[] = [
+//         'icon' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_icon', true),
+//         'heading' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_heading', true),
+//         'copy' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_copy', true),
+//     ];
+// }
+// $section_5_image_id = get_post_meta(get_the_id(), 'service_template_2_section_five_main_image', true);
 
+
+// $sec_3_l_slides = array();
+// $sec_3_l_slides_num = 3;
+// for($i = 0; $i < $sec_3_l_slides_num; $i++) {
+//     $sec_3_l_slides[] = [
+//         'icon' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_section_three_left_col_slides_'. $i . '_icon', true),
+//         'heading' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_section_three_left_col_slides_'. $i . '_heading', true),
+//         'copy' => get_post_meta(get_the_id(), 'frenectomy_section_three_left_col_slides_'. $i . '_frenectomy_section_three_left_col_slides_'. $i . '_copy', true),
+//     ];
+// }
+// $sec_3_r_slides = array();
+// $sec_3_r_slides_num = 3;
+// for($i = 0; $i < $sec_3_r_slides_num; $i++) {
+//     $sec_3_r_slides[] = [
+//         'icon' => get_post_meta(get_the_id(), 'frenectomy_section_three_right_col_slides_'. $i . '_frenectomy_section_three_right_col_slides_'. $i . '_icon', true),
+//         'heading' => get_post_meta(get_the_id(), 'frenectomy_section_three_right_col_slides_'. $i . '_frenectomy_section_three_right_col_slides_'. $i . '_heading', true),
+//         'copy' => get_post_meta(get_the_id(), 'frenectomy_section_three_right_col_slides_'. $i . '_frenectomy_section_three_right_col_slides_'. $i . '_copy', true),
+//     ];
+// }
+
+// $sec_3_color_class = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'orange': 'red'); // Smiles in Motion
+// partial('section.pediatric.effervescent-reversible-with-carousel', [
+//     'classes' => [$sec_3_color_class],
+//     'heading'=> get_post_meta(get_the_id(), 'frenectomy_section_three_main_heading', true),
+//     'heading_classes' => ['h1'],
+//     'wrapper_left_heading' => get_post_meta(get_the_id(), 'frenectomy_section_three_bubble_heading', true),
+//     'wrapper_left_subheading' => get_post_meta(get_the_id(), 'frenectomy_section_three_bubble_subheading', true),
+//     'wrapper_left_copy' => get_post_meta(get_the_id(), 'frenectomy_section_three_bubble_content', true),
+//     'eyebrow_text' => get_post_meta(get_the_id(), 'frenectomy_section_three_eyebrows', true),
+//     'sub_wrapper_left'=> [
+//         'slides' => $sec_3_l_slides
+//     ],
+//     'sub_wrapper_right'=> [
+//         'slides' => $sec_3_r_slides        
+//     ] ,
+//     'video_link' => get_post_meta(get_the_id(), 'frenectomy_section_three_video_url', true),
 // ]);
+
+
+partial('section.pediatric.two-icons-with-image', [
+    'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'mb-150'],
+    'heading' => get_post_meta(get_the_id(), 'service_template_2_section_five_heading', true),
+    'copy' =>  apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_five_content', true)),
+    'image' => [
+        'src' => wp_get_attachment_image_src($section_5_image_id, 'medium_large')[0],
+        'alt' => get_post_meta($section_5_image_id, '_wp_attachment_image_alt', true),
+        'classes' => ['animatable'],
+    ],
+    'slides' => $icon_slides_1,
+    'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_link', true),
+
+]);
 $bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
 $slides_symptoms = [];
 $counter1 = 0;
