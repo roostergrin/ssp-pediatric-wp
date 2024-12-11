@@ -266,12 +266,6 @@ if (!empty($slides_count1)) {
 					'slides' => $slides1,
 				]
 			],
-			[
-				'name' => 'section.pediatric.bubbles',
-				'parts' => [
-					'classes' => ['bottom', 'var-3', $bubbles_color]
-				]
-			],
 
 		]
 	]);
@@ -291,7 +285,7 @@ if (!empty($video_links_count)) {
     }
 }
 partial('section.copy.full', [
-    'classes' => ['heading-orange', 'mt-large'],
+    'classes' => [ 'mt-large', 'bg-green'],
     'heading' => get_post_meta(get_the_id(), 'service_template_2_section_nine_heading', true),
     'heading_classes' => ['h1', 'orange'],
     'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_nine_content', true)),
