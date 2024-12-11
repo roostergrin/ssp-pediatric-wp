@@ -203,32 +203,32 @@ for($i = 0; $i < $y1; $i++) {
 
 if(!empty($slides_symptoms)) {
 
-partial('section.wrapper', [
-    'partials' => [
-        [
-            'name' => 'section.pediatric.bubbles',
-            'parts' => [
-                'classes' => ['top', 'var-1', $bubbles_color]
-            ]
-        ],
-        [
-            'name' => 'section.pediatric.variable-slide-up-carousel',
-            'parts' => [
-                'classes' => ['service', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'bg-green' : 'bg-blue'), sanitize_title($brand->palette).'-palette'],
-                'carousel_classes' => ['slides-'. $counter, 'kill-carousel'],
-                'heading' => get_post_meta(get_the_id(), 'service_template_2_section_symptoms_heading', true),
-                'content' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_symptoms_content', true)),
-                'slides' => $slides_symptoms,                
-            ]
-        ],
-        [
-            'name' => 'section.pediatric.bubbles',
-            'parts' => [
-                'classes' => ['bottom', 'var-2', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue')]
-            ]
-        ],
-    ]
-]);
+// partial('section.wrapper', [
+//     'partials' => [
+//         [
+//             'name' => 'section.pediatric.bubbles',
+//             'parts' => [
+//                 'classes' => ['top', 'var-1', $bubbles_color]
+//             ]
+//         ],
+//         [
+//             'name' => 'section.pediatric.variable-slide-up-carousel',
+//             'parts' => [
+//                 'classes' => ['service', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'bg-green' : 'bg-blue'), sanitize_title($brand->palette).'-palette'],
+//                 'carousel_classes' => ['slides-'. $counter, 'kill-carousel'],
+//                 'heading' => get_post_meta(get_the_id(), 'service_template_2_section_symptoms_heading', true),
+//                 'content' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_symptoms_content', true)),
+//                 'slides' => $slides_symptoms,                
+//             ]
+//         ],
+//         [
+//             'name' => 'section.pediatric.bubbles',
+//             'parts' => [
+//                 'classes' => ['bottom', 'var-2', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue')]
+//             ]
+//         ],
+//     ]
+// ]);
 }
 
 $video_links_count = get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links', true);
