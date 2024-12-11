@@ -260,7 +260,7 @@ if (!empty($slides_count1)) {
 			[
 				'name' => 'section.pediatric.variable-slide-up-carousel',
 				'parts' => [
-					'classes' => ['service', 'bg-'.$bubbles_color],
+					'classes' => ['service', 'bg-'.$bubbles_color, 'pt-sm'],
 					'carousel_classes' => ['slides-3'],
 					'heading' => get_post_meta(get_the_id(), 'section_ten_location_age_group_section_heading', true),
 					'slides' => $slides1,
@@ -330,7 +330,7 @@ if (!empty($video_links_count)) {
 if(!empty($video_links2)) {
     echo '<div class="mt-5" style="margin-top: 5rem;"></div>';
     partial('section.copy.full', [
-        'classes' => ['heading-orange'],
+        'classes' => ['heading-orange', 'pb-l'],
         'heading' => get_post_meta(get_the_id(), 'service_template_2_section_parent_heading', true),
         'heading_classes' => ['h1', 'orange'],
         'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_parent_video_content', true)),
