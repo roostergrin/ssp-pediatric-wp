@@ -290,7 +290,7 @@ partial('section.wrapper', [
         [
             'name' => 'section.copy.full',
             'parts' => [
-            'classes' => ['mt-0', 'bg-green'],
+            'classes' => ['mt-0', 'bg-green', 'pb-l'],
             'heading' => get_post_meta(get_the_id(), 'service_template_2_section_nine_heading', true),
             'heading_classes' => ['h1', 'white'],
             'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_nine_content', true)),
@@ -300,7 +300,7 @@ partial('section.wrapper', [
         [
             'name' => 'section.pediatric.bubbles',
             'parts' => [
-                'classes' => ['bottom', 'var-1', $bubbles_color]
+                'classes' => ['bottom', 'var-2', $bubbles_color]
             ]
         ],
     ]
