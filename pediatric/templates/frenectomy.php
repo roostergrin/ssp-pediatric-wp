@@ -89,15 +89,15 @@ partial('section.copy.full', [
 ]);
 
 
-// $icon_slides_1 = array();
-// for($j = 0; $j < 2; $j++) {
-//     $icon_slides_1[] = [
-//         'icon' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_icon', true),
-//         'heading' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_heading', true),
-//         'copy' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_copy', true),
-//     ];
-// }
-// $section_5_image_id = get_post_meta(get_the_id(), 'service_template_2_section_five_main_image', true);
+$icon_slides_1 = array();
+for($j = 0; $j < 2; $j++) {
+    $icon_slides_1[] = [
+        'icon' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_icon', true),
+        'heading' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_heading', true),
+        'copy' => get_post_meta(get_the_id(), 'service_template_2_section_five_slide_' . $j . '_service_template_2_section_five_slide_' . $j . '_copy', true),
+    ];
+}
+$section_5_image_id = get_post_meta(get_the_id(), 'service_template_2_section_five_main_image', true);
 
 
 // $sec_3_l_slides = array();
