@@ -173,7 +173,7 @@ if(!empty($sec_six_heading)) {
             'classes' => ['animatable'],
         ],
         'slides' => $icon_slides_2,
-        'no-icon' => true,
+        'no_icon' => true,
     ]);
 }
 $bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
