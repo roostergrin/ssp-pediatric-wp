@@ -32,6 +32,9 @@ wp_enqueue_script('two-icons-with-image-carousel');
                                     <?php if (!$no_icon): ?>
                                         <div class="icon"><i class="widget static icon-<?= $slide['icon']; ?>"></i></div>
                                     <?php endif; ?>
+                                    <?php
+                                    echo ('<div></div>' . $no_icon);
+                                     ?>
                                     <div class="heading"><?= $slide['heading']; ?></div>
                                     <div class="copy"><?= $slide['copy']; ?></div>
                                 </div>
