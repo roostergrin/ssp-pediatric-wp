@@ -232,6 +232,52 @@ if(!empty($slides_symptoms)) {
 // ]);
 }
 
+$slides_count1 = get_post_meta(get_the_id(),'section_ten_age_group_slides', true);
+$slides1 = [];
+if (!empty($slides_count1)) {
+        for ($i = 0; $i < $slides_count1; $i++) {
+            $icon = get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_image', true);
+            $slides1[] = [
+                'heading' => get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_heading', true),
+                'content' => apply_filters('the_content', get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_copy', true)),
+                'cta' => get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_link_text', true),
+                'image' => [
+                    'src' => wp_get_attachment_image_src($icon, 'medium_large')[0],
+                    'alt' => get_post_meta($icon, '_wp_attachment_image_alt', true),
+                ]
+            ];
+        }
+
+	// $bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
+	partial('section.wrapper', [
+		'partials' => [
+			[
+				'name' => 'section.pediatric.bubbles',
+				'parts' => [
+					'classes' => ['top', 'var-1', $bubbles_color]
+				]
+			],
+			[
+				'name' => 'section.pediatric.variable-slide-up-carousel',
+				'parts' => [
+					'classes' => ['service', 'bg-'.$bubbles_color],
+					'carousel_classes' => ['slides-3'],
+					'heading' => get_post_meta(get_the_id(), 'section_ten_location_age_group_section_heading', true),
+					'slides' => $slides1,
+				]
+			],
+			[
+				'name' => 'section.pediatric.bubbles',
+				'parts' => [
+					'classes' => ['bottom', 'var-3', $bubbles_color]
+				]
+			],
+
+		]
+	]);
+
+}
+
 $video_links_count = get_post_meta(get_the_id(), 'service_template_2_section_nine_video_links', true);
 $video_links = [];
 if (!empty($video_links_count)) {
@@ -298,51 +344,6 @@ if(!empty($video_links2)) {
 //     ]
 // ]);
 
-$slides_count1 = get_post_meta(get_the_id(),'section_ten_age_group_slides', true);
-$slides1 = [];
-if (!empty($slides_count1)) {
-        for ($i = 0; $i < $slides_count1; $i++) {
-            $icon = get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_image', true);
-            $slides1[] = [
-                'heading' => get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_heading', true),
-                'content' => apply_filters('the_content', get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_copy', true)),
-                'cta' => get_post_meta(get_the_id(), 'section_ten_age_group_slides_' . $i . '_section_ten_age_group_slides_link_text', true),
-                'image' => [
-                    'src' => wp_get_attachment_image_src($icon, 'medium_large')[0],
-                    'alt' => get_post_meta($icon, '_wp_attachment_image_alt', true),
-                ]
-            ];
-        }
-
-	// $bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
-	partial('section.wrapper', [
-		'partials' => [
-			[
-				'name' => 'section.pediatric.bubbles',
-				'parts' => [
-					'classes' => ['top', 'var-1', $bubbles_color]
-				]
-			],
-			[
-				'name' => 'section.pediatric.variable-slide-up-carousel',
-				'parts' => [
-					'classes' => ['service', 'bg-'.$bubbles_color],
-					'carousel_classes' => ['slides-3'],
-					'heading' => get_post_meta(get_the_id(), 'section_ten_location_age_group_section_heading', true),
-					'slides' => $slides1,
-				]
-			],
-			[
-				'name' => 'section.pediatric.bubbles',
-				'parts' => [
-					'classes' => ['bottom', 'var-3', $bubbles_color]
-				]
-			],
-
-		]
-	]);
-
-}
 
 
 
