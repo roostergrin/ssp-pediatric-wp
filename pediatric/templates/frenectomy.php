@@ -261,9 +261,10 @@ if (!empty($slides_count1)) {
 				'name' => 'section.pediatric.variable-slide-up-carousel',
 				'parts' => [
 					'classes' => ['service', 'bg-'.$bubbles_color, 'pt-sm'],
-					'carousel_classes' => ['slides-3'],
+					'carousel_classes' => ['slides-3' ],
 					'heading' => get_post_meta(get_the_id(), 'section_ten_location_age_group_section_heading', true),
 					'slides' => $slides1,
+                    'heading_classes' => ['h1', 'white'],
 				]
 			],
 
