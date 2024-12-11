@@ -164,7 +164,7 @@ if(!empty($sec_six_heading)) {
     }
     $section_6_image_id = get_post_meta(get_the_id(), 'service_template_2_section_six_main_image', true);
     partial('section.pediatric.two-icons-with-image', [
-        'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'reverse', 'mb-neg-150'],
+        'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'reverse'],
         'heading' => $sec_six_heading,
         'copy' =>  apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_six_content', true)),
         'image' => [
