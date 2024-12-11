@@ -12,6 +12,7 @@ wp_enqueue_script('two-icons-with-image-carousel');
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                     </iframe>
+                    <h1>test</h1>
                 <?php elseif (!empty($image['src'])): ?>
                     <img src="<?= $image['src']; ?>" <?= !empty($image['alt']) ? 'alt="' . $image['alt'] . '"' : ''; ?>
                         <?= !empty($image['classes']) ? 'class="' . implode(' ', $image['classes']) . '"' : ''; ?>>
