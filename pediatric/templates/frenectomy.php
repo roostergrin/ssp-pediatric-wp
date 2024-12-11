@@ -151,6 +151,30 @@ partial('section.pediatric.two-icons-with-image', [
     'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_link', true),
 
 ]);
+
+$sec_six_heading = get_post_meta(get_the_id(), 'service_template_2_section_six_heading', true);
+if(!empty($sec_six_heading)) {
+    $icon_slides_2 = array();
+    for($k = 0; $k < 2; $k++) {
+        $icon_slides_2[] = [
+            'icon' => get_post_meta(get_the_id(), 'service_template_2_section_six_slide_' . $k . '_service_template_2_section_six_slide_' . $k . '_icon', true),
+            'heading' => get_post_meta(get_the_id(), 'service_template_2_section_six_slide_' . $k . '_service_template_2_section_six_slide_' . $k . '_heading', true),
+            'copy' => get_post_meta(get_the_id(), 'service_template_2_section_six_slide_' . $k . '_service_template_2_section_six_slide_' . $k . '_copy', true),
+        ];
+    }
+    $section_6_image_id = get_post_meta(get_the_id(), 'service_template_2_section_six_main_image', true);
+    partial('section.pediatric.two-icons-with-image', [
+        'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'reverse', 'mb-neg-150'],
+        'heading' => $sec_six_heading,
+        'copy' =>  apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_six_content', true)),
+        'image' => [
+            'src' => wp_get_attachment_image_src($section_6_image_id, 'medium_large')[0],
+            'alt' => get_post_meta($section_6_image_id, '_wp_attachment_image_alt', true),
+            'classes' => ['animatable'],
+        ],
+        'slides' => $icon_slides_2,
+    ]);
+}
 $bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
 $slides_symptoms = [];
 $counter1 = 0;
@@ -322,29 +346,6 @@ if (!empty($slides_count1)) {
 
 
 
-$sec_six_heading = get_post_meta(get_the_id(), 'service_template_2_section_six_heading', true);
-if(!empty($sec_six_heading)) {
-    $icon_slides_2 = array();
-    for($k = 0; $k < 2; $k++) {
-        $icon_slides_2[] = [
-            'icon' => get_post_meta(get_the_id(), 'service_template_2_section_six_slide_' . $k . '_service_template_2_section_six_slide_' . $k . '_icon', true),
-            'heading' => get_post_meta(get_the_id(), 'service_template_2_section_six_slide_' . $k . '_service_template_2_section_six_slide_' . $k . '_heading', true),
-            'copy' => get_post_meta(get_the_id(), 'service_template_2_section_six_slide_' . $k . '_service_template_2_section_six_slide_' . $k . '_copy', true),
-        ];
-    }
-    $section_6_image_id = get_post_meta(get_the_id(), 'service_template_2_section_six_main_image', true);
-    partial('section.pediatric.two-icons-with-image', [
-        'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'reverse', 'mb-neg-150'],
-        'heading' => $sec_six_heading,
-        'copy' =>  apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_six_content', true)),
-        'image' => [
-            'src' => wp_get_attachment_image_src($section_6_image_id, 'medium_large')[0],
-            'alt' => get_post_meta($section_6_image_id, '_wp_attachment_image_alt', true),
-            'classes' => ['animatable'],
-        ],
-        'slides' => $icon_slides_2,
-    ]);
-}
 
 $sec_seven_heading = get_post_meta(get_the_id(), 'service_template_2_section_seven_heading', true);
 if(!empty($sec_seven_heading)) {
