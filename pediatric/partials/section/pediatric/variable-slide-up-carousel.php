@@ -24,7 +24,7 @@ wp_enqueue_script('variable-slide-up-carousel');
             <? $slide_type = !empty($slide['image']) ? 'image' : 'icon';?>
             <div class="slide<?= !empty($slide_type) ? ' ' . $slide_type : '';?>">
                 <div class="slide-container">
-                    <? if($slide['image']) : ?>
+                    <? if($slide['image'] && !empty($slide['image']['src']) ) : ?>
                     <div class="image-container<?= !empty($slide['image']['classes']) ? ' ' . implode(' ', $slide['image']['classes']) : ''?>">
                         <img src="<?= $slide['image']['src']?>" alt="<?= $slide['image']['alt']?>" width="180" height="180">
                     </div>
