@@ -264,7 +264,7 @@ if (!empty($slides_count1)) {
 					'carousel_classes' => ['slides-3' ],
 					'heading' => get_post_meta(get_the_id(), 'section_ten_location_age_group_section_heading', true),
 					'slides' => $slides1,
-                    'heading_classes' => ['h1', 'white'],
+                    'heading_classes' => ['h1-l', 'white'],
 				]
 			],
 
