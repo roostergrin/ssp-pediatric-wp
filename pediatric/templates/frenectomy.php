@@ -290,7 +290,7 @@ partial('section.wrapper', [
         [
             'name' => 'section.copy.full',
             'parts' => [
-            'classes' => ['mt-0', 'bg-green', 'pb-l'],
+            'classes' => ['mt-0', 'bg-green', 'pb-l', 'mb-0'],
             'heading' => get_post_meta(get_the_id(), 'service_template_2_section_nine_heading', true),
             'heading_classes' => ['h1', 'white'],
             'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_nine_content', true)),
