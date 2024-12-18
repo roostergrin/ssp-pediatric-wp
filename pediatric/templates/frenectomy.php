@@ -149,6 +149,7 @@ partial('section.pediatric.two-icons-with-image', [
     ],
     'slides' => $icon_slides_1,
     'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_link', true),
+    'show_copy' => true,
 
 ]);
 

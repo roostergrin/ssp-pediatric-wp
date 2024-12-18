@@ -32,7 +32,7 @@ wp_enqueue_script('two-icons-with-image-carousel');
                                 <div class="slide">
                                         <div class="icon"><i class="widget static icon-<?= $slide['icon']; ?>"></i></div>
                                     <div class="heading"><?= $slide['heading']; ?></div>
-                                    <div class="copy"><?= $slide['copy']; ?></div>
+                                    <div class="copy<?= $show_copy ? ' show-copy' : ''; ?>"><?= $slide['copy']; ?></div>
                                 </div>
                                     <?php endif; ?>
                             <? endforeach; ?>
