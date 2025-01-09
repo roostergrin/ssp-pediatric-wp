@@ -137,6 +137,26 @@ $section_5_image_id = get_post_meta(get_the_id(), 'service_template_2_section_fi
 //     'video_link' => get_post_meta(get_the_id(), 'frenectomy_section_three_video_url', true),
 // ]);
 
+
+
+
+
+
+partial('section.pediatric.two-icons-with-image', [
+    'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'mb-150'],
+    'heading' => get_post_meta(get_the_id(), 'service_template_2_section_five_heading', true),
+    'copy' =>  apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_five_content', true)),
+    'image' => [
+        'src' => wp_get_attachment_image_src($section_5_image_id, 'medium_large')[0],
+        'alt' => get_post_meta($section_5_image_id, '_wp_attachment_image_alt', true),
+        'classes' => ['animatable'],
+    ],
+    'slides' => $icon_slides_1,
+    'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_link', true),
+    'show_copy' => true,
+
+]);
+
 $bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
 // signs and symptoms
 partial('section.wrapper', [
@@ -164,25 +184,6 @@ partial('section.wrapper', [
             ]
         ],
     ]
-]);
-
-
-
-
-
-partial('section.pediatric.two-icons-with-image', [
-    'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'mb-150'],
-    'heading' => get_post_meta(get_the_id(), 'service_template_2_section_five_heading', true),
-    'copy' =>  apply_filters('the_content', get_post_meta(get_the_id(), 'service_template_2_section_five_content', true)),
-    'image' => [
-        'src' => wp_get_attachment_image_src($section_5_image_id, 'medium_large')[0],
-        'alt' => get_post_meta($section_5_image_id, '_wp_attachment_image_alt', true),
-        'classes' => ['animatable'],
-    ],
-    'slides' => $icon_slides_1,
-    'video_link' => get_post_meta(get_the_id(), 'service_template_2_section_five_video_link', true),
-    'show_copy' => true,
-
 ]);
 
 $sec_six_heading = get_post_meta(get_the_id(), 'service_template_2_section_six_heading', true);
