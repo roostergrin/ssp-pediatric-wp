@@ -137,6 +137,38 @@ $section_5_image_id = get_post_meta(get_the_id(), 'service_template_2_section_fi
 //     'video_link' => get_post_meta(get_the_id(), 'frenectomy_section_three_video_url', true),
 // ]);
 
+$bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue'); 
+// signs and symptoms
+partial('section.wrapper', [
+    'partials' => [
+        [
+            'name' => 'section.pediatric.bubbles',
+            'parts' => [
+                'classes' => ['top', 'var-2', $bubbles_color]
+            ]
+        ],
+        [
+            'name' => 'section.copy.full',
+            'parts' => [
+            'classes' => ['mt-0', 'bg-green', 'pb-l', 'mb-0'],
+            'heading' => "Signs and Symptoms",
+            'heading_classes' => ['h1', 'white', 'mt-small'],
+            'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'section_signs_and_symptoms_content', true)),
+            'copy_classes' => ['copy-white'],
+            ]
+        ],
+        [
+            'name' => 'section.pediatric.bubbles',
+            'parts' => [
+                'classes' => ['bottom', 'var-2', $bubbles_color]
+            ]
+        ],
+    ]
+]);
+
+
+
+
 
 partial('section.pediatric.two-icons-with-image', [
     'classes' => [(sanitize_title($brand->palette) == 'smiles-in-motion' ? 'gray' : 'orange'), 'mb-150'],
@@ -181,36 +213,6 @@ $bubbles_color = (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green
 $slides_symptoms = [];
 $counter1 = 0;
 $y1 = 2;
-
-
-// signs and symptoms
-partial('section.wrapper', [
-    'partials' => [
-        [
-            'name' => 'section.pediatric.bubbles',
-            'parts' => [
-                'classes' => ['top', 'var-2', $bubbles_color]
-            ]
-        ],
-        [
-            'name' => 'section.copy.full',
-            'parts' => [
-            'classes' => ['mt-0', 'bg-green', 'pb-l', 'mb-0'],
-            'heading' => "Signs and Symptoms",
-            'heading_classes' => ['h1', 'white', 'mt-small'],
-            'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'section_signs_and_symptoms_content', true)),
-            'copy_classes' => ['copy-white'],
-            ]
-        ],
-        [
-            'name' => 'section.pediatric.bubbles',
-            'parts' => [
-                'classes' => ['bottom', 'var-2', $bubbles_color]
-            ]
-        ],
-    ]
-]);
-
 
 
 
