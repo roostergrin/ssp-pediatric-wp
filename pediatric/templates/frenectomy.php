@@ -180,7 +180,7 @@ partial('section.wrapper', [
         [
             'name' => 'section.copy.signs_and_symptoms',
             'parts' => [
-            'classes' => ['mt-0', 'bg-green', 'pb-l', 'mb-0'],
+            'classes' => [],
             ]
         ],
         [
