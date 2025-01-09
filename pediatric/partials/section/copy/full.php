@@ -16,7 +16,9 @@ $vid_links = [
             <?php endif; ?>
 
             <?php if ($copy): ?>
-                <?= $copy; ?>
+                <div class="<?= !empty($copy_classes) ? implode(' ', $copy_classes) : ''; ?>">
+                    <?= $copy; ?>
+                </div>
             <?php endif; ?>
 
             <?php if (!empty($video_links) && is_array($video_links)): ?>

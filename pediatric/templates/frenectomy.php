@@ -199,6 +199,7 @@ partial('section.wrapper', [
             'heading' => "Signs and Symptoms",
             'heading_classes' => ['h1', 'white'],
             'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'section_signs_and_symptoms_content', true)),
+            'copy_classes' => ['copy-white'],
             ]
         ],
         [
