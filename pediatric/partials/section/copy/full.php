@@ -6,6 +6,9 @@ $vid_links = [
     "https://youtube.com/embed/M0o2DKD4M1c",
     "https://youtube.com/embed/YBnN8DNSu4U",
 ];
+echo "<pre>";
+var_dump($heading);
+echo "</pre>";
 ?>
 
 <section class="copy full<?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
