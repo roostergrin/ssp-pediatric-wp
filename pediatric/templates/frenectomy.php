@@ -182,6 +182,38 @@ $slides_symptoms = [];
 $counter1 = 0;
 $y1 = 2;
 
+
+// signs and symptoms
+partial('section.wrapper', [
+    'partials' => [
+        [
+            'name' => 'section.pediatric.bubbles',
+            'parts' => [
+                'classes' => ['top', 'var-2', $bubbles_color]
+            ]
+        ],
+        [
+            'name' => 'section.copy.full',
+            'parts' => [
+            'classes' => ['mt-0', 'bg-green', 'pb-l', 'mb-0'],
+            'heading' => get_post_meta(get_the_id(), 'section_signs_and_symptoms_content_heading', true),
+            'heading_classes' => ['h1', 'white'],
+            'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'section_signs_and_symptoms_content', true)),
+            ]
+        ],
+        [
+            'name' => 'section.pediatric.bubbles',
+            'parts' => [
+                'classes' => ['bottom', 'var-2', $bubbles_color]
+            ]
+        ],
+    ]
+]);
+
+
+
+
+
 // SIM4KIDS brand
 if ($brand->ID == 18088) $y1 = 4;
 
