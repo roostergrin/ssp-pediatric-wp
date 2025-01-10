@@ -164,7 +164,7 @@ partial('section.wrapper', [
         [
             'name' => 'section.pediatric.bubbles',
             'parts' => [
-                'classes' => ['top', 'var-2', $bubbles_color, 'phone-mt-lg']
+                'classes' => ['top', 'var-2', $bubbles_color]
             ]
         ],
         [
@@ -189,7 +189,8 @@ partial('section.wrapper', [
                 'classes' => ['bottom', 'var-2', $bubbles_color]
             ]
         ],
-    ]
+    ],
+    'classes' => ['phone-mt-lg']
 ]);
 
 $sec_six_heading = get_post_meta(get_the_id(), 'service_template_2_section_six_heading', true);
