@@ -11,8 +11,6 @@
         </div>
         <div class="signs_and_symptoms__images"></div>
     </div>
-</section>
-
 <style>
     .text-white {
         color: white;
@@ -31,3 +29,4 @@
         border-radius: 5px;
     }
 </style>
+</section>
