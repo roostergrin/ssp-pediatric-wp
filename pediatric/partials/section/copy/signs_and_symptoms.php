@@ -12,3 +12,22 @@
         <div class="signs_and_symptoms__images"></div>
     </div>
 </section>
+
+<style>
+    .text-white {
+        color: white;
+    }
+    .signs_and_sypmtoms_content {
+        display: flex;
+    }
+    .signs_and_sypmtoms_cards {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    .signs_and_sypmtoms_card {
+        background: white;
+        color: black;
+        border-radius: 5px;
+    }
+</style>
