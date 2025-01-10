@@ -172,7 +172,7 @@ partial('section.wrapper', [
             'parts' => [
             'classes' => ['mt-0', 'bg-green', 'mb-0'],
             'heading' => "Signs and Symptoms",
-            'heading_classes' => ['h1', 'white', 'mt-small'],
+            'heading_classes' => ['h1', 'white', 'mt-small', 'pb-small'],
             'copy' => apply_filters('the_content', get_post_meta(get_the_id(), 'section_signs_and_symptoms_content', true)),
             'copy_classes' => ['copy-white'],
             ]
@@ -180,7 +180,7 @@ partial('section.wrapper', [
         [
             'name' => 'section.copy.signs_and_symptoms',
             'parts' => [
-            'classes' => ['bg-green', 'text-white', 'mt-small'],
+            'classes' => ['bg-green', 'text-white'],
             ]
         ],
         [
