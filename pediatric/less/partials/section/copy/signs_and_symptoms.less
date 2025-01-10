@@ -36,9 +36,16 @@
         width: 25%;
         justify-content: space-around;
         align-items: center;
+            @media (max-width: 768px) { /* Adjust 768px as needed for your breakpoint */
+                flex-direction: row;
+    }
         .signs_and_symptoms__image {
             width: 8rem;
             height: 8rem;
+            @media (max-width: 768px) { /* Adjust 768px as needed for your breakpoint */
+                width: 4rem;
+                height: 4rem;
+    }
             img {
                 width: 100%;
                 height: 100%;
