@@ -2,7 +2,7 @@
     <div class="content">
 
         <div class="inner-content">
-            <div class="signs_and_symptoms_content">
+            <div class="signs_and_symptoms__content">
                 <div class="signs_and_symptoms__cards">
                     <div class="signs_and_symptoms__card">
                         <h2 class="signs_and_symptoms__header">Baby signs and symptoms</h2>
