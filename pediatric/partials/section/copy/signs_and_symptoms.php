@@ -1,4 +1,4 @@
-<section class="signs_and_sypmtoms<?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
+<section class="signs_and_symptoms <?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
     <div class="signs_and_symptoms_content">
         <div class="signs_and_symptoms__cards">
             <div class="signs_and_symptoms__card">
