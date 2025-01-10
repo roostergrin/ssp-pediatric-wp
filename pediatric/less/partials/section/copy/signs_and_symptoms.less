@@ -6,6 +6,9 @@
         flex-direction: column;
         gap: 3rem;
         width: 75%;
+            @media (max-width: 768px) { /* Adjust 768px as needed for your breakpoint */
+                width: 100%;
+    }
         .signs_and_symptoms__list-container {
             display: flex;
             gap: 2rem;
@@ -38,13 +41,14 @@
         align-items: center;
             @media (max-width: 768px) { /* Adjust 768px as needed for your breakpoint */
                 flex-direction: row;
+                width: 100%;
     }
         .signs_and_symptoms__image {
             width: 8rem;
             height: 8rem;
             @media (max-width: 768px) { /* Adjust 768px as needed for your breakpoint */
-                width: 4rem;
-                height: 4rem;
+                width: 5rem;
+                height: 5rem;
     }
             img {
                 width: 100%;
