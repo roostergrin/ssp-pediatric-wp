@@ -46,7 +46,6 @@
 
 
                     </div>
-                    <div class="signs_and_symptoms__card"></div>
                 </div>
                 <div class="signs_and_symptoms__images"></div>
     </div>
