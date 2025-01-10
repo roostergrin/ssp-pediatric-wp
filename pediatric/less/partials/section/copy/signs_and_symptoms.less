@@ -1,5 +1,6 @@
 .signs_and_symptoms {
     color: white;
+    padding-bottom: 3rem;
     .signs_and_symptoms__content {
         display: flex;
         gap: 30px;
@@ -43,8 +44,15 @@
         display: flex;
         flex-direction: column;
         width: 25%;
-        img {
-            width: 100%;
+        justify-content: space-around;
+        .signs_and_symptoms__image {
+            width: 4rem;
+            height: 4rem;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 }

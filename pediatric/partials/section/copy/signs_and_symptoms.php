@@ -43,11 +43,19 @@
                             </ul>
 
                         </div>
-
-
                     </div>
                 </div>
-                <div class="signs_and_symptoms__images"></div>
+                <div class="signs_and_symptoms__images">
+                    <div class="signs_and_symptoms__image">
+                        <img src="/wp-content/uploads/2024/12/SimKO-22-1.jpg" alt="Baby signs and symptoms">
+                    </div>
+                    <div class="signs_and_symptoms__image">
+                        <img src="/wp-content/uploads/2024/12/SimKO-22-1.jpg" alt="Baby signs and symptoms">
+                    </div>
+                    <div class="signs_and_symptoms__image">
+                        <img src="/wp-content/uploads/2024/12/SimKO-22-1.jpg" alt="Baby signs and symptoms">
+                    </div>
+                </div>
     </div>
 
         </div>
