@@ -61,9 +61,8 @@
   <style>
     
   .reviews-carousel {
-      width: 80%;
-      margin: 2rem auto;
-      font-family: sans-serif;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     }
     
     .reviews-carousel .content {

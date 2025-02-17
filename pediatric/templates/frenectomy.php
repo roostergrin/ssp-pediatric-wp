@@ -388,6 +388,12 @@ if(!empty($video_links2)) {
 
 partial('section.wrapper', [
     'partials' => [
+		[
+			'name' => 'section.pediatric.bubbles',
+			'parts' => [
+				'classes' => ['top', 'var-3', (sanitize_title($brand->palette) == 'smiles-in-motion' ? 'green' : 'blue')]
+			]
+		],
         [
             'name' => 'section.reviews-carousel',
             'parts' => [
