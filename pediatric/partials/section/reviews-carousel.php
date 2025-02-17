@@ -17,9 +17,15 @@
                 </div>
 
                 <p class="review-text">
-                    “This product completely exceeded my expectations. Will buy again!”
+                    We had an incredible experience at Smiles in Motion Pediatric Dentistry. We
+brought our newborn in for a lip and tongue tie revision, and from the initial
+assessment to the procedure itself, everything was handled with care and
+professionalism. As chiropractors who have referred many children here, it was
+amazing to experience their expertise firsthand as parents. We’re so grateful to have
+this invaluable service available in our area. A big thank you to Dr. Winn and the
+entire SIM team for providing such exceptional care!”
                 </p>
-                <p class="review-author">– John Doe</p>
+                <p class="review-author">– Courtney K. </p>
             </div>
 
             <div class="review">
@@ -32,9 +38,14 @@
                 </div>
 
                 <p class="review-text">
-                    “Fantastic quality and fast shipping. Highly recommend this store.”
+                    “My son had a lip, tongue; and cheek tie. We had a consultation with the SIM Team
+and the laser procedure done. The entire experience was great even though I was so
+nervous and worried about the procedure. They made sure all of my questions were
+answered and were very thorough and kind. They even called us in the afternoon
+after the procedure to check in with us. I would definitely recommend seeing the
+team at Smiles in Motion"
                 </p>
-                <p class="review-author">– Jane Smith</p>
+                <p class="review-author">– Kayla H.</p>
             </div>
 
             <div class="review">
@@ -48,9 +59,20 @@
                 </div>
 
                 <p class="review-text">
-                    “Great service, friendly staff, and an overall wonderful experience.”
+                    “We came to Smiles in Motion desperate for answers as to why our little 6 week old
+was struggling to latch and feed which was resulting in sleepless nights full of gas
+and acid reflux. We found out that our girl had three oral ties and from there we
+were able to get them released and now we are on the road to recovery with high
+hopes for her ability to latch and feed. From the moment we stepped into the office,
+we were treated with kindness and compassion. We were given the space we’d need
+to care for our little girl comfortably during our visit and had everything that was to
+happen explained in great detail so that we felt comfortable and confident with our
+decision. When it came time for the procedure I felt incredibly comfortable with
+them releasing our daughter’s ties and could tell that she felt comfortable and safe
+with them, which for me as a mom, is the most important thing! I can’t thank the
+team enough for the care and support we have received!”
                 </p>
-                <p class="review-author">– Bob Johnson</p>
+                <p class="review-author">– Olivia H.</p>
             </div>
 
             <div class="dots">
