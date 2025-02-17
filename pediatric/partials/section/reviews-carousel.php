@@ -1,7 +1,7 @@
 <section class="reviews-carousel  <?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
     <div class="content">
         <div class="inner-content">
-            <h3 style="margin-bottom: 1rem; text-align: center;">Google Reviews</h3>
+            <h2 style="margin-bottom: 1rem; text-align: center;">Google Reviews</h2>
             <div class="review active">
                 <!-- Google Review Stars -->
                 <div class="review-stars">
@@ -123,7 +123,8 @@ team enough for the care and support we have received!”
 
     .review-stars {
         display: flex;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
     }
 
     .reviews-carousel .content {
@@ -144,6 +145,7 @@ team enough for the care and support we have received!”
         padding: 1rem;
         border: 1px solid #ccc;
         background-color: #fff;
+        border-radius: 16px;
     }
 
     /* Only the active review is visible */
