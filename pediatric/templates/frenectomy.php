@@ -391,6 +391,7 @@ partial('section.wrapper', [
         [
             'name' => 'section.reviews-carousel',
             'parts' => [
+                'classes' => ['bg-green'],
             ]
         ],
         [

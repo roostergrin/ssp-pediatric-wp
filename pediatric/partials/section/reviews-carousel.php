@@ -1,4 +1,4 @@
- <section class="reviews-carousel">
+ <section class="reviews-carousel  <?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
     <div class="content">
       <div class="inner-content">
         <div class="review active">
@@ -22,9 +22,6 @@
           <p class="review-author">– Bob Johnson</p>
         </div>
 
-        <button class="carousel-btn prev-btn">Prev</button>
-        <button class="carousel-btn next-btn">Next</button>
-
         <div class="dots">
           <span class="dot active"></span>
           <span class="dot"></span>
@@ -36,8 +33,6 @@
    <script>
     const reviews = document.querySelectorAll('.reviews-carousel .review');
     const dots = document.querySelectorAll('.reviews-carousel .dot');
-    const prevBtn = document.querySelector('.reviews-carousel .prev-btn');
-    const nextBtn = document.querySelector('.reviews-carousel .next-btn');
     
     let currentIndex = 0; // Which review/dot is active
     
@@ -57,8 +52,6 @@
       currentIndex = index;
     }
     
-    nextBtn.addEventListener('click', () => showReview(currentIndex + 1));
-    prevBtn.addEventListener('click', () => showReview(currentIndex - 1));
     
     // Dot navigation
     dots.forEach((dot, i) => {
