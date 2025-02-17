@@ -23,7 +23,7 @@
                                 <li class="signs_and_symptoms__item">Frequently gassiness and fussiness</li>
                                 <li class="signs_and_symptoms__item">Inability to hold pacifier</li>
                                 <li class="signs_and_symptoms__item">Lip blisters</li>
-                                <li class="signs_and_symptoms__item">High arched and palate</li>
+                                <li class="signs_and_symptoms__item">High and palate</li>
                             </ul>
                         </div>
                     </div>
@@ -47,13 +47,10 @@
                 </div>
                 <div class="signs_and_symptoms__images">
                     <div class="signs_and_symptoms__image">
-                        <img src="/wp-content/uploads/2025/01/SimKO-105-1.jpg" alt="Baby signs and symptoms">
+                        <img src="/wp-content/uploads/2025/01/infant-laser-1-1.jpg" alt="Baby signs and symptoms">
                     </div>
                     <div class="signs_and_symptoms__image">
-                        <img src="/wp-content/uploads/2024/12/SimKO-22-1.jpg" alt="Baby signs and symptoms">
-                    </div>
-                    <div class="signs_and_symptoms__image">
-                        <img src="/wp-content/uploads/2025/01/Brooks-Natalya-Waterhouse-baby-1.jpg" alt="Baby signs and symptoms">
+                        <img src="/wp-content/uploads/2025/01/infant-laser-2-1.jpg" alt="Baby signs and symptoms">
                     </div>
                 </div>
     </div>
