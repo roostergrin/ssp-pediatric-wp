@@ -1,35 +1,68 @@
- <section class="reviews-carousel  <?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
-    <div class="content">
-      <div class="inner-content">
-        <div class="review active">
-          <p class="review-text">
-            “This product completely exceeded my expectations. Will buy again!”
-          </p>
-          <p class="review-author">– John Doe</p>
+  <section class="reviews-carousel  <?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
+  <div class="content">
+    <div class="inner-content">
+      <div class="review active">
+        <!-- Google Review Stars -->
+        <div class="review-stars">
+          <!-- 
+            For demonstration, these are 5 identical filled stars. 
+            In practice, you can dynamically show half-stars, 
+            different counts, etc. 
+          -->
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
         </div>
 
-        <div class="review">
-          <p class="review-text">
-            “Fantastic quality and fast shipping. Highly recommend this store.”
-          </p>
-          <p class="review-author">– Jane Smith</p>
+        <p class="review-text">
+          “This product completely exceeded my expectations. Will buy again!”
+        </p>
+        <p class="review-author">– John Doe</p>
+      </div>
+
+      <div class="review">
+        <!-- Google Review Stars -->
+        <div class="review-stars">
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
         </div>
 
-        <div class="review">
-          <p class="review-text">
-            “Great service, friendly staff, and an overall wonderful experience.”
-          </p>
-          <p class="review-author">– Bob Johnson</p>
+        <p class="review-text">
+          “Fantastic quality and fast shipping. Highly recommend this store.”
+        </p>
+        <p class="review-author">– Jane Smith</p>
+      </div>
+
+      <div class="review">
+        <!-- Google Review Stars -->
+        <div class="review-stars">
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
+          <img src="/wp-content/uploads/star.svg" alt="Star" />
         </div>
 
-        <div class="dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+        <p class="review-text">
+          “Great service, friendly staff, and an overall wonderful experience.”
+        </p>
+        <p class="review-author">– Bob Johnson</p>
+      </div>
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+ 
+   
    <script>
     const reviews = document.querySelectorAll('.reviews-carousel .review');
     const dots = document.querySelectorAll('.reviews-carousel .dot');
@@ -59,86 +92,80 @@
     });
   </script>
   <style>
-    
-  .reviews-carousel {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    }
-    
-    .reviews-carousel .content {
-      position: relative;
-      padding: 1rem;
-      background-color: #f9f9f9;
-    }
-    
-    .reviews-carousel .inner-content {
-      position: relative;
-    }
-    
-    .reviews-carousel .review {
-      display: none; /* Hides all reviews by default */
-      text-align: center;
-      margin: 1rem 0;
-      padding: 1rem;
-      border: 1px solid #ccc;
-      background-color: #fff;
-    }
-    
-    .reviews-carousel .review.active {
-      display: block; /* Only the active review shows */
-    }
-    
-    .reviews-carousel .review .review-text {
-      font-size: 1.2rem;
-      line-height: 1.4;
-      margin-bottom: 0.5rem;
-    }
-    
-    .reviews-carousel .review .review-author {
-      font-style: italic;
-      color: #555;
-    }
-    
-    .reviews-carousel .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-    
-    .reviews-carousel .carousel-btn:hover {
-      background-color: #555;
-    }
-    
-    .reviews-carousel .carousel-btn.prev-btn {
-      left: 0;
-    }
-    
-    .reviews-carousel .carousel-btn.next-btn {
-      right: 0;
-    }
-    
-    .reviews-carousel .dots {
-      text-align: center;
-      margin-top: 1rem;
-    }
-    
-    .reviews-carousel .dots .dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin: 0 5px;
-      background-color: #ccc;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    
-    .reviews-carousel .dots .dot.active {
-      background-color: #333;
-    }
+    .reviews-carousel {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.reviews-carousel .content {
+  position: relative;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.reviews-carousel .inner-content {
+  position: relative;
+}
+
+.reviews-carousel .review {
+  display: none; /* Hides all reviews by default */
+  text-align: center;
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+/* Only the active review is visible */
+.reviews-carousel .review.active {
+  display: block;
+}
+
+/* Star container */
+.reviews-carousel .review .review-stars {
+  margin-bottom: 0.75rem;
+}
+
+/* Example: if you're using images for stars */
+.reviews-carousel .review .review-stars img {
+  width: 20px;      /* Adjust size as needed */
+  height: 20px;     /* Adjust size as needed */
+  margin: 0 2px;
+}
+
+/* If you're using text-based stars (like ★), you can style .review-stars span */
+.reviews-carousel .review-stars span {
+  color: #ffd700;  /* gold color, for example */
+  font-size: 1.2rem;
+}
+
+.reviews-carousel .review .review-text {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.reviews-carousel .review .review-author {
+  font-style: italic;
+  color: #555;
+}
+
+.reviews-carousel .dots {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.reviews-carousel .dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.reviews-carousel .dots .dot.active {
+  background-color: #333;
+}
   </style>
