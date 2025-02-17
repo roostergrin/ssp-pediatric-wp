@@ -1,7 +1,7 @@
 <section class="reviews-carousel  <?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
     <div class="content">
         <div class="inner-content">
-            <h3>Google Reviews</h3>
+            <h3 style="margin-bottom: 1rem; text-align: center;">Google Reviews</h3>
             <div class="review active">
                 <!-- Google Review Stars -->
                 <div class="review-stars">
@@ -32,6 +32,7 @@ entire SIM team for providing such exceptional care!”
             <div class="review">
                 <!-- Google Review Stars -->
                 <div class="review-stars">
+                    <img src="/wp-content/uploads/star.svg" alt="Star" />
                     <img src="/wp-content/uploads/star.svg" alt="Star" />
                     <img src="/wp-content/uploads/star.svg" alt="Star" />
                     <img src="/wp-content/uploads/star.svg" alt="Star" />
