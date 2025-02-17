@@ -1,6 +1,7 @@
 <section class="reviews-carousel  <?= $classes ? ' ' . implode(' ', $classes) : ''; ?>">
     <div class="content">
         <div class="inner-content">
+            <h3>Google Reviews</h3>
             <div class="review active">
                 <!-- Google Review Stars -->
                 <div class="review-stars">
